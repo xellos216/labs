@@ -1,0 +1,6 @@
+root /var 80
+root /home 40
+alice /home/alice 95
+bob /srv 60
+alice /tmp 20
+bob /home/bob 90

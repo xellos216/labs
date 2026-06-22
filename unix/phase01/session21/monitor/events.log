@@ -1,0 +1,6 @@
+nginx ERROR worker_crash
+nginx INFO reload
+mysql ERROR connection_fail
+sshd WARN auth_retry
+redis INFO snapshot
+mysql WARN slow_query

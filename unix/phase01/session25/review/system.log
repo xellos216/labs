@@ -1,0 +1,6 @@
+nginx ERROR 500
+nginx INFO 200
+mysql WARN 300
+sshd INFO 100
+redis ERROR 700
+mysql ERROR 600

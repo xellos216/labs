@@ -1,0 +1,4 @@
+200 GET /
+404 GET /admin
+200 GET /login
+500 POST /api

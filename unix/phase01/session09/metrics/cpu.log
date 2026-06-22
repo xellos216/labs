@@ -1,0 +1,6 @@
+server1 cpu=20 mem=30
+server2 cpu=85 mem=70
+server3 cpu=40 mem=90
+server1 cpu=95 mem=50
+server2 cpu=60 mem=40
+server3 cpu=88 mem=95

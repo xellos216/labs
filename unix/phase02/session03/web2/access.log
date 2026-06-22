@@ -1,0 +1,4 @@
+200 GET /
+200 GET /profile
+404 GET /backup
+404 GET /secret

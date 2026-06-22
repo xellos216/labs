@@ -1,0 +1,6 @@
+nginx worker 12 running
+nginx master 3 sleeping
+mysql worker 40 running
+sshd listener 1 idle
+redis worker 25 running
+mysql backup 15 stopped
