@@ -210,7 +210,6 @@ It only reveals evidence.
 
 # QA
 
-```markdown
 **Q1.**
 What is the goal of network troubleshooting?
 
@@ -274,4 +273,3 @@ How does troubleshooting relate to DNS, IP, Routing, TCP, TLS, HTTP, and sockets
 <summary><strong>A8.</strong></summary>
 
 </details>
-```

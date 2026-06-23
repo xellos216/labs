@@ -41,47 +41,33 @@ Build a mental model of networking as a system for moving information.
 - Understand how Linux participates in networking
 - Build a foundation for later security learning
 
-### Session 01
-What is a Network?
+### Session 01 - What is a Network?
 
-### Session 02
-IP Addresses
+### Session 02 - IP Addresses
 
-### Session 03
-Ports
+### Session 03 - Ports
 
-### Session 04
-TCP
+### Session 04 - TCP
 
-### Session 05
-UDP
+### Session 05 - UDP
 
-### Session 06
-TCP Three-Way Handshake
+### Session 06 - TCP Three-Way Handshake
 
-### Session 07
-DNS
+### Session 07 - DNS
 
-### Session 08
-Routing
+### Session 08 - Routing
 
-### Session 09
-HTTP
+### Session 09 - HTTP
 
-### Session 10
-TLS
+### Session 10 - TLS
 
-### Session 11
-Sockets
+### Session 11 - Sockets
 
-### Session 12
-Packet Capture
+### Session 12 - Packet Capture
 
-### Session 13
-Network Troubleshooting
+### Session 13 - Network Troubleshooting
 
-### Session 14
-Networking Concepts Inside HTB
+### Session 14 - Networking Concepts Inside HTB
 
 ---
 
@@ -100,47 +86,33 @@ Understand how Linux implements networking.
 - Understand Linux firewall concepts
 - Observe networking from the operating system perspective
 
-### Session 01
-Network Interfaces
+### Session 01 - Network Interfaces
 
-### Session 02
-Loopback Interface
+### Session 02 - Loopback Interface
 
-### Session 03
-ARP
+### Session 03 - ARP
 
-### Session 04
-Neighbor Tables
+### Session 04 - Neighbor Tables
 
-### Session 05
-Routing Tables
+### Session 05 - Routing Tables
 
-### Session 06
-Default Gateway
+### Session 06 - Default Gateway
 
-### Session 07
-DHCP
+### Session 07 - DHCP
 
-### Session 08
-NAT
+### Session 08 - NAT
 
-### Session 09
-Linux Packet Flow
+### Session 09 - Linux Packet Flow
 
-### Session 10
-iptables Fundamentals
+### Session 10 - iptables Fundamentals
 
-### Session 11
-nftables Overview
+### Session 11 - nftables Overview
 
-### Session 12
-Connection Tracking
+### Session 12 - Connection Tracking
 
-### Session 13
-Network Namespaces
+### Session 13 - Network Namespaces
 
-### Session 14
-Observing Linux Networking Internals
+### Session 14 - Observing Linux Networking Internals
 
 ---
 
@@ -157,47 +129,33 @@ Learn to think in packets instead of applications.
 - Understand protocol behavior through observation
 - Improve troubleshooting and enumeration skills
 
-### Session 01
-What Is a Packet?
+### Session 01 - What Is a Packet?
 
-### Session 02
-Ethernet Frames
+### Session 02 - Ethernet Frames
 
-### Session 03
-MAC Addresses
+### Session 03 - MAC Addresses
 
-### Session 04
-ARP Traffic
+### Session 04 - ARP Traffic
 
-### Session 05
-ICMP
+### Session 05 - ICMP
 
-### Session 06
-Traceroute Mechanics
+### Session 06 - Traceroute Mechanics
 
-### Session 07
-TCP Packet Anatomy
+### Session 07 - TCP Packet Anatomy
 
-### Session 08
-UDP Packet Anatomy
+### Session 08 - UDP Packet Anatomy
 
-### Session 09
-DNS Packets
+### Session 09 - DNS Packets
 
-### Session 10
-HTTP Packets
+### Session 10 - HTTP Packets
 
-### Session 11
-TLS Packets
+### Session 11 - TLS Packets
 
-### Session 12
-Wireshark Workflow
+### Session 12 - Wireshark Workflow
 
-### Session 13
-tcpdump Workflow
+### Session 13 - tcpdump Workflow
 
-### Session 14
-Packet Storytelling
+### Session 14 - Packet Storytelling
 
 ---
 
@@ -214,47 +172,33 @@ Understand web applications as networking systems.
 - Understand sessions and authentication
 - Understand how web applications use networking
 
-### Session 01
-Browser Request Lifecycle
+### Session 01 - Browser Request Lifecycle
 
-### Session 02
-HTTP Request Structure
+### Session 02 - HTTP Request Structure
 
-### Session 03
-HTTP Response Structure
+### Session 03 - HTTP Response Structure
 
-### Session 04
-Cookies
+### Session 04 - Cookies
 
-### Session 05
-Sessions
+### Session 05 - Sessions
 
-### Session 06
-JWT
+### Session 06 - JWT
 
-### Session 07
-Caching
+### Session 07 - Caching
 
-### Session 08
-Proxies
+### Session 08 - Proxies
 
-### Session 09
-Reverse Proxies
+### Session 09 - Reverse Proxies
 
-### Session 10
-Load Balancers
+### Session 10 - Load Balancers
 
-### Session 11
-CDN Fundamentals
+### Session 11 - CDN Fundamentals
 
-### Session 12
-WebSocket
+### Session 12 - WebSocket
 
-### Session 13
-API Networking
+### Session 13 - API Networking
 
-### Session 14
-Observing Real Web Applications
+### Session 14 - Observing Real Web Applications
 
 ---
 
@@ -271,47 +215,33 @@ Understand security from a networking perspective.
 - Understand network visibility
 - Understand common security controls
 
-### Session 01
-Attack Surface
+### Session 01 - Attack Surface
 
-### Session 02
-Port Scanning Theory
+### Session 02 - Port Scanning Theory
 
-### Session 03
-Nmap Internals
+### Session 03 - Nmap Internals
 
-### Session 04
-Service Enumeration
+### Session 04 - Service Enumeration
 
-### Session 05
-Banner Grabbing
+### Session 05 - Banner Grabbing
 
-### Session 06
-DNS Enumeration
+### Session 06 - DNS Enumeration
 
-### Session 07
-Web Enumeration
+### Session 07 - Web Enumeration
 
-### Session 08
-Packet Inspection
+### Session 08 - Packet Inspection
 
-### Session 09
-Traffic Analysis
+### Session 09 - Traffic Analysis
 
-### Session 10
-Man-in-the-Middle Concepts
+### Session 10 - Man-in-the-Middle Concepts
 
-### Session 11
-Network Segmentation
+### Session 11 - Network Segmentation
 
-### Session 12
-Firewalls
+### Session 12 - Firewalls
 
-### Session 13
-IDS and IPS
+### Session 13 - IDS and IPS
 
-### Session 14
-Network Security Mental Models
+### Session 14 - Network Security Mental Models
 
 ---
 
@@ -328,47 +258,33 @@ Apply networking concepts in real environments.
 - Build strong enumeration habits
 - Connect theory to practice
 
-### Session 01
-HTB Network Architecture
+### Session 01 - HTB Network Architecture
 
-### Session 02
-VPN Concepts
+### Session 02 - VPN Concepts
 
-### Session 03
-Target Reachability
+### Session 03 - Target Reachability
 
-### Session 04
-Host Discovery
+### Session 04 - Host Discovery
 
-### Session 05
-Port Discovery
+### Session 05 - Port Discovery
 
-### Session 06
-Service Discovery
+### Session 06 - Service Discovery
 
-### Session 07
-Web Discovery
+### Session 07 - Web Discovery
 
-### Session 08
-Protocol Identification
+### Session 08 - Protocol Identification
 
-### Session 09
-Traffic Observation
+### Session 09 - Traffic Observation
 
-### Session 10
-Enumeration Workflow
+### Session 10 - Enumeration Workflow
 
-### Session 11
-Building Observation Notes
+### Session 11 - Building Observation Notes
 
-### Session 12
-Failure Analysis
+### Session 12 - Failure Analysis
 
-### Session 13
-Network-Based Pivot Thinking
+### Session 13 - Network-Based Pivot Thinking
 
-### Session 14
-HTB Machine Walkthrough Analysis
+### Session 14 - HTB Machine Walkthrough Analysis
 
 ---
 
@@ -385,47 +301,33 @@ Understand modern networking systems and architectures.
 - Understand container networking
 - Understand modern infrastructure design
 
-### Session 01
-VLAN
+### Session 01 - VLAN
 
-### Session 02
-Subnetting
+### Session 02 - Subnetting
 
-### Session 03
-CIDR
+### Session 03 - CIDR
 
-### Session 04
-BGP Overview
+### Session 04 - BGP Overview
 
-### Session 05
-VPN Technologies
+### Session 05 - VPN Technologies
 
-### Session 06
-WireGuard
+### Session 06 - WireGuard
 
-### Session 07
-IPv6
+### Session 07 - IPv6
 
-### Session 08
-Containers and Networking
+### Session 08 - Containers and Networking
 
-### Session 09
-Docker Networking
+### Session 09 - Docker Networking
 
-### Session 10
-Kubernetes Networking
+### Session 10 - Kubernetes Networking
 
-### Session 11
-Cloud Networking
+### Session 11 - Cloud Networking
 
-### Session 12
-Service Mesh Concepts
+### Session 12 - Service Mesh Concepts
 
-### Session 13
-Zero Trust Networking
+### Session 13 - Zero Trust Networking
 
-### Session 14
-Modern Internet Architecture
+### Session 14 - Modern Internet Architecture
 
 ---
 

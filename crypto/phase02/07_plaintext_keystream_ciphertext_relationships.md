@@ -162,7 +162,7 @@ P XOR K = __
 
 <details>
 <summary><strong>A1.</strong></summary>
-
+C (ciphertext)
 
 </details>
 
@@ -178,7 +178,7 @@ C XOR K = __
 
 <details>
 <summary><strong>A2.</strong></summary>
-
+P (plaintext)
 
 </details>
 
@@ -194,7 +194,7 @@ P XOR C = __
 
 <details>
 <summary><strong>A3.</strong></summary>
-
+K (keystream)
 
 </details>
 
@@ -210,7 +210,7 @@ Calculate:
 
 <details>
 <summary><strong>A4.</strong></summary>
-
+0x40
 
 </details>
 
@@ -229,7 +229,7 @@ Recover P.
 
 <details>
 <summary><strong>A5.</strong></summary>
-
+0x41
 
 </details>
 
@@ -248,7 +248,7 @@ Recover K.
 
 <details>
 <summary><strong>A6.</strong></summary>
-
+0x01
 
 </details>
 
@@ -260,6 +260,7 @@ Why does knowing plaintext sometimes help recover a keystream?
 
 <details>
 <summary><strong>A7.</strong></summary>
+Knowing plaintext and ciphertext allows recovery of the keystream.
 
 
 </details>
@@ -278,7 +279,14 @@ mean?
 
 <details>
 <summary><strong>A8.</strong></summary>
+Know P and K
+→ recover C
 
+Know C and K
+→ recover P
+
+Know P and C
+→ recover K
 
 </details>
 
@@ -297,7 +305,7 @@ Recover C.
 
 <details>
 <summary><strong>A9.</strong></summary>
-
+0x40
 
 </details>
 
@@ -316,7 +324,7 @@ Recover P.
 
 <details>
 <summary><strong>A10.</strong></summary>
-
+0x42
 
 </details>
 
@@ -335,7 +343,7 @@ Recover K.
 
 <details>
 <summary><strong>A11.</strong></summary>
-
+0x02
 
 </details>
 
@@ -355,7 +363,7 @@ P XOR C = K
 
 <details>
 <summary><strong>A12.</strong></summary>
-
+Applying XOR with the same value restores the original value.
 
 </details>
 
@@ -367,6 +375,7 @@ When analyzing ciphertext, why might known plaintext be valuable?
 
 <details>
 <summary><strong>A13.</strong></summary>
+Known plaintext may reveal missing values in the XOR relationship.
 
 
 </details>
@@ -379,6 +388,6 @@ In one sentence, explain the relationship between plaintext, keystream, and ciph
 
 <details>
 <summary><strong>A14.</strong></summary>
-
+Knowing any two of plaintext, keystream, and ciphertext allows recovery of the third.
 
 </details>

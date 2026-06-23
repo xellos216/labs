@@ -385,6 +385,26 @@ Execute
 
 The CPU executes instructions from the Code Segment.
 
+---
+
+# Observations
+
+![02_01](image/02_01.png)
+
+---
+
+![02_02](image/02_02.png)
+
+---
+
+![02_03](image/02_03.png)
+
+---
+
+![02_04](image/02_04.png)
+
+---
+
 # QA
 
 **Q1.**

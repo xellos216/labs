@@ -329,8 +329,9 @@ What is the difference between a filter and a parser?
 
 <details>
 <summary><strong>A1.</strong></summary>
+A filter examines text
 
-</details>
+A parser interprets the text and assigns meaning to it</details>
 
 ---
 
@@ -346,8 +347,9 @@ behavior
 
 <details>
 <summary><strong>A2.</strong></summary>
+The same text can be interpreted differently after normalization and parsing.
 
-</details>
+Therefore text itself does not directly determine behavior.</details>
 
 ---
 
@@ -359,8 +361,11 @@ Give two examples.
 
 <details>
 <summary><strong>A3.</strong></summary>
+Normalization is the process of transforming input into a standard form before parsing.
 
-</details>
+- URL decoding
+- case conversion
+- whitespace normalization</details>
 
 ---
 
@@ -371,7 +376,7 @@ Why can the same input have different meanings across processing layers?
 <details>
 <summary><strong>A4.</strong></summary>
 
-</details>
+Because each processing layer may apply different interpretation rules to the same input.</details>
 
 ---
 
@@ -382,7 +387,7 @@ What is parser mismatch?
 <details>
 <summary><strong>A5.</strong></summary>
 
-</details>
+filter understanding != parser understanding</details>
 
 ---
 
@@ -417,7 +422,7 @@ parser
 <details>
 <summary><strong>A6.</strong></summary>
 
-</details>
+The filter may inspect different data depending on the processing order.</details>
 
 ---
 
@@ -427,7 +432,10 @@ When analyzing a filter, what are the five questions from the Mental Checklist?
 
 <details>
 <summary><strong>A7.</strong></summary>
-
-</details>
+1. What text is inspected?
+2. Does normalization happen?
+3. Which parser executes later?
+4. Do filter and parser agree?
+5. What finally executes?</details>
 
 ---
