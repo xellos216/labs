@@ -1,12 +1,12 @@
-# XOR Viewpoints
+# Session 02 — XOR Viewpoints
 
-Keep vs Flip Mental Model
-
-## Session Goal
+## Objective
 
 Separate two XOR viewpoints.
 
 Do not mix them.
+
+---
 
 ## Viewpoint 1
 
@@ -29,6 +29,8 @@ Examples:
 This viewpoint explains:
 
 "How XOR produces a result."
+
+---
 
 ## Viewpoint 2
 
@@ -56,6 +58,8 @@ This viewpoint explains:
 
 "What the key does."
 
+---
+
 ## Important Distinction
 
 These are not competing explanations.
@@ -69,6 +73,8 @@ Truth Rule
 Key Interpretation
 
 → explains transformation behavior
+
+---
 
 ## Reversibility
 
@@ -84,6 +90,8 @@ and
 
 decrypt
 
+---
+
 ## Observation Habit
 
 When analyzing XOR:
@@ -95,6 +103,8 @@ When analyzing XOR:
 3. Which bits remain unchanged?
 
 4. Can the same key restore the original data?
+
+---
 
 ## Transferable Mental Model
 
@@ -112,16 +122,18 @@ Think in bit relationships.
 
 Not in characters.
 
+---
+
 # QA
 
-**Q1.**
+### Q1
 
 Calculate the following XOR result.
 
 1010 XOR 0000
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary><strong>A</strong></summary>
 
 = 1010
 
@@ -129,14 +141,14 @@ Calculate the following XOR result.
 
 ---
 
-**Q2.**
+### Q2
 
 Calculate the following XOR result.
 
 1010 XOR 1111
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary><strong>A</strong></summary>
 
 = 0101
 
@@ -144,40 +156,14 @@ Calculate the following XOR result.
 
 ---
 
-**Q3.**
-
-Why does a key bit of 0 preserve the original bit in XOR?
-
-<details>
-<summary><strong>A3.</strong></summary>
-
-XOR with 0 leaves the original bit unchanged.
-
-</details>
-
----
-
-**Q4.**
-
-Why does a key bit of 1 flip the original bit in XOR?
-
-<details>
-<summary><strong>A4.</strong></summary>
-
-XOR with 1 changes 0 to 1 and 1 to 0.
-
-</details>
-
----
-
-**Q5.**
+### Q3
 
 Calculate the following expression.
 
 1100 XOR 0101
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary><strong>A</strong></summary>
 
 1001
 
@@ -185,96 +171,7 @@ Calculate the following expression.
 
 ---
 
-**Q6.**
-
-Calculate the following expression.
-
-1001 XOR 1001
-
-<details>
-<summary><strong>A6.</strong></summary>
-
-= 0000
-
-</details>
-
----
-
-**Q7.**
-
-Calculate the following expression.
-
-1111 XOR 0011
-
-<details>
-<summary><strong>A7.</strong></summary>
-
-= 1100
-
-</details>
-
----
-
-**Q8.**
-
-Find `C` in the following expression.
-
-P = 1100
-
-K = 0101
-
-C = P XOR K
-
-<details>
-<summary><strong>A8.</strong></summary>
-
-= 1001
-
-</details>
-
----
-
-**Q9.**
-
-Find `P` in the following expression.
-
-C = 1001
-
-K = 0101
-
-P = C XOR K
-
-<details>
-<summary><strong>A9.</strong></summary>
-
-= 1100
-
-</details>
-
----
-
-**Q10.**
-
-Which is the most important property of XOR?
-
-A. It compresses data.
-
-B. It is irreversible.
-
-C. The same key can restore the original value.
-
-D. It reduces the data length.
-
-<details>
-<summary><strong>A10.</strong></summary>
-
-C
-
-</details>
-
----
-
-**Q11.**
+### Q4
 
 Distinguish between the following two concepts.
 
@@ -283,7 +180,7 @@ Distinguish between the following two concepts.
 2. Key=0 → Keep / Key=1 → Flip
 
 <details>
-<summary><strong>A11.</strong></summary>
+<summary><strong>A</strong></summary>
 
 The first explains how XOR calculates its result. The second explains how
 the key affects the original bit.
@@ -292,28 +189,14 @@ the key affects the original bit.
 
 ---
 
-**Q12.**
-
-Why are "Same -> 0 / Different -> 1" and "Keep / Flip" different viewpoints?
-
-<details>
-<summary><strong>A12.</strong></summary>
-
-Same/Different is the XOR calculation rule. Keep/Flip interprets XOR from
-the key's point of view.
-
-</details>
-
----
-
-**Q13.**
+### Q5
 
 Explain why the following identity holds.
 
 (P XOR K) XOR K = P
 
 <details>
-<summary><strong>A13.</strong></summary>
+<summary><strong>A</strong></summary>
 
 XORing the same value twice restores the original value.
 
@@ -321,15 +204,25 @@ XORing the same value twice restores the original value.
 
 ---
 
-**Q14.**
+### Q6
 
 Why might XOR be considered when examining ciphertext?
 
 <details>
-<summary><strong>A14.</strong></summary>
+<summary><strong>A</strong></summary>
 
 Because XOR is a common reversible transformation.
 
 If data looks transformed but can potentially be restored with a key, XOR is one possibility to investigate.
 
 </details>
+
+---
+
+## Key Takeaways
+
+- The same/different rule explains how XOR calculates its result.
+- The keep/flip model explains what each key bit does to the input.
+- These viewpoints describe the same operation from different perspectives.
+- XOR is reversible because applying the same key twice cancels its effect.
+- Bit relationships are more useful than character appearance when analyzing XOR.

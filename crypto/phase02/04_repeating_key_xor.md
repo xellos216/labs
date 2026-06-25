@@ -1,10 +1,10 @@
-# Repeating-Key XOR
+# Session 04 — Repeating-Key XOR
 
-Repeating-Key XOR Introduction
-
-## Session Goal
+## Objective
 
 Understand how a key can be reused across many bytes.
+
+---
 
 ## Single-Byte XOR
 
@@ -30,6 +30,8 @@ Applied:
 ```
 
 Same key every time.
+
+---
 
 ## Repeating-Key XOR
 
@@ -58,6 +60,8 @@ Applied:
 
 The key repeats.
 
+---
+
 ## Important Observation
 
 The key is usually shorter than the data.
@@ -73,6 +77,8 @@ key
 
 until all plaintext bytes are processed.
 
+---
+
 ## Mental Model
 
 Think of the key as a stencil.
@@ -86,6 +92,8 @@ Think of the key as a stencil.
 ```
 
 The pattern is reused.
+
+---
 
 ## Reversibility
 
@@ -109,6 +117,8 @@ instead of
 K1 K1 K1 K1 ...
 ```
 
+---
+
 ## Observation Habit
 
 When analyzing ciphertext:
@@ -118,6 +128,8 @@ Ask:
 - Is there a repeating pattern?
 - Could a short key be reused?
 - Does the data look transformed by repeating bytes?
+
+---
 
 ## Transferable Mental Model
 
@@ -141,21 +153,24 @@ ciphertext
 
 The keystream is just much larger and usually generated dynamically.
 
+---
+
 # QA
 
-**Q1.**
+### Q1
 
 What is repeating-key XOR?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary><strong>A</strong></summary>
+
 A short key is reused repeatedly across the plaintext.
 
 </details>
 
 ---
 
-**Q2.**
+### Q2
 
 Which key byte is applied to each position in the following plaintext?
 
@@ -170,7 +185,8 @@ X Y
 Write the key sequence aligned with every plaintext position.
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary><strong>A</strong></summary>
+
 A B C D E F
 X Y X Y X Y
 
@@ -178,49 +194,7 @@ X Y X Y X Y
 
 ---
 
-**Q3.**
-
-Why is it called repeating-key XOR?
-
-<details>
-<summary><strong>A3.</strong></summary>
-Because the key is reused in a repeating pattern.
-
-</details>
-
----
-
-**Q4.**
-
-Calculate the following expression.
-
-```text
-0x41 XOR 0x01
-```
-
-<details>
-<summary><strong>A4.</strong></summary>
-= `0100 0000` = `0x40`
-</details>
-
----
-
-**Q5.**
-
-Calculate the following expression.
-
-```text
-0x42 XOR 0x02
-```
-
-<details>
-<summary><strong>A5.</strong></summary>
-= `0100 0000` = `0x40`
-</details>
-
----
-
-**Q6.**
+### Q3
 
 XOR the following plaintext and key.
 
@@ -237,14 +211,15 @@ Key:
 Write the result after repeating the key.
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary><strong>A</strong></summary>
+
 = 0x40 0x40 0x42 0x46
 
 </details>
 
 ---
 
-**Q7.**
+### Q4
 
 Which sequence correctly represents repeating-key XOR?
 
@@ -268,18 +243,20 @@ P4 XOR K2
 ```
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary><strong>A</strong></summary>
+
 B
 </details>
 
 ---
 
-**Q8.**
+### Q5
 
 Why does repeating-key XOR appear more complex than single-byte XOR?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary><strong>A</strong></summary>
+
 Because different key bytes are used at different positions.
 
 
@@ -287,53 +264,28 @@ Because different key bytes are used at different positions.
 
 ---
 
-**Q9.**
+### Q6
 
-Explain the following statement.
-
-```text
-The key becomes a repeating pattern.
-```
+How is repeating-key XOR conceptually related to a stream cipher?
 
 <details>
-<summary><strong>A9.</strong></summary>
-The same key pattern is reused again and again.
+<summary><strong>A</strong></summary>
+
+Both XOR plaintext with a keystream. Repeating-key XOR creates that
+keystream by repeating a short key, while a stream cipher usually generates
+it dynamically.
 
 </details>
 
 ---
 
-**Q10.**
-
-Calculate the following results.
-
-```text
-0x41 XOR 0x01 = ?
-0x42 XOR 0x02 = ?
-0x43 XOR 0x01 = ?
-0x44 XOR 0x02 = ?
-```
-
-<details>
-<summary><strong>A10.</strong></summary>
-0x40
-
-0x40
-
-0x42
-
-0x46
-
-</details>
-
----
-
-**Q11.**
+### Q7
 
 Why is repeating-key XOR reversible?
 
 <details>
-<summary><strong>A11.</strong></summary>
+<summary><strong>A</strong></summary>
+
 Because XOR is reversible and the same repeating key can be applied again.
 
 
@@ -342,31 +294,13 @@ Because XOR is reversible and the same repeating key can be applied again.
 
 ---
 
-**Q12.**
-
-Explain why the following identity holds.
-
-```text
-(P XOR K) XOR K = P
-```
-
-<details>
-<summary><strong>A12.</strong></summary>
-P XOR K = C
-
-C XOR K = P
-
-
-</details>
-
----
-
-**Q13.**
+### Q8
 
 Why can a repeated ciphertext pattern suggest repeating-key XOR?
 
 <details>
-<summary><strong>A13.</strong></summary>
+<summary><strong>A</strong></summary>
+
 Because reuse of a short key may leave periodic relationships in the
 ciphertext.
 
@@ -376,13 +310,10 @@ ciphertext.
 
 ---
 
-**Q14.**
+## Key Takeaways
 
-Describe repeating-key XOR in one sentence.
-
-<details>
-<summary><strong>A14.</strong></summary>
-Repeating-key XOR applies a short key repeatedly across the plaintext bytes.
-
-
-</details>
+- Repeating-key XOR cycles a short key across a longer plaintext.
+- Each plaintext byte is XORed with the key byte aligned to its position.
+- The repeated key forms a predictable keystream.
+- XOR remains reversible when the same repeated key sequence is applied again.
+- Periodic ciphertext relationships can suggest reuse of a short key.

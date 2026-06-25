@@ -1,8 +1,10 @@
-# Plaintext, Keystream, Ciphertext Relationships
+# Session 07 — Plaintext, Keystream, and Ciphertext Relationships
 
-## Session Goal
+## Objective
 
 Understand how plaintext, keystream, and ciphertext are mathematically related.
+
+---
 
 ## Core Relationship
 
@@ -20,6 +22,8 @@ This can be rewritten as:
 P XOR K = C
 ```
 
+---
+
 ## Reversibility
 
 Because XOR is reversible:
@@ -36,6 +40,8 @@ P XOR C = K
 
 Knowing any two values allows you to recover the third.
 
+---
+
 ## Three-Way Relationship
 
 ```text
@@ -47,6 +53,8 @@ P XOR C = K
 ```
 
 All three equations describe the same relationship.
+
+---
 
 ## Important Observation
 
@@ -65,6 +73,8 @@ can reveal:
 ```text
 Keystream
 ```
+
+---
 
 ## Example
 
@@ -90,6 +100,8 @@ Verification:
 41 XOR 40 = 01
 ```
 
+---
+
 ## Analyst Mindset
 
 Ask:
@@ -111,6 +123,8 @@ Know P and C
 → recover K
 ```
 
+---
+
 ## Why This Matters
 
 Many crypto challenges are not about:
@@ -127,6 +141,8 @@ finding any missing piece
 
 of the relationship.
 
+---
+
 ## Observation Habit
 
 When looking at encrypted data:
@@ -137,6 +153,8 @@ Ask:
 - Do I know ciphertext?
 - Do I know keystream?
 - Can I recover the missing value?
+
+---
 
 ## Transferable Mental Model
 
@@ -150,124 +168,11 @@ Ciphertext
 
 Knowing any two pieces reveals the third.
 
+---
+
 # QA
 
-**Q1.**
-
-Complete:
-
-```text
-P XOR K = __
-```
-
-<details>
-<summary><strong>A1.</strong></summary>
-C (ciphertext)
-
-</details>
-
----
-
-**Q2.**
-
-Complete:
-
-```text
-C XOR K = __
-```
-
-<details>
-<summary><strong>A2.</strong></summary>
-P (plaintext)
-
-</details>
-
----
-
-**Q3.**
-
-Complete:
-
-```text
-P XOR C = __
-```
-
-<details>
-<summary><strong>A3.</strong></summary>
-K (keystream)
-
-</details>
-
----
-
-**Q4.**
-
-Calculate:
-
-```text
-0x41 XOR 0x01
-```
-
-<details>
-<summary><strong>A4.</strong></summary>
-0x40
-
-</details>
-
----
-
-**Q5.**
-
-Given:
-
-```text
-C = 0x40
-K = 0x01
-```
-
-Recover P.
-
-<details>
-<summary><strong>A5.</strong></summary>
-0x41
-
-</details>
-
----
-
-**Q6.**
-
-Given:
-
-```text
-P = 0x41
-C = 0x40
-```
-
-Recover K.
-
-<details>
-<summary><strong>A6.</strong></summary>
-0x01
-
-</details>
-
----
-
-**Q7.**
-
-Why does knowing plaintext sometimes help recover a keystream?
-
-<details>
-<summary><strong>A7.</strong></summary>
-Knowing plaintext and ciphertext allows recovery of the keystream.
-
-
-</details>
-
----
-
-**Q8.**
+### Q1
 
 What does the phrase
 
@@ -278,7 +183,8 @@ Knowing any two reveals the third
 mean?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary><strong>A</strong></summary>
+
 Know P and K
 → recover C
 
@@ -292,7 +198,7 @@ Know P and C
 
 ---
 
-**Q9.**
+### Q2
 
 Given:
 
@@ -304,14 +210,15 @@ K = 0x02
 Recover C.
 
 <details>
-<summary><strong>A9.</strong></summary>
+<summary><strong>A</strong></summary>
+
 0x40
 
 </details>
 
 ---
 
-**Q10.**
+### Q3
 
 Given:
 
@@ -323,14 +230,15 @@ K = 0x02
 Recover P.
 
 <details>
-<summary><strong>A10.</strong></summary>
+<summary><strong>A</strong></summary>
+
 0x42
 
 </details>
 
 ---
 
-**Q11.**
+### Q4
 
 Given:
 
@@ -342,14 +250,15 @@ C = 0x40
 Recover K.
 
 <details>
-<summary><strong>A11.</strong></summary>
+<summary><strong>A</strong></summary>
+
 0x02
 
 </details>
 
 ---
 
-**Q12.**
+### Q5
 
 Why are the following equations equivalent?
 
@@ -362,19 +271,21 @@ P XOR C = K
 ```
 
 <details>
-<summary><strong>A12.</strong></summary>
+<summary><strong>A</strong></summary>
+
 Applying XOR with the same value restores the original value.
 
 </details>
 
 ---
 
-**Q13.**
+### Q6
 
 When analyzing ciphertext, why might known plaintext be valuable?
 
 <details>
-<summary><strong>A13.</strong></summary>
+<summary><strong>A</strong></summary>
+
 Known plaintext may reveal missing values in the XOR relationship.
 
 
@@ -382,12 +293,23 @@ Known plaintext may reveal missing values in the XOR relationship.
 
 ---
 
-**Q14.**
+### Q7
 
 In one sentence, explain the relationship between plaintext, keystream, and ciphertext.
 
 <details>
-<summary><strong>A14.</strong></summary>
+<summary><strong>A</strong></summary>
+
 Knowing any two of plaintext, keystream, and ciphertext allows recovery of the third.
 
 </details>
+
+---
+
+## Key Takeaways
+
+- Stream-style encryption follows the relationship `P XOR K = C`.
+- XOR reversibility also gives `C XOR K = P` and `P XOR C = K`.
+- Knowing any two of plaintext, keystream, and ciphertext reveals the third.
+- Known plaintext can expose the corresponding part of a keystream.
+- Analysis should begin by identifying which values are already known.

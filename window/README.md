@@ -8,34 +8,41 @@ Build a strong mental model of how Windows systems work from the perspective of:
 - System Administration Awareness
 - Incident Response
 - Enterprise Infrastructure
-- Active Directory Environments
+- Active Directory
 - Future Windows Security Learning
 
-This roadmap is not designed to create a Windows administrator.
+This roadmap is **not** intended to make you a Windows administrator.
 
-The goal is to understand how Windows systems operate, how enterprises use them, and how attackers and defenders interact with them.
+Instead, its purpose is to understand how Windows systems are designed, how they operate, and how they are used in modern enterprise environments.
 
 ---
 
 # Philosophy
 
-Windows should not be approached as:
+Windows should not be studied as:
 
 - a collection of GUI menus
 - certification trivia
 - version-specific features
-- memorization exercises
+- commands to memorize
 
-Instead, Windows should be studied as:
+Instead, study Windows as a complete operating system.
 
 ```text
 Hardware
-→ Kernel
-→ Services
-→ Users
-→ Authentication
-→ Networking
-→ Enterprise Infrastructure
+        │
+        ▼
+NT Kernel
+        │
+        ▼
+Processes
+Services
+Filesystem
+Networking
+Authentication
+        │
+        ▼
+Enterprise Infrastructure
 ```
 
 Core principles:
@@ -43,176 +50,296 @@ Core principles:
 - understanding before memorization
 - observation before modification
 - systems thinking
-- security awareness
-- enterprise context
+- security-oriented learning
+- enterprise awareness
 - transferable mental models
 
 ---
 
 # Learning Method
 
-## Concept Sessions (30%)
+This roadmap follows a hybrid structure.
+
+## Concept Sessions (≈30%)
 
 Purpose:
 
-Build mental models.
+Build accurate mental models.
 
-Focus:
+Topics include:
 
 - architecture
-- design decisions
+- why components exist
+- problems they solve
 - Linux comparisons
-- security implications
-
-Questions:
-
-```text
-Why does this component exist?
-
-What problem does it solve?
-
-How does Linux solve the same problem?
-
-Where does it appear in real enterprises?
-```
+- enterprise context
 
 ---
 
-## Task Sessions (70%)
+## Observation Sessions (≈40%)
 
 Purpose:
 
 Observe Windows directly.
 
-Focus:
+Focus on:
 
-- built-in tools
-- system investigation
-- process observation
-- event analysis
-- service inspection
+- inspecting
+- comparing
+- identifying
+- tracing
+- explaining
 
-Workflow:
+using built-in Windows tools.
+
+---
+
+## Hands-on Sessions (≈30%)
+
+Purpose:
+
+Apply concepts through practical investigation.
+
+Typical workflow:
 
 ```text
 Predict
-→ Observe
-→ Explain
-→ Verify
+
+↓
+
+Observe
+
+↓
+
+Modify
+
+↓
+
+Verify
+
+↓
+
+Explain
 ```
 
 ---
 
-# Recommended Lab Environment
+# Lab Environment
 
-Primary workstation:
+Host System
 
 - Arch Linux
 
-Recommended Windows lab:
+Windows Lab
 
-- Windows 11
-- Windows Server Evaluation Edition (later phases)
-- Virtual Machine (QEMU/KVM preferred)
+- Windows 11 VM
+- Windows Server Evaluation VM (later phases)
+- QEMU/KVM recommended
 
-Why:
+The VM exists for:
 
 - safe experimentation
-- snapshot recovery
-- enterprise simulation
+- snapshots
 - Active Directory labs
+- incident response exercises
+
+---
+
+# Typical Phase Structure
+
+Every phase follows a consistent pattern.
+
+```text
+Session 01–02
+Concept
+
+↓
+
+Session 03–04
+Observation
+
+↓
+
+Session 05–08
+Hands-on Investigation
+
+↓
+
+Session 09–11
+Applied Observation
+
+↓
+
+Session 12
+Mini Review Lab
+```
+
+This allows learning to continue easily across different chat sessions.
 
 ---
 
 # Phase 01 — Windows Foundations
 
-## Purpose
+## Goal
 
-Build a high-level mental model of Windows as an operating system.
+Understand Windows as an operating system rather than a graphical interface.
 
-Many Linux users understand commands before understanding Windows architecture.
-
-This phase reverses that.
+Build the mental model that will support every later topic.
 
 ---
 
-## Core Concepts
+## Outcomes
 
-- What Windows actually is
-- User Mode vs Kernel Mode
-- Windows architecture overview
-- Windows boot process
-- Windows editions
-- GUI vs underlying system
-- Registry introduction
-- Windows management philosophy
+After completing this phase, you should be able to:
 
----
-
-## Skills Gained
-
-- Explain major Windows components
-- Navigate Windows confidently
-- Understand where system settings live
-- Compare Windows architecture to Linux
+- explain what Windows actually is
+- distinguish GUI from the operating system
+- explain User Mode vs Kernel Mode
+- identify major Windows components
+- understand the Windows boot sequence
+- navigate basic Windows administration tools
 
 ---
 
 ## Typical Tools
 
-- Settings
-- Control Panel
 - Task Manager
+- Resource Monitor
 - System Information
 - msinfo32
+- winver
+- Settings
+- Control Panel
 
 ---
 
 ## Example Labs
 
-- Explore Task Manager
-- Identify hardware information
-- Observe startup applications
-- Compare Windows boot flow to Linux boot flow
+- Observe running processes
+- Observe services
+- Compare Task Manager to Linux tools
+- Observe startup programs
+- Inspect system information
+
+---
+
+### Session 01
+
+What Is Windows?
+
+---
+
+### Session 02
+
+User Mode vs Kernel Mode
+
+---
+
+### Session 03
+
+Observing Windows with Task Manager
+
+---
+
+### Session 04
+
+Processes vs Applications
+
+---
+
+### Session 05
+
+Major Windows Components
+
+- Explorer
+- Services
+- Registry
+- Win32
+- Drivers
+
+---
+
+### Session 06
+
+Observing Windows Services
+
+---
+
+### Session 07
+
+System Information
+
+- msinfo32
+- winver
+- systeminfo
+
+---
+
+### Session 08
+
+Resource Monitor
+
+CPU
+
+Memory
+
+Disk
+
+Network
+
+---
+
+### Session 09
+
+Windows Boot Process Overview
+
+---
+
+### Session 10
+
+Observing Startup Programs
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"What is currently running on my Windows system?"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 02 — Filesystem & NTFS
 
-## Purpose
+## Goal
 
 Understand how Windows stores data and enforces filesystem security.
 
-NTFS is one of the most important foundations for security and administration.
-
 ---
 
-## Core Concepts
+## Outcomes
 
-- Drives and volumes
-- NTFS architecture
-- Files and directories
-- Alternate Data Streams
-- Metadata
-- Recycle Bin
-- Junctions and symbolic links
-- Windows path conventions
+After completing this phase, you should be able to:
 
----
-
-## Skills Gained
-
-- Navigate Windows storage
-- Understand NTFS permissions
-- Interpret filesystem behavior
-- Recognize security-relevant filesystem features
+- navigate Windows storage
+- understand NTFS
+- explain metadata
+- understand Alternate Data Streams
+- understand Windows path conventions
+- compare NTFS with ext4
 
 ---
 
 ## Typical Tools
 
 - File Explorer
-- diskmgmt.msc
+- Disk Management
 - fsutil
 - PowerShell
 
@@ -220,48 +347,119 @@ NTFS is one of the most important foundations for security and administration.
 
 ## Example Labs
 
-- Create directories and files
-- Inspect NTFS permissions
+- Create NTFS directories
+- Inspect permissions
 - Create symbolic links
-- Explore Alternate Data Streams
+- Observe Alternate Data Streams
+- Compare Windows and Linux paths
+
+---
+
+### Session 01
+
+Windows Drives, Volumes and Paths
+
+---
+
+### Session 02
+
+NTFS Overview
+
+---
+
+### Session 03
+
+Observing the Windows Filesystem
+
+---
+
+### Session 04
+
+Windows Special Directories
+
+- System32
+- Program Files
+- Users
+- ProgramData
+
+---
+
+### Session 05
+
+NTFS Metadata
+
+---
+
+### Session 06
+
+Alternate Data Streams
+
+---
+
+### Session 07
+
+Symbolic Links and Junctions
+
+---
+
+### Session 08
+
+Windows Path Resolution
+
+---
+
+### Session 09
+
+Disk Management Observation
+
+---
+
+### Session 10
+
+Filesystem Investigation
+
+---
+
+### Session 11
+
+Mini Investigation
+
+Tracing a File Through Windows
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 03 — Users, Groups & Permissions
 
-## Purpose
+## Goal
 
-Understand identity and authorization in Windows.
+Understand identity, authorization and permission management in Windows.
 
-This phase forms the foundation for Active Directory.
-
----
-
-## Core Concepts
-
-- Local users
-- Local groups
-- Security Identifiers (SIDs)
-- Access Tokens
-- Permissions
-- Access Control Lists (ACLs)
-- Privileges vs permissions
+This phase builds the foundation for Active Directory.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Understand Windows authorization
-- Inspect identities
-- Reason about access decisions
-- Compare Linux permissions with ACLs
+After completing this phase, you should be able to:
+
+- explain users and groups
+- understand SIDs
+- explain Access Tokens
+- understand ACLs
+- compare Windows authorization with Linux permissions
 
 ---
 
 ## Typical Tools
 
-- lusrmgr.msc
 - Computer Management
+- lusrmgr.msc
 - whoami
 - PowerShell
 
@@ -271,40 +469,106 @@ This phase forms the foundation for Active Directory.
 
 - Create local users
 - Create groups
-- Inspect group membership
-- Examine access tokens
-- Compare ACL behavior
+- Inspect ACLs
+- Compare permissions
+- Observe access tokens
+
+---
+
+### Session 01
+
+Windows Users and Groups
+
+---
+
+### Session 02
+
+Security Identifiers (SID)
+
+---
+
+### Session 03
+
+Observing Local Users
+
+---
+
+### Session 04
+
+Observing Group Membership
+
+---
+
+### Session 05
+
+Windows Permissions
+
+---
+
+### Session 06
+
+ACL Fundamentals
+
+---
+
+### Session 07
+
+Access Tokens
+
+---
+
+### Session 08
+
+Privileges vs Permissions
+
+---
+
+### Session 09
+
+Comparing Linux and Windows Authorization
+
+---
+
+### Session 10
+
+Permission Investigation
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"Why can this user access this file?"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 04 — Processes & Services
 
-## Purpose
+## Goal
 
-Understand how Windows executes software and background functionality.
+Understand how Windows executes programs and manages background services.
 
-Most enterprise security monitoring revolves around processes and services.
-
----
-
-## Core Concepts
-
-- Processes
-- Threads
-- Parent-child relationships
-- Services
-- Service Control Manager (SCM)
-- Startup mechanisms
-- Scheduled Tasks
+This phase connects directly to system administration, incident response, malware analysis, and endpoint security.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Inspect running software
-- Understand service architecture
-- Trace execution flow
-- Identify persistence locations
+After completing this phase, you should be able to:
+
+- explain Windows processes and threads
+- distinguish applications from processes
+- understand Windows Services
+- explain the Service Control Manager (SCM)
+- inspect process trees
+- identify common persistence mechanisms
 
 ---
 
@@ -314,91 +578,238 @@ Most enterprise security monitoring revolves around processes and services.
 - Resource Monitor
 - services.msc
 - tasklist
+- taskkill
+- sc
 - PowerShell
 
 ---
 
 ## Example Labs
 
-- Enumerate running processes
-- Inspect services
-- Observe startup behavior
-- Compare system services with Linux daemons
+- Observe running processes
+- Observe parent-child relationships
+- Start and stop services
+- Inspect service startup types
+- Compare Windows Services with Linux systemd services
+
+---
+
+### Session 01
+
+Processes vs Threads
+
+---
+
+### Session 02
+
+Windows Services & Service Control Manager (SCM)
+
+---
+
+### Session 03
+
+Observing Running Processes
+
+---
+
+### Session 04
+
+Observing Process Trees
+
+---
+
+### Session 05
+
+Inspecting Windows Services
+
+---
+
+### Session 06
+
+Starting, Stopping and Restarting Services
+
+---
+
+### Session 07
+
+Service Startup Types
+
+- Automatic
+- Manual
+- Disabled
+
+---
+
+### Session 08
+
+Scheduled Tasks as Persistence
+
+---
+
+### Session 09
+
+Comparing systemd and Windows Services
+
+---
+
+### Session 10
+
+Process Investigation
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"What started this process?"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 05 — Event Logs & Observability
 
-## Purpose
+## Goal
 
-Understand how Windows records system activity.
+Understand how Windows records system activity and how defenders investigate it.
 
-Event Logs are the foundation of enterprise monitoring and incident response.
-
----
-
-## Core Concepts
-
-- Windows Event Log architecture
-- Log channels
-- Event IDs
-- Audit events
-- Security logs
-- Operational logs
+This phase forms the foundation for enterprise monitoring and incident response.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Investigate system activity
-- Read security events
-- Build timelines
-- Understand enterprise monitoring
+After completing this phase, you should be able to:
+
+- explain Windows Event Logs
+- understand Event IDs
+- inspect authentication events
+- inspect service events
+- build simple activity timelines
 
 ---
 
 ## Typical Tools
 
 - Event Viewer
-- PowerShell
 - wevtutil
+- PowerShell
 
 ---
 
 ## Example Labs
 
-- Review login events
-- Review service start events
-- Review application crashes
-- Build a simple activity timeline
+- Observe logon events
+- Observe service events
+- Observe application crashes
+- Filter Event Logs
+- Build an investigation timeline
+
+---
+
+### Session 01
+
+Why Windows Event Logs Exist
+
+---
+
+### Session 02
+
+Windows Event Log Architecture
+
+---
+
+### Session 03
+
+Exploring Event Viewer
+
+---
+
+### Session 04
+
+Windows Log Categories
+
+- Application
+- Security
+- System
+- Setup
+
+---
+
+### Session 05
+
+Authentication Events
+
+---
+
+### Session 06
+
+Service Events
+
+---
+
+### Session 07
+
+Application Events
+
+---
+
+### Session 08
+
+Filtering Event Logs
+
+---
+
+### Session 09
+
+Building Timelines
+
+---
+
+### Session 10
+
+Simple Incident Investigation
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"What happened on this computer?"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 06 — PowerShell Fundamentals
 
-## Purpose
+## Goal
 
-Learn the primary automation and administration language used in modern Windows environments.
+Learn PowerShell as the standard Windows automation and administration interface.
 
----
-
-## Core Concepts
-
-- Objects vs text
-- Cmdlets
-- Pipelines
-- Variables
-- Filtering
-- Querying system information
+Focus on understanding objects rather than memorizing commands.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Navigate PowerShell
-- Query Windows internals
-- Automate investigations
-- Understand common security tooling
+After completing this phase, you should be able to:
+
+- understand object-based pipelines
+- navigate PowerShell
+- query Windows components
+- automate system observation
+- compare PowerShell with Bash
 
 ---
 
@@ -411,46 +822,122 @@ Learn the primary automation and administration language used in modern Windows 
 
 ## Example Labs
 
-- Enumerate processes
-- Enumerate services
-- Enumerate users
+- List processes
+- List services
+- List users
+- Query event logs
 - Export system information
+
+---
+
+### Session 01
+
+Why PowerShell Exists
+
+---
+
+### Session 02
+
+Objects vs Text
+
+---
+
+### Session 03
+
+Exploring the PowerShell Console
+
+---
+
+### Session 04
+
+Finding Commands
+
+- Get-Command
+- Get-Help
+
+---
+
+### Session 05
+
+Object Pipelines
+
+---
+
+### Session 06
+
+Working with Processes
+
+---
+
+### Session 07
+
+Working with Services
+
+---
+
+### Session 08
+
+Working with Files
+
+---
+
+### Session 09
+
+Working with Event Logs
+
+---
+
+### Session 10
+
+Building Small Investigation Commands
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"Collect basic system information with PowerShell"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 07 — Networking on Windows
 
-## Purpose
+## Goal
 
-Understand how Windows participates in networks.
+Understand how Windows participates in modern networks from the operating system perspective.
 
-Focus on observation rather than protocol theory.
-
----
-
-## Core Concepts
-
-- Network interfaces
-- DNS
-- Routing
-- Windows Firewall
-- TCP/IP implementation
-- Network profiles
+This phase focuses on host networking rather than networking protocols themselves.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Troubleshoot Windows networking
-- Inspect network configuration
-- Understand host-level networking
+After completing this phase, you should be able to:
+
+- inspect Windows network configuration
+- understand Windows network interfaces
+- inspect routing information
+- understand Windows Firewall
+- troubleshoot common connectivity issues
+- compare Windows networking with Linux networking
 
 ---
 
 ## Typical Tools
 
 - ipconfig
+- ping
+- tracert
 - netstat
+- arp
+- route
 - PowerShell
 - Windows Defender Firewall
 
@@ -458,41 +945,121 @@ Focus on observation rather than protocol theory.
 
 ## Example Labs
 
+- Observe network interfaces
 - Inspect routing tables
-- Observe DNS resolution
-- Compare Windows networking tools with Linux equivalents
+- Observe ARP cache
+- Compare ipconfig with ip addr
+- Observe listening ports
+
+---
+
+### Session 01
+
+Windows Networking Overview
+
+---
+
+### Session 02
+
+Network Interfaces
+
+---
+
+### Session 03
+
+Observing Network Configuration
+
+(ipconfig)
+
+---
+
+### Session 04
+
+Routing Tables
+
+(route print)
+
+---
+
+### Session 05
+
+ARP Cache Observation
+
+---
+
+### Session 06
+
+DNS Resolution
+
+---
+
+### Session 07
+
+Listening Ports and Connections
+
+(netstat)
+
+---
+
+### Session 08
+
+Windows Defender Firewall
+
+---
+
+### Session 09
+
+Comparing Linux and Windows Networking
+
+---
+
+### Session 10
+
+Network Troubleshooting
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"Why can't this computer reach the network?"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 08 — SMB & File Sharing
 
-## Purpose
+## Goal
 
-Understand the protocol most commonly encountered in enterprise Windows environments.
+Understand the protocol that powers most enterprise Windows file sharing.
 
----
-
-## Core Concepts
-
-- SMB
-- Shares
-- Administrative shares
-- Network drives
-- Authentication and authorization
+Learn both the administration perspective and the security perspective.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Access shared resources
-- Troubleshoot SMB access
-- Understand common attack surfaces
+After completing this phase, you should be able to:
+
+- explain SMB
+- create Windows shares
+- distinguish share permissions from NTFS permissions
+- understand administrative shares
+- troubleshoot common sharing problems
 
 ---
 
 ## Typical Tools
 
 - File Explorer
+- Computer Management
+- net share
 - net use
 - PowerShell
 
@@ -502,37 +1069,108 @@ Understand the protocol most commonly encountered in enterprise Windows environm
 
 - Create SMB shares
 - Connect to remote shares
-- Observe permissions
-- Inspect share configurations
+- Compare share permissions
+- Observe hidden administrative shares
+
+---
+
+### Session 01
+
+What is SMB?
+
+---
+
+### Session 02
+
+Shares vs NTFS Permissions
+
+---
+
+### Session 03
+
+Observing Existing Shares
+
+---
+
+### Session 04
+
+Creating Shared Folders
+
+---
+
+### Session 05
+
+Mapping Network Drives
+
+---
+
+### Session 06
+
+Administrative Shares
+
+- C$
+- ADMIN$
+- IPC$
+
+---
+
+### Session 07
+
+SMB Authentication Flow
+
+---
+
+### Session 08
+
+Troubleshooting File Sharing
+
+---
+
+### Session 09
+
+Comparing Samba and Windows SMB
+
+---
+
+### Session 10
+
+Share Permission Investigation
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"Why can one user access the share while another cannot?"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 09 — Windows Authentication
 
-## Purpose
+## Goal
 
-Understand how Windows verifies identity.
+Understand how Windows verifies identity before introducing Active Directory.
 
-This phase prepares for Active Directory and Kerberos.
-
----
-
-## Core Concepts
-
-- Authentication vs authorization
-- Credentials
-- NTLM
-- Local authentication
-- Domain authentication
-- Access tokens
+This phase builds the conceptual foundation for Kerberos and enterprise authentication.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Explain authentication flow
-- Identify authentication mechanisms
-- Understand enterprise login behavior
+After completing this phase, you should be able to:
+
+- distinguish authentication from authorization
+- explain local authentication
+- explain domain authentication
+- understand access tokens
+- understand NTLM at a conceptual level
 
 ---
 
@@ -541,85 +1179,227 @@ This phase prepares for Active Directory and Kerberos.
 - whoami
 - runas
 - Event Viewer
-
----
-
-## Example Labs
-
-- Observe login events
-- Compare local vs domain authentication
-- Inspect security tokens
-
----
-
-# Phase 10 — Active Directory Fundamentals
-
-## Purpose
-
-Understand the most important identity system in enterprise Windows environments.
-
----
-
-## Core Concepts
-
-- Domains
-- Domain Controllers
-- Organizational Units
-- Users
-- Groups
-- Group Policy
-- LDAP
-
----
-
-## Skills Gained
-
-- Explain AD architecture
-- Understand enterprise identity management
-- Navigate AD terminology confidently
-
----
-
-## Typical Tools
-
-- Active Directory Users and Computers
-- Group Policy Management
 - PowerShell
 
 ---
 
 ## Example Labs
 
-- Build a simple AD lab
+- Observe logon events
+- Compare local and domain users
+- Inspect access tokens
+- Observe authentication failures
+
+---
+
+### Session 01
+
+Authentication vs Authorization
+
+---
+
+### Session 02
+
+Windows Credentials
+
+---
+
+### Session 03
+
+Observing Local Logon
+
+---
+
+### Session 04
+
+Access Tokens
+
+---
+
+### Session 05
+
+NTLM Fundamentals
+
+---
+
+### Session 06
+
+Domain Logon Overview
+
+---
+
+### Session 07
+
+runas and Alternate Credentials
+
+---
+
+### Session 08
+
+Authentication Events
+
+---
+
+### Session 09
+
+Authentication Troubleshooting
+
+---
+
+### Session 10
+
+Following a Windows Logon
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"How did this user successfully log in?"
+
+---
+
+### Session 12
+
+Phase Review Lab
+
+---
+
+# Phase 10 — Active Directory Fundamentals
+
+## Goal
+
+Understand Active Directory as the identity and management system used in enterprise Windows environments.
+
+This phase focuses on architecture and mental models rather than administration.
+
+---
+
+## Outcomes
+
+After completing this phase, you should be able to:
+
+- explain what Active Directory is
+- understand Domains and Domain Controllers
+- understand Organizational Units (OUs)
+- explain Group Policy at a high level
+- understand why enterprises centralize identity
+
+---
+
+## Typical Tools
+
+- Active Directory Users and Computers (ADUC)
+- Group Policy Management
+- Active Directory Administrative Center
+- PowerShell
+
+---
+
+## Example Labs
+
+- Build a small Active Directory lab
 - Create users and groups
-- Explore Group Policy
+- Join a client to a domain
+- Explore Organizational Units
+- Observe Group Policy application
+
+---
+
+### Session 01
+
+Why Active Directory Exists
+
+---
+
+### Session 02
+
+Domains and Domain Controllers
+
+---
+
+### Session 03
+
+Observing an Active Directory Environment
+
+---
+
+### Session 04
+
+Users, Groups and Organizational Units
+
+---
+
+### Session 05
+
+Joining a Computer to a Domain
+
+---
+
+### Session 06
+
+Group Policy Fundamentals
+
+---
+
+### Session 07
+
+Domain Administration Overview
+
+---
+
+### Session 08
+
+LDAP Fundamentals
+
+---
+
+### Session 09
+
+Comparing Local Authentication and Domain Authentication
+
+---
+
+### Session 10
+
+Tracing an Active Directory Login
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"Where does this user account actually exist?"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 11 — Kerberos Fundamentals
 
-## Purpose
+## Goal
 
 Understand the authentication protocol that powers modern Active Directory environments.
 
----
-
-## Core Concepts
-
-- Kerberos
-- Tickets
-- TGT
-- Service Tickets
-- KDC
-- Single Sign-On
+This phase emphasizes the authentication workflow instead of protocol implementation details.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Explain Kerberos workflows
-- Understand ticket-based authentication
-- Recognize common security implications
+After completing this phase, you should be able to:
+
+- explain why Kerberos exists
+- understand tickets
+- explain TGT and Service Tickets
+- understand the role of the KDC
+- compare Kerberos and NTLM
 
 ---
 
@@ -634,42 +1414,113 @@ Understand the authentication protocol that powers modern Active Directory envir
 ## Example Labs
 
 - Inspect Kerberos tickets
-- Trace authentication events
-- Compare Kerberos to NTLM
+- Observe ticket renewal
+- Compare Kerberos and NTLM authentication
+- Trace a domain login
+
+---
+
+### Session 01
+
+Why Kerberos Exists
+
+---
+
+### Session 02
+
+Kerberos Architecture
+
+---
+
+### Session 03
+
+Observing Kerberos Tickets
+
+---
+
+### Session 04
+
+Ticket Granting Ticket (TGT)
+
+---
+
+### Session 05
+
+Service Tickets
+
+---
+
+### Session 06
+
+Key Distribution Center (KDC)
+
+---
+
+### Session 07
+
+Single Sign-On
+
+---
+
+### Session 08
+
+Comparing NTLM and Kerberos
+
+---
+
+### Session 09
+
+Kerberos Authentication Timeline
+
+---
+
+### Session 10
+
+Authentication Investigation
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"How did this user access a network resource without entering another password?"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 12 — Windows Security Fundamentals
 
-## Purpose
+## Goal
 
-Understand how Windows protects itself and how defenders observe systems.
+Understand the built-in security architecture of Windows before studying offensive or defensive techniques.
 
----
-
-## Core Concepts
-
-- Windows Defender
-- UAC
-- Credential protection
-- Attack surface
-- Security boundaries
-- Hardening concepts
+Focus on security boundaries and defensive components.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Understand native Windows security controls
-- Evaluate host security posture
-- Interpret defensive mechanisms
+After completing this phase, you should be able to:
+
+- explain User Account Control (UAC)
+- understand Windows Defender
+- understand Windows security boundaries
+- recognize common protection mechanisms
+- understand host hardening concepts
 
 ---
 
 ## Typical Tools
 
 - Windows Security
-- Defender
+- Windows Defender
+- Local Security Policy
 - Event Viewer
 - PowerShell
 
@@ -677,37 +1528,107 @@ Understand how Windows protects itself and how defenders observe systems.
 
 ## Example Labs
 
-- Observe Defender activity
-- Review security events
-- Explore UAC behavior
+- Observe Windows Defender
+- Observe UAC prompts
+- Inspect Windows Security settings
+- Review security-related Event Logs
+- Compare Windows protections with Linux equivalents
+
+---
+
+### Session 01
+
+Windows Security Architecture Overview
+
+---
+
+### Session 02
+
+Security Boundaries
+
+---
+
+### Session 03
+
+User Account Control (UAC)
+
+---
+
+### Session 04
+
+Windows Defender
+
+---
+
+### Session 05
+
+Windows Firewall Revisited
+
+---
+
+### Session 06
+
+Credential Protection Concepts
+
+---
+
+### Session 07
+
+Least Privilege on Windows
+
+---
+
+### Session 08
+
+Security Configuration Observation
+
+---
+
+### Session 09
+
+Host Hardening Concepts
+
+---
+
+### Session 10
+
+Security Event Investigation
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"How is this Windows system protecting itself?"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 13 — Enterprise Environment Concepts
 
-## Purpose
+## Goal
 
-Understand how Windows exists inside larger organizations.
+Understand how Windows systems operate inside real enterprise environments.
 
----
-
-## Core Concepts
-
-- Enterprise architecture
-- Workstations
-- Servers
-- Domain Controllers
-- Centralized management
-- Patch management
-- Monitoring systems
+This phase connects Windows fundamentals to organizational infrastructure and day-to-day IT operations.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Understand enterprise workflows
-- Understand administrative boundaries
-- Interpret enterprise terminology
+After completing this phase, you should be able to:
+
+- explain a typical enterprise Windows environment
+- understand centralized management
+- understand endpoint management
+- understand software deployment concepts
+- understand enterprise terminology
 
 ---
 
@@ -715,84 +1636,233 @@ Understand how Windows exists inside larger organizations.
 
 - Active Directory
 - Group Policy
-- Management Consoles
+- Microsoft Management Console (MMC)
+- Windows Admin Center
+- PowerShell
 
 ---
 
 ## Example Labs
 
-- Map a sample enterprise
-- Trace administrative responsibilities
-- Analyze enterprise authentication paths
+- Map a small enterprise network
+- Trace a Group Policy update
+- Observe domain-managed settings
+- Compare standalone PCs with domain-joined PCs
+- Explore centralized administration
+
+---
+
+### Session 01
+
+What Is an Enterprise Environment?
+
+---
+
+### Session 02
+
+Typical Enterprise Architecture
+
+---
+
+### Session 03
+
+Servers vs Workstations
+
+---
+
+### Session 04
+
+Centralized Management
+
+---
+
+### Session 05
+
+Group Policy in Practice
+
+---
+
+### Session 06
+
+Software Deployment Concepts
+
+---
+
+### Session 07
+
+Patch Management Concepts
+
+---
+
+### Session 08
+
+Enterprise Monitoring Overview
+
+---
+
+### Session 09
+
+Endpoint Management Concepts
+
+---
+
+### Session 10
+
+Enterprise Workflow Observation
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"How would an administrator manage hundreds of Windows computers?"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 14 — Introductory Incident Response
 
-## Purpose
+## Goal
 
-Learn how investigators examine Windows systems after suspicious activity.
+Learn how defenders investigate Windows systems after suspicious activity.
 
----
-
-## Core Concepts
-
-- Evidence sources
-- Event logs
-- Process history
-- User activity
-- Timeline reconstruction
+The focus is observation, evidence collection and reasoning—not malware removal.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Perform basic investigations
-- Collect observations
-- Build activity timelines
+After completing this phase, you should be able to:
+
+- identify useful evidence sources
+- inspect Windows Event Logs
+- investigate suspicious processes
+- reconstruct simple timelines
+- perform basic host investigations
 
 ---
 
 ## Typical Tools
 
 - Event Viewer
-- PowerShell
 - Task Manager
+- Resource Monitor
+- PowerShell
+- Windows Security
 
 ---
 
 ## Example Labs
 
-- Investigate failed logins
-- Investigate service changes
-- Build a host timeline
+- Investigate failed logons
+- Investigate service modifications
+- Trace application crashes
+- Build a simple activity timeline
+- Identify suspicious startup entries
+
+---
+
+### Session 01
+
+What Is Incident Response?
+
+---
+
+### Session 02
+
+Windows Evidence Sources
+
+---
+
+### Session 03
+
+Observing Running Processes
+
+---
+
+### Session 04
+
+Investigating Logon Activity
+
+---
+
+### Session 05
+
+Investigating Services
+
+---
+
+### Session 06
+
+Investigating Startup Programs
+
+---
+
+### Session 07
+
+Timeline Reconstruction
+
+---
+
+### Session 08
+
+Basic Host Triage
+
+---
+
+### Session 09
+
+Simple Investigation Workflow
+
+---
+
+### Session 10
+
+Case Study
+
+Suspicious User Activity
+
+---
+
+### Session 11
+
+Mini Investigation
+
+"What happened on this Windows machine?"
+
+---
+
+### Session 12
+
+Phase Review Lab
 
 ---
 
 # Phase 15 — Foundations for Future Windows Security Learning
 
-## Purpose
+## Goal
 
-Connect Windows fundamentals to future security disciplines.
+Connect everything learned into a coherent security-focused mental model.
 
----
-
-## Core Concepts
-
-- Security monitoring
-- Threat detection
-- AD attack paths
-- Endpoint security
-- Privilege escalation concepts
-- Defensive architecture
+Prepare for Windows Internals, Active Directory Security, Malware Analysis, Digital Forensics, Reverse Engineering and Enterprise Security.
 
 ---
 
-## Skills Gained
+## Outcomes
 
-- Read Windows security material comfortably
-- Approach AD security training confidently
-- Transition into advanced topics
+After completing this phase, you should be able to:
+
+- understand how Windows components interact
+- navigate Windows confidently
+- investigate systems methodically
+- understand enterprise authentication
+- begin advanced Windows security topics without major knowledge gaps
 
 ---
 
@@ -800,8 +1870,9 @@ Connect Windows fundamentals to future security disciplines.
 
 - PowerShell
 - Event Viewer
+- Windows Security
 - Sysinternals Suite
-- Windows Security Tools
+- Windows Terminal
 
 ---
 
@@ -809,8 +1880,83 @@ Connect Windows fundamentals to future security disciplines.
 
 - Investigate suspicious processes
 - Trace authentication activity
-- Map an AD environment
-- Analyze endpoint telemetry
+- Inspect services and startup entries
+- Analyze a complete Windows host
+- Perform an end-to-end system walkthrough
+
+---
+
+### Session 01
+
+Connecting the Windows Architecture
+
+---
+
+### Session 02
+
+Observability Review
+
+---
+
+### Session 03
+
+Authentication Review
+
+---
+
+### Session 04
+
+Filesystem Review
+
+---
+
+### Session 05
+
+Networking Review
+
+---
+
+### Session 06
+
+Enterprise Review
+
+---
+
+### Session 07
+
+Security Review
+
+---
+
+### Session 08
+
+Complete Windows Investigation Workflow
+
+---
+
+### Session 09
+
+Capstone Lab
+
+Investigating an Unknown Windows System
+
+---
+
+### Session 10
+
+Preparing for Windows Internals
+
+---
+
+### Session 11
+
+Preparing for Active Directory Security
+
+---
+
+### Session 12
+
+Final Capstone Review
 
 ---
 
@@ -818,27 +1964,58 @@ Connect Windows fundamentals to future security disciplines.
 
 Upon completing this roadmap, you should be able to:
 
-- Explain how Windows systems are structured
-- Navigate Windows confidently despite primarily using Linux
-- Understand NTFS, permissions, and identities
-- Inspect processes, services, and logs
-- Use PowerShell for investigation and administration
-- Understand SMB and enterprise file sharing
-- Explain Windows authentication mechanisms
-- Understand Active Directory architecture
-- Explain Kerberos authentication flows
-- Understand enterprise security concepts
-- Perform basic Windows incident-response activities
-- Begin Windows security learning without knowledge gaps
+- Explain how Windows systems are architected.
+- Understand the relationship between User Mode and Kernel Mode.
+- Navigate Windows confidently despite primarily using Linux.
+- Understand NTFS, permissions, identities and access control.
+- Inspect processes, services and system activity.
+- Use PowerShell as an investigation and administration tool.
+- Troubleshoot Windows networking.
+- Understand SMB and enterprise file sharing.
+- Explain Windows authentication, NTLM and Kerberos.
+- Understand Active Directory architecture and enterprise identity management.
+- Interpret Windows Event Logs and perform basic host investigations.
+- Understand the role of Windows Defender, UAC and native security controls.
+- Reason about enterprise Windows environments.
+- Build timelines from observable system activity.
+- Transition smoothly into advanced topics such as:
+  - Windows Internals
+  - Active Directory Security
+  - Incident Response
+  - Malware Analysis
+  - Digital Forensics
+  - Endpoint Detection & Response (EDR)
+  - Reverse Engineering
 
-Windows should stop feeling like a collection of GUI tools and become a coherent system of:
+---
+
+# Core Mental Model
+
+Windows should no longer appear as a collection of GUI applications.
+
+Instead, it should become a coherent operating system built around:
 
 ```text
-Identity
-→ Authentication
-→ Authorization
-→ Services
-→ Observability
-→ Enterprise Infrastructure
-→ Security
+Hardware
+        │
+        ▼
+NT Kernel
+        │
+        ▼
+Processes
+Services
+Filesystem
+Networking
+Authentication
+Observability
+        │
+        ▼
+Enterprise Infrastructure
+        │
+        ▼
+Security
 ```
+
+The objective is not to memorize Windows.
+
+The objective is to understand **why Windows behaves the way it does**, so that administration, troubleshooting and security analysis become natural extensions of systems thinking.

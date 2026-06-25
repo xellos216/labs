@@ -333,16 +333,6 @@ A running program is not just executing instructions.
 It is a structured memory layout managed by Linux.
 
 ---
-
-# Observation
-
-![01_01](image/01_01.png)
-
----
-
-![01_02](image/01_02.png)
-
----
 # QA
 
 **Q1.**

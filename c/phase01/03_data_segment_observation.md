@@ -432,20 +432,6 @@ Variables stored in the Data Segment already have values before `main()` begins.
 
 ---
 
-# Observations
-
-![03_01](image/03_01.png)
-
----
-
-![03_02](image/03_02.png)
-
----
-
-![03_03](image/03_03.png)
-
----
-
 # QA
 
 **Q1.**

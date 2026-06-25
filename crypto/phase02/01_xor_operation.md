@@ -1,6 +1,10 @@
-# XOR Operation
+# Session 01 — What XOR Actually Does
 
-What XOR Actually Does
+## Objective
+
+Understand XOR as a reversible byte transformation and distinguish it from representation changes such as Base64.
+
+---
 
 ## Mental Model
 
@@ -13,6 +17,8 @@ It is not:
 - hashing
 
 It transforms bytes using another byte sequence.
+
+---
 
 ## XOR Rules
 
@@ -28,6 +34,8 @@ Same -> 0
 
 Different -> 1
 
+---
+
 ## Toggle Intuition
 
 Key bit = 0
@@ -40,6 +48,8 @@ Key bit = 1
 
 Therefore XOR behaves like a controlled bit-flipper.
 
+---
+
 ## Reversibility
 
 P XOR K = C
@@ -49,6 +59,8 @@ C XOR K = P
 Applying the same key twice restores the original value.
 
 (P XOR K) XOR K = P
+
+---
 
 ## Important Observation
 
@@ -63,6 +75,8 @@ bytes -> text representation
 
 XOR:
 bytes -> different bytes
+
+---
 
 ## Crypto Mindset
 
@@ -82,6 +96,8 @@ from
 
 transformation
 
+---
+
 ## Transferable Pattern
 
 Input Bytes
@@ -98,14 +114,16 @@ byte relationships
 
 not visual appearance.
 
+---
+
 # QA
 
-**Q1.**
+### Q1
 
 What does XOR return when both input bits are the same?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary><strong>A</strong></summary>
 
 Result is 0
 
@@ -113,12 +131,12 @@ Result is 0
 
 ---
 
-**Q2.**
+### Q2
 
 What does XOR return when the two input bits are different?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary><strong>A</strong></summary>
 
 Result is 1
 
@@ -126,12 +144,12 @@ Result is 1
 
 ---
 
-**Q3.**
+### Q3
 
 Why can XOR be understood as a toggle operation?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary><strong>A</strong></summary>
 
 Because a key bit of 1 flips a bit and a key bit of 0 keeps it unchanged.
 
@@ -139,44 +157,14 @@ Because a key bit of 1 flips a bit and a key bit of 0 keeps it unchanged.
 
 ---
 
-**Q4.**
-
-Calculate the following expression.
-
-1 XOR 0
-
-<details>
-<summary><strong>A4.</strong></summary>
-
-= 1
-
-</details>
-
----
-
-**Q5.**
-
-Calculate the following expression.
-
-1 XOR 1
-
-<details>
-<summary><strong>A5.</strong></summary>
-
-= 0
-
-</details>
-
----
-
-**Q6.**
+### Q4
 
 Calculate the following expression.
 
 0101 XOR 0011
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary><strong>A</strong></summary>
 
 = 0110
 
@@ -184,65 +172,14 @@ Calculate the following expression.
 
 ---
 
-**Q7.**
-
-Why is XOR frequently used in cryptography?
-
-<details>
-<summary><strong>A7.</strong></summary>
-
-Because applying the same key again restores the original data.
-
-</details>
-
----
-
-**Q8.**
-
-Find `C` in the following expression.
-
-P = 0101
-
-K = 0011
-
-C = P XOR K
-
-<details>
-<summary><strong>A8.</strong></summary>
-
-= 0110
-
-</details>
-
----
-
-**Q9.**
-
-Find `P` in the following expression.
-
-C = 0110
-
-K = 0011
-
-P = C XOR K
-
-<details>
-<summary><strong>A9.</strong></summary>
-
-= 0101
-
-</details>
-
----
-
-**Q10.**
+### Q5
 
 Why does the following identity hold?
 
 (P XOR K) XOR K = P
 
 <details>
-<summary><strong>A10.</strong></summary>
+<summary><strong>A</strong></summary>
 
 Applying the same key twice restores the original value.
 
@@ -250,25 +187,12 @@ Applying the same key twice restores the original value.
 
 ---
 
-**Q11.**
-
-Why is XOR called a transformation rather than a change of representation?
-
-<details>
-<summary><strong>A11.</strong></summary>
-
-XOR changes byte values, not their representation.
-
-</details>
-
----
-
-**Q12.**
+### Q6
 
 What is the most important difference between Base64 and XOR?
 
 <details>
-<summary><strong>A12.</strong></summary>
+<summary><strong>A</strong></summary>
 
 Base64 changes representation, while XOR changes values.
 
@@ -276,34 +200,23 @@ Base64 changes representation, while XOR changes values.
 
 ---
 
-**Q13.**
+### Q7
 
-Which statement best describes the relationship between XOR input and output?
-
-A. The input length changes.
-
-B. The input byte values are transformed.
-
-C. Only the structure changes.
-
-D. The input is converted to ASCII.
+What XOR-related question should you ask when examining ciphertext?
 
 <details>
-<summary><strong>A13.</strong></summary>
+<summary><strong>A</strong></summary>
 
-B
+Could this data be XOR-transformed?
 
 </details>
 
 ---
 
-**Q14.**
+## Key Takeaways
 
-What XOR-related question should you ask when examining ciphertext?
-
-<details>
-<summary><strong>A14.</strong></summary>
-
-Could this data be XOR-transformed?
-
-</details>
+- XOR returns `0` for equal bits and `1` for different bits.
+- A key bit of `0` preserves a bit, while a key bit of `1` flips it.
+- Applying the same XOR key twice restores the original value.
+- XOR transforms byte values; it does not merely change their representation.
+- Analyze XOR in terms of byte relationships rather than visual appearance.

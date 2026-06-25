@@ -1,8 +1,10 @@
-# Keystream Mental Model
+# Session 06 — Keystream Mental Model
 
-## Session Goal
+## Objective
 
 Understand the concept of a keystream.
+
+---
 
 ## From Repeating Key to Keystream
 
@@ -31,6 +33,8 @@ This stream is called a:
 ```text
 keystream
 ```
+
+---
 
 ## Important Observation
 
@@ -63,6 +67,8 @@ Applied:
 44 XOR 02
 ```
 
+---
+
 ## Mental Model
 
 Think:
@@ -87,6 +93,8 @@ Ciphertext
 
 The key often generates the keystream.
 
+---
+
 ## Repeating-Key XOR
 
 Example:
@@ -102,6 +110,8 @@ Generated keystream:
 ```text
 01 02 01 02 01 02 01 02 ...
 ```
+
+---
 
 ## Stream Cipher Intuition
 
@@ -133,6 +143,8 @@ Stream Cipher
 
 tries to generate a much less predictable keystream.
 
+---
+
 ## Observation Habit
 
 When analyzing XOR-based data, ask:
@@ -141,6 +153,8 @@ When analyzing XOR-based data, ask:
 - How is it generated?
 - Does it repeat?
 - Is it predictable?
+
+---
 
 ## Transferable Mental Model
 
@@ -153,33 +167,24 @@ Key
 
 Understanding the keystream is often more important than understanding the key itself.
 
+---
+
 # QA
 
-**Q1.**
+### Q1
 
 What is a keystream?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary><strong>A</strong></summary>
+
 A keystream is the sequence of key bytes used directly in XOR operations.
 
 </details>
 
 ---
 
-**Q2.**
-
-In Repeating-Key XOR, what generates the keystream?
-
-<details>
-<summary><strong>A2.</strong></summary>
-The repeating key generates the keystream.
-
-</details>
-
----
-
-**Q3.**
+### Q2
 
 Given:
 
@@ -192,7 +197,8 @@ Key
 Write the first eight bytes of the generated keystream.
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary><strong>A</strong></summary>
+
 01 02 01 02 01 02 01 02
 
 
@@ -200,71 +206,7 @@ Write the first eight bytes of the generated keystream.
 
 ---
 
-**Q4.**
-
-Calculate:
-
-```text
-0x41 XOR 0x01
-```
-
-<details>
-<summary><strong>A4.</strong></summary>
-0x40
-
-</details>
-
----
-
-**Q5.**
-
-Calculate:
-
-```text
-0x42 XOR 0x02
-```
-
-<details>
-<summary><strong>A5.</strong></summary>
-0x40
-
-</details>
-
----
-
-**Q6.**
-
-Calculate:
-
-```text
-0x43 XOR 0x01
-```
-
-<details>
-<summary><strong>A6.</strong></summary>
-0x42
-
-</details>
-
----
-
-**Q7.**
-
-Calculate:
-
-```text
-0x44 XOR 0x02
-```
-
-<details>
-<summary><strong>A7.</strong></summary>
-0x46
-
-</details>
-
----
-
-**Q8.**
+### Q3
 
 Complete:
 
@@ -277,19 +219,21 @@ Ciphertext
 ```
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary><strong>A</strong></summary>
+
 Key-stream
 
 </details>
 
 ---
 
-**Q9.**
+### Q4
 
 Why is a keystream more important than the original key during XOR operations?
 
 <details>
-<summary><strong>A9.</strong></summary>
+<summary><strong>A</strong></summary>
+
 Because XOR is performed with the keystream, not directly with the original key.
 
 
@@ -297,27 +241,7 @@ Because XOR is performed with the keystream, not directly with the original key.
 
 ---
 
-**Q10.**
-
-What keystream is produced by:
-
-```text
-Key
-
-AA BB
-```
-
-for six output bytes?
-
-<details>
-<summary><strong>A10.</strong></summary>
-AA BB AA BB AA BB
-
-</details>
-
----
-
-**Q11.**
+### Q5
 
 What is the main difference between:
 
@@ -334,7 +258,8 @@ Stream Cipher
 from a keystream perspective?
 
 <details>
-<summary><strong>A11.</strong></summary>
+<summary><strong>A</strong></summary>
+
 Repeating-Key XOR uses a predictable key-stream.
 
 Stream Cipher tries to generate a much less predictable key-stream.
@@ -343,12 +268,13 @@ Stream Cipher tries to generate a much less predictable key-stream.
 
 ---
 
-**Q12.**
+### Q6
 
 Why can a predictable keystream become a weakness?
 
 <details>
-<summary><strong>A12.</strong></summary>
+<summary><strong>A</strong></summary>
+
 If the keystream is predictable, an analyst recover plaintext or infer future transformatios.
 
 
@@ -356,20 +282,7 @@ If the keystream is predictable, an analyst recover plaintext or infer future tr
 
 ---
 
-**Q13.**
-
-When observing ciphertext, why might an analyst try to infer the keystream?
-
-<details>
-<summary><strong>A13.</strong></summary>
-Because knowing or guessing the keystream helps recover plaintext from ciphertext.
-
-
-</details>
-
----
-
-**Q14.**
+### Q7
 
 In one sentence, explain the relationship between:
 
@@ -380,8 +293,19 @@ Ciphertext
 ```
 
 <details>
-<summary><strong>A14.</strong></summary>
+<summary><strong>A</strong></summary>
+
 The key generates the keystream, and the keystream is XORed with plaintext to produce ciphertext.
 
 
 </details>
+
+---
+
+## Key Takeaways
+
+- A keystream is the sequence of bytes applied directly to plaintext by XOR.
+- A key commonly acts as an input to a process that generates the keystream.
+- Repeating-key XOR produces a periodic and predictable keystream.
+- Stream ciphers aim to generate a less predictable keystream.
+- Understanding keystream generation is central to analyzing XOR-based encryption.

@@ -1,12 +1,12 @@
-# Single-Byte XOR
+# Session 03 — Single-Byte XOR by Hand
 
-Single-Byte XOR by Hand
-
-## Session Goal
+## Objective
 
 Move from bits to bytes.
 
 Observe XOR on actual byte values.
+
+---
 
 ## Important Observation
 
@@ -29,6 +29,8 @@ XOR
 ```
 
 The operation happens on bytes.
+
+---
 
 ## Character vs Byte
 
@@ -64,6 +66,8 @@ from
 
 byte value
 
+---
+
 ## Reversibility
 
 ```text
@@ -79,6 +83,8 @@ Example:
 
 0x40 XOR 0x01 = 0x41
 ```
+
+---
 
 ## Crypto Mindset
 
@@ -98,6 +104,8 @@ Characters are only human-friendly views.
 
 Bytes are the real data.
 
+---
+
 ## Observation Habit
 
 When seeing data:
@@ -115,6 +123,8 @@ Ask:
 - XOR?
 ```
 
+---
+
 ## Transferable Mental Model
 
 ```text
@@ -127,14 +137,16 @@ Character
 
 Crypto operations happen in the byte layer.
 
+---
+
 # QA
 
-**Q1.**
+### Q1
 
 What is the hexadecimal value of the ASCII character `A`?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary><strong>A</strong></summary>
 
 0x41
 
@@ -142,57 +154,14 @@ What is the hexadecimal value of the ASCII character `A`?
 
 ---
 
-**Q2.**
-
-What is the hexadecimal value of the ASCII character `B`?
-
-<details>
-<summary><strong>A2.</strong></summary>
-
-0x42
-
-</details>
-
----
-
-**Q3.**
-
-Calculate the following expression.
-
-0x41 XOR 0x00
-
-<details>
-<summary><strong>A3.</strong></summary>
-
-= 0x41
-
-</details>
-
----
-
-**Q4.**
-
-Calculate the following expression.
-
-0x41 XOR 0x01
-
-<details>
-<summary><strong>A4.</strong></summary>
-
-= 0x40
-
-</details>
-
----
-
-**Q5.**
+### Q2
 
 Calculate the following expression.
 
 0x41 XOR 0x03
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary><strong>A</strong></summary>
 
 = 0x43
 
@@ -200,7 +169,7 @@ Calculate the following expression.
 
 ---
 
-**Q6.**
+### Q3
 
 Find `C` in the following expression.
 
@@ -211,7 +180,7 @@ K = 0x01
 C = P XOR K
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary><strong>A</strong></summary>
 
 C = 0x40
 
@@ -219,7 +188,7 @@ C = 0x40
 
 ---
 
-**Q7.**
+### Q4
 
 Find `P` in the following expression.
 
@@ -230,7 +199,7 @@ K = 0x01
 P = C XOR K
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary><strong>A</strong></summary>
 
 P = 0x41
 
@@ -238,12 +207,12 @@ P = 0x41
 
 ---
 
-**Q8.**
+### Q5
 
 Why do we say XOR transforms bytes rather than characters?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary><strong>A</strong></summary>
 
 Computers do not XOR characters. They XOR byte values.
 
@@ -251,69 +220,14 @@ Computers do not XOR characters. They XOR byte values.
 
 ---
 
-**Q9.**
-
-Explain the following statement.
-
-`"A" XOR 0x01`
-
-is actually:
-
-`0x41 XOR 0x01`
-
-<details>
-<summary><strong>A9.</strong></summary>
-
-The hexadecimal ASCII value of `A` is `0x41`.
-
-</details>
-
----
-
-**Q10.**
-
-Which statement is the most accurate?
-
-A. XOR transforms strings.
-
-B. XOR transforms bytes.
-
-C. XOR transforms ASCII.
-
-D. XOR transforms character meaning.
-
-<details>
-<summary><strong>A10.</strong></summary>
-
-B
-
-</details>
-
----
-
-**Q11.**
-
-Calculate the following expression.
-
-0x42 XOR 0x03
-
-<details>
-<summary><strong>A11.</strong></summary>
-
-= 0x41
-
-</details>
-
----
-
-**Q12.**
+### Q6
 
 Calculate the following expression.
 
 (0x41 XOR 0x03) XOR 0x03
 
 <details>
-<summary><strong>A12.</strong></summary>
+<summary><strong>A</strong></summary>
 
 = 0x41
 
@@ -321,12 +235,12 @@ Calculate the following expression.
 
 ---
 
-**Q13.**
+### Q7
 
 Why is it important to examine bytes before characters in XOR analysis?
 
 <details>
-<summary><strong>A13.</strong></summary>
+<summary><strong>A</strong></summary>
 
 Characters are only a human-friendly view; the actual calculation operates
 on bytes.
@@ -335,17 +249,10 @@ on bytes.
 
 ---
 
-**Q14.**
+## Key Takeaways
 
-What question should you ask first when seeing the following data?
-
-```text
-41 42 43 44
-```
-
-<details>
-<summary><strong>A14.</strong></summary>
-
-ASCII-like?
-
-</details>
+- XOR operates on byte values rather than characters.
+- Characters, hexadecimal values, and ASCII are representations of underlying bytes.
+- Single-byte XOR applies one byte-sized key value to the data.
+- Applying the same key again restores the original byte.
+- Inspect the byte representation before interpreting transformed data as text.
