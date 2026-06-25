@@ -9,3 +9,8 @@ __pycache__/
 # Editor
 *.swp
 *.swo
+
+# dotfiles
+.template/
+.agents/
+.codex/
