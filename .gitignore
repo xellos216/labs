@@ -11,20 +11,8 @@ __pycache__/
 *.swo
 
 # dotfiles
-.template/
 .agents/
 .codex/
-
-# moved template documents
-/ARCHIVE_TEMPLATE.md
-/DESIGN_PRINCIPLES.md
-/LAB_EXPERIMENT_TEMPLATE.md
-/LABS_SESSION_RULES.md
-/QA_TEMPLATE_SPECIFICATION.md
-/ROADMAP_FORMAT.md
-/ROADMAP_INDEX.md
-/reference/
-/AGENTS.md
 
 # directory
 tmp/
