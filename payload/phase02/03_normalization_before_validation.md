@@ -273,6 +273,5 @@ Parser
 <summary>A</summary>
 
 </details>
-````
 
 이 문서는 **Payload Construction Roadmap**의 **Phase 02 - Session 03 (Normalization Before Validation)** 아카이브 및 복습용 문서이다. 

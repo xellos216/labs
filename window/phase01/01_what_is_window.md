@@ -177,9 +177,7 @@ not the fundamental purpose of the operating system.
 
 # Review Questions
 
-### Q1
-
-What is the primary role of an operating system?
+### Q1. What is the primary role of an operating system?
 
 <details>
 <summary>A</summary>
@@ -188,9 +186,7 @@ What is the primary role of an operating system?
 
 ---
 
-### Q2
-
-Why is Explorer.exe not considered the operating system itself?
+### Q2. Why is Explorer.exe not considered the operating system itself?
 
 <details>
 <summary>A</summary>
@@ -199,9 +195,7 @@ Why is Explorer.exe not considered the operating system itself?
 
 ---
 
-### Q3
-
-Which component is closer to the operating system core?
+### Q3. Which component is closer to the operating system core?
 
 - Explorer.exe
 - NT Kernel
@@ -215,9 +209,7 @@ Why?
 
 ---
 
-### Q4
-
-When an application wants to use CPU or memory, does it directly control the hardware?
+### Q4. When an application wants to use CPU or memory, does it directly control the hardware?
 
 <details>
 <summary>A</summary>
@@ -226,9 +218,7 @@ When an application wants to use CPU or memory, does it directly control the har
 
 ---
 
-### Q5
-
-Describe the simplified execution path of a Windows application.
+### Q5. Describe the simplified execution path of a Windows application.
 
 <details>
 <summary>A</summary>
@@ -237,9 +227,7 @@ Describe the simplified execution path of a Windows application.
 
 ---
 
-### Q6
-
-What is the relationship between Windows API and the NT Kernel?
+### Q6. What is the relationship between Windows API and the NT Kernel?
 
 <details>
 <summary>A</summary>
@@ -248,9 +236,7 @@ What is the relationship between Windows API and the NT Kernel?
 
 ---
 
-### Q7
-
-Name three concepts that exist in both Linux and Windows.
+### Q7. Name three concepts that exist in both Linux and Windows.
 
 <details>
 <summary>A</summary>
@@ -259,9 +245,7 @@ Name three concepts that exist in both Linux and Windows.
 
 ---
 
-### Q8
-
-What is a more accurate statement?
+### Q8. What is a more accurate statement?
 
 - Windows is a GUI.
 - Windows is an operating system that includes a GUI.
@@ -275,9 +259,7 @@ Why?
 
 ---
 
-### Q9
-
-What happens if Explorer.exe crashes?
+### Q9. What happens if Explorer.exe crashes?
 
 <details>
 <summary>A</summary>
@@ -286,9 +268,7 @@ What happens if Explorer.exe crashes?
 
 ---
 
-### Q10
-
-Explain in your own words:
+### Q10. Explain in your own words:
 
 ```text
 Windows and Linux differ more in implementation

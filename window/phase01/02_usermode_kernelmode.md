@@ -214,9 +214,7 @@ The kernel decides.
 
 # Review Questions
 
-### Q1
-
-Why do modern operating systems separate User Mode and Kernel Mode?
+### Q1. Why do modern operating systems separate User Mode and Kernel Mode?
 
 <details>
 <summary>A</summary>
@@ -225,9 +223,7 @@ Why do modern operating systems separate User Mode and Kernel Mode?
 
 ---
 
-### Q2
-
-Can an ordinary application directly control hardware?
+### Q2. Can an ordinary application directly control hardware?
 
 Why or why not?
 
@@ -238,9 +234,7 @@ Why or why not?
 
 ---
 
-### Q3
-
-Describe the simplified execution path of a Windows application.
+### Q3. Describe the simplified execution path of a Windows application.
 
 <details>
 <summary>A</summary>
@@ -249,9 +243,7 @@ Describe the simplified execution path of a Windows application.
 
 ---
 
-### Q4
-
-What responsibilities belong to the NT Kernel?
+### Q4. What responsibilities belong to the NT Kernel?
 
 <details>
 <summary>A</summary>
@@ -260,9 +252,7 @@ What responsibilities belong to the NT Kernel?
 
 ---
 
-### Q5
-
-Why does an application crash usually not crash the entire operating system?
+### Q5. Why does an application crash usually not crash the entire operating system?
 
 <details>
 <summary>A</summary>
@@ -271,9 +261,7 @@ Why does an application crash usually not crash the entire operating system?
 
 ---
 
-### Q6
-
-Which components typically run in User Mode?
+### Q6. Which components typically run in User Mode?
 
 Give three examples.
 
@@ -284,9 +272,7 @@ Give three examples.
 
 ---
 
-### Q7
-
-Which components typically run in Kernel Mode?
+### Q7. Which components typically run in Kernel Mode?
 
 Give two examples.
 
@@ -297,9 +283,7 @@ Give two examples.
 
 ---
 
-### Q8
-
-Where does malware usually begin executing?
+### Q8. Where does malware usually begin executing?
 
 Why?
 
@@ -310,9 +294,7 @@ Why?
 
 ---
 
-### Q9
-
-Compare the following concepts:
+### Q9. Compare the following concepts:
 
 - User Space vs User Mode
 - Kernel Space vs Kernel Mode
@@ -324,9 +306,7 @@ Compare the following concepts:
 
 ---
 
-### Q10
-
-Explain in your own words:
+### Q10. Explain in your own words:
 
 ```text
 Applications request.
