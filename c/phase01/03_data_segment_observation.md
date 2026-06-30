@@ -1,5 +1,18 @@
 # Data Segment Observation
 
+## Metadata
+
+```yaml
+Roadmap: C Programming
+Phase: 01
+Session: 03
+Title: Data Segment Observation
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Session Goal
 
 Observe where initialized global variables live in memory.
@@ -432,66 +445,54 @@ Variables stored in the Data Segment already have values before `main()` begins.
 
 ---
 
-# QA
+# Review Questions
 
-**Q1.**
-
-What kind of variables are typically stored in the Data Segment?
+### Q1. What kind of variables are typically stored in the Data Segment?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q2.**
-
-Why does `int global_a = 10;` belong to the Data Segment?
+### Q2. Why does `int global_a = 10;` belong to the Data Segment?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q3.**
-
-Where is `global_a = 10` stored inside the ELF file?
+### Q3. Where is `global_a = 10` stored inside the ELF file?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q4.**
-
-What permission is commonly associated with the Data Segment?
+### Q4. What permission is commonly associated with the Data Segment?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q5.**
-
-Why does the Data Segment need write permission?
+### Q5. Why does the Data Segment need write permission?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q6.**
-
-Complete:
+### Q6. Complete:
 
 ```text
 .data
@@ -500,81 +501,67 @@ __________
 ```
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q7.**
-
-What is the difference between a global variable and a local variable?
+### Q7. What is the difference between a global variable and a local variable?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q8.**
-
-Which memory region typically stores local variables?
+### Q8. Which memory region typically stores local variables?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q9.**
-
-Why is `global_a` available before `main()` begins?
+### Q9. Why is `global_a` available before `main()` begins?
 
 <details>
-<summary><strong>A9.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q10.**
-
-Which tool can display ELF sections?
+### Q10. Which tool can display ELF sections?
 
 <details>
-<summary><strong>A10.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q11.**
-
-Which ELF section corresponds to the Data Segment?
+### Q11. Which ELF section corresponds to the Data Segment?
 
 <details>
-<summary><strong>A11.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q12.**
-
-Why can `global_a = 999;` succeed during execution?
+### Q12. Why can `global_a = 999;` succeed during execution?
 
 <details>
-<summary><strong>A12.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q13.**
-
-Complete:
+### Q13. Complete:
 
 ```text
 Initialized Global Variable
@@ -587,17 +574,15 @@ rw-p
 ```
 
 <details>
-<summary><strong>A13.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q14.**
-
-Explain the relationship between `.data` and the Data Segment.
+### Q14. Explain the relationship between `.data` and the Data Segment.
 
 <details>
-<summary><strong>A14.</strong></summary>
+<summary>A</summary>
 
 </details>
