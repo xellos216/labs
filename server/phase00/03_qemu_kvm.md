@@ -2,6 +2,19 @@
 ## Phase 00 — Session 03
 # QEMU and KVM Relationship
 
+## Metadata
+
+```yaml
+Roadmap: Linux Server Administration
+Phase: 00
+Session: 03
+Title: QEMU and KVM Relationship
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 Understand:
@@ -455,64 +468,63 @@ Acceleration
 
 # QA
 
-<details>
-<summary>Q1. What is the primary responsibility of QEMU?</summary>
+### Q1. What is the primary responsibility of QEMU?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q2. What virtual hardware can QEMU provide to a guest operating system?</summary>
+### Q2. What virtual hardware can QEMU provide to a guest operating system?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q3. Why can a virtual machine still run without KVM?</summary>
+### Q3. Why can a virtual machine still run without KVM?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q4. What problem does KVM solve?</summary>
+### Q4. What problem does KVM solve?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q5. Explain the difference between virtualization and acceleration.</summary>
+### Q5. Explain the difference between virtualization and acceleration.
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q6. Which component is responsible for creating virtual hardware: QEMU or KVM?</summary>
+### Q6. Which component is responsible for creating virtual hardware: QEMU or KVM?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q7. Which component lives in User Space?</summary>
+### Q7. Which component lives in User Space?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q8. Which component lives in Kernel Space?</summary>
+### Q8. Which component lives in Kernel Space?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q9. Complete the execution flow:</summary>
+### Q9. Complete the execution flow:
 
 ```text
 Guest
@@ -524,13 +536,14 @@ KVM
 CPU
 ```
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q10. Why is QEMU + KVM typically preferred over QEMU alone?</summary>
+### Q10. Why is QEMU + KVM typically preferred over QEMU alone?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>

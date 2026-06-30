@@ -2,6 +2,19 @@
 ## Phase 00 — Session 04
 # libvirt Architecture
 
+## Metadata
+
+```yaml
+Roadmap: Linux Server Administration
+Phase: 00
+Session: 04
+Title: libvirt Architecture
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 Understand:
@@ -398,64 +411,63 @@ VM execution and VM management are different layers.
 
 # QA
 
-<details>
-<summary>Q1. Why does direct QEMU usage become inconvenient when managing many VMs?</summary>
+### Q1. Why does direct QEMU usage become inconvenient when managing many VMs?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q2. Why should VM configuration not exist only in QEMU process memory?</summary>
+### Q2. Why should VM configuration not exist only in QEMU process memory?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q3. What is libvirt?</summary>
+### Q3. What is libvirt?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q4. What is virsh?</summary>
+### Q4. What is virsh?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q5. What is virt-manager?</summary>
+### Q5. What is virt-manager?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q6. Does deleting virt-manager necessarily delete existing VMs?</summary>
+### Q6. Does deleting virt-manager necessarily delete existing VMs?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q7. Which layer is responsible for VM execution?</summary>
+### Q7. Which layer is responsible for VM execution?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q8. Which layer is responsible for VM management?</summary>
+### Q8. Which layer is responsible for VM management?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q9. Complete the architecture:</summary>
+### Q9. Complete the architecture:
 
 ```text
 virt-manager / virsh
@@ -469,13 +481,14 @@ virt-manager / virsh
 Hardware
 ```
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q10. What is the most important distinction from this session?</summary>
+### Q10. What is the most important distinction from this session?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>

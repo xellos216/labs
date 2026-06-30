@@ -2,6 +2,19 @@
 ## Phase 00 — Session 02
 # Installing the Lab Environment
 
+## Metadata
+
+```yaml
+Roadmap: Linux Server Administration
+Phase: 00
+Session: 02
+Title: Installing the Lab Environment
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 Understand:
@@ -398,71 +411,70 @@ as data is written
 
 # QA
 
-<details>
-<summary>Q1. What are the five common components configured when creating a VM?</summary>
+### Q1. What are the five common components configured when creating a VM?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q2. What is the purpose of an ISO file?</summary>
+### Q2. What is the purpose of an ISO file?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q3. Why is an ISO not considered an installed operating system?</summary>
+### Q3. Why is an ISO not considered an installed operating system?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q4. What does the Guest believe the virtual disk to be?</summary>
+### Q4. What does the Guest believe the virtual disk to be?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q5. What is a qcow2 file?</summary>
+### Q5. What is a qcow2 file?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q6. Why can deleting a qcow2 file prevent a VM from booting?</summary>
+### Q6. Why can deleting a qcow2 file prevent a VM from booting?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q7. Explain the difference between Guest disk size and Host disk usage.</summary>
+### Q7. Explain the difference between Guest disk size and Host disk usage.
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q8. What is Thin Provisioning?</summary>
+### Q8. What is Thin Provisioning?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q9. A VM is configured with a 100 GB disk but the qcow2 file is only 5 GB. Why is this possible?</summary>
+### Q9. A VM is configured with a 100 GB disk but the qcow2 file is only 5 GB. Why is this possible?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q10. Complete the model:</summary>
+### Q10. Complete the model:
 
 ```text
 ISO
@@ -474,6 +486,7 @@ ISO
 Virtual Disk
 ```
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
