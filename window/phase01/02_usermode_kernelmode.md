@@ -1,6 +1,19 @@
 # Phase 01 — Session 02
 ## User Mode vs Kernel Mode
 
+## Metadata
+
+```yaml
+Roadmap: Windows Fundamentals
+Phase: 01
+Session: 02
+Title: User Mode vs Kernel Mode
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ### Notes
 
 Modern operating systems do not allow ordinary applications to directly control hardware.
@@ -199,14 +212,14 @@ The kernel decides.
 
 ---
 
-## QA
+# Review Questions
 
 ### Q1
 
 Why do modern operating systems separate User Mode and Kernel Mode?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 </details>
 
@@ -219,7 +232,7 @@ Can an ordinary application directly control hardware?
 Why or why not?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 </details>
 
@@ -230,7 +243,7 @@ Why or why not?
 Describe the simplified execution path of a Windows application.
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 </details>
 
@@ -241,7 +254,7 @@ Describe the simplified execution path of a Windows application.
 What responsibilities belong to the NT Kernel?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 </details>
 
@@ -252,7 +265,7 @@ What responsibilities belong to the NT Kernel?
 Why does an application crash usually not crash the entire operating system?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 </details>
 
@@ -265,7 +278,7 @@ Which components typically run in User Mode?
 Give three examples.
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 </details>
 
@@ -278,7 +291,7 @@ Which components typically run in Kernel Mode?
 Give two examples.
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 </details>
 
@@ -291,7 +304,7 @@ Where does malware usually begin executing?
 Why?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 </details>
 
@@ -305,7 +318,7 @@ Compare the following concepts:
 - Kernel Space vs Kernel Mode
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 </details>
 
@@ -321,6 +334,6 @@ The kernel decides.
 ```
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 </details>
