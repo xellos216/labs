@@ -113,6 +113,44 @@ During migration:
 
 ---
 
+# Roadmap Reconciliation Policy
+
+The current canonical roadmap is authoritative for the active roadmap session sequence.
+
+If an existing archive path, title, or session conflicts with the current roadmap, do not silently rename the file or rewrite its content to make it appear that the historical session followed the current sequence.
+
+Preserve mismatched files as historical or pre-roadmap archives. When appropriate, move them into a local `legacy/` directory near their original phase or session location.
+
+Example:
+
+```text
+server/phase00/legacy/05_virtmanager_virsh.md
+```
+
+Moving a file into `legacy/` must preserve its historical learning content. Do not delete the file or rewrite its technical content solely to match the current roadmap.
+
+Do not invent a missing current-roadmap session archive automatically. If the user explicitly approves creation, create a new Draft archive or study file using:
+
+* the current canonical roadmap
+* `docs/labs/ARCHIVE_TEMPLATE.md`
+* nearby current-format session files
+
+New study archives should use:
+
+```yaml
+Status: Draft
+Review: Pending
+ArchiveVersion: 2
+```
+
+QA answers should remain blank.
+
+Prepared study archives must not fabricate completed observations, command outputs, screenshots, logs, packet captures, learner answers, or other completed learner work. Suggested observations and study targets should be labeled as such.
+
+Treat this work as roadmap reconciliation, not as a simple archive format migration. Reconciliation requires checking the current roadmap sequence, historical file identity, and content placement before applying format changes.
+
+---
+
 # Suggested Migration Workflow
 
 Use a dedicated branch for archive migration.
