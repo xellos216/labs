@@ -1,6 +1,19 @@
 # Phase 01 — Session 14
 # Networking Concepts Inside HTB
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 01
+Session: 14
+Title: Networking Concepts Inside HTB
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Goal
 
 Connect networking fundamentals to real HTB enumeration workflows.
@@ -471,25 +484,35 @@ Questions:
 
 ---
 
-# Reflection Questions
+# Review Questions
 
-```text
-1. Why is reachability checked before scanning ports?
+### Q1. Why is reachability checked before scanning ports?
 
-A:
+<details>
+<summary>A</summary>
 
-2. Why is an open port not automatically a vulnerability?
+</details>
 
-A:
+### Q2. Why is an open port not automatically a vulnerability?
 
-3. Why do we identify protocols before looking for weaknesses?
+<details>
+<summary>A</summary>
 
-A:
+</details>
 
-4. Why is enumeration fundamentally a networking activity?
+### Q3. Why do we identify protocols before looking for weaknesses?
 
-A:
-```
+<details>
+<summary>A</summary>
+
+</details>
+
+### Q4. Why is enumeration fundamentally a networking activity?
+
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
