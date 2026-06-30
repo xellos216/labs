@@ -1,5 +1,18 @@
 # TCP Reliability
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 01
+Session: 04
+Title: TCP
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Why TCP Exists
 
 TCP exists to provide reliable communication between systems.
@@ -48,13 +61,12 @@ Before memorizing TCP mechanisms, ask:
 - How would the sender detect it?
 - How would the receiver recover from it?
 
-# QA
+# Review Questions
 
-**Q1.**
-What problem does TCP solve?
+### Q1. What problem does TCP solve?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 TCP solves the problem of providing reliable communication between systems.
 
@@ -62,11 +74,10 @@ TCP solves the problem of providing reliable communication between systems.
 
 ---
 
-**Q2.**
-Why are IP addresses and ports insufficient for reliable communication?
+### Q2. Why are IP addresses and ports insufficient for reliable communication?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 IP addresses and ports identify destinations and applications, but they do not guarantee reliable delivery.
 
@@ -74,11 +85,10 @@ IP addresses and ports identify destinations and applications, but they do not g
 
 ---
 
-**Q3.**
-What does reliability mean in networking?
+### Q3. What does reliability mean in networking?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 detecting loss, detecting missing data, confirming delivery, preserving correct order
 
@@ -86,11 +96,10 @@ detecting loss, detecting missing data, confirming delivery, preserving correct 
 
 ---
 
-**Q4.**
-Why is sending data different from successfully delivering data?
+### Q4. Why is sending data different from successfully delivering data?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Sending data only means the sender transmitted it. Successful delivery means the receiver actually received it.
 
@@ -98,11 +107,10 @@ Sending data only means the sender transmitted it. Successful delivery means the
 
 ---
 
-**Q5.**
-What should happen if data arrives out of order?
+### Q5. What should happen if data arrives out of order?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 The receiver should reorder the data so it can be processed in the correct sequence.
 
@@ -110,11 +118,10 @@ The receiver should reorder the data so it can be processed in the correct seque
 
 ---
 
-**Q6.**
-Why might a sender need confirmation from a receiver?
+### Q6. Why might a sender need confirmation from a receiver?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
 A sender needs confirmation because packets may be lost during transmission.
 
@@ -122,11 +129,10 @@ A sender needs confirmation because packets may be lost during transmission.
 
 ---
 
-**Q7.**
-How can systems successfully transfer data even when packets are lost?
+### Q7. How can systems successfully transfer data even when packets are lost?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
 System can successfully transfer data by detecting missing packets and retransmitting them.
 
@@ -134,11 +140,10 @@ System can successfully transfer data by detecting missing packets and retransmi
 
 ---
 
-**Q8.**
-What is the relationship between IP, Port, and TCP?
+### Q8. What is the relationship between IP, Port, and TCP?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
 IP identifies the destination machine. Port identifies the destination application. TCP helps ensure that data data is delivered reliably.
 

@@ -1,5 +1,18 @@
 # IP Addressing
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 01
+Session: 02
+Title: IP Addresses
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Why IP Exists
 
 IP addresses exist because networks contain multiple destinations.
@@ -46,13 +59,12 @@ Before memorizing address formats, ask:
 - What problem does it solve?
 - What would happen without it?
 
-# QA
+# Review Questions
 
-**Q1.**
-What problem do IP addresses solve?
+### Q1. What problem do IP addresses solve?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 IP addresses solve the problem of identifying destination on a network
 
@@ -60,11 +72,10 @@ IP addresses solve the problem of identifying destination on a network
 
 ---
 
-**Q2.**
-Why are IP addresses unnecessary when only one destination exists?
+### Q2. Why are IP addresses unnecessary when only one destination exists?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Computer don't need to identify where the data should go
 
@@ -72,11 +83,10 @@ Computer don't need to identify where the data should go
 
 ---
 
-**Q3.**
-Why does a network need destination identifiers?
+### Q3. Why does a network need destination identifiers?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Without destination identifiers, systems would not know where data should go
 
@@ -84,11 +94,10 @@ Without destination identifiers, systems would not know where data should go
 
 ---
 
-**Q4.**
-What problem would occur if every device used the same IP address?
+### Q4. What problem would occur if every device used the same IP address?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 The network could not determine which device should receive the data
 
@@ -96,11 +105,10 @@ The network could not determine which device should receive the data
 
 ---
 
-**Q5.**
-Why is an IP address better understood as a network destination identifier than a physical location?
+### Q5. Why is an IP address better understood as a network destination identifier than a physical location?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 An IP address is better understood as a network destination identifier because it tells data where it should be delivered
 
@@ -108,11 +116,10 @@ An IP address is better understood as a network destination identifier because i
 
 ---
 
-**Q6.**
-Why might a computer have more than one IP address?
+### Q6. Why might a computer have more than one IP address?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
 A device may have multiple IP addresses because it can be connected to multiple networks
 
@@ -120,11 +127,10 @@ A device may have multiple IP addresses because it can be connected to multiple 
 
 ---
 
-**Q7.**
-What is the purpose of the loopback address 127.0.0.1?
+### Q7. What is the purpose of the loopback address 127.0.0.1?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
 To allow a machine to communicate with itself through the network stack
 
@@ -132,11 +138,10 @@ To allow a machine to communicate with itself through the network stack
 
 ---
 
-**Q8.**
-What problems could occur if two devices share the same IP address?
+### Q8. What problems could occur if two devices share the same IP address?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
 IP conflicts may occur, causing packets to be delivered incorrectly or communication to fail
 
