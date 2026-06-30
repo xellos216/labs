@@ -4,124 +4,222 @@
 
 ## Purpose
 
-This repository is a centralized personal learning workspace.
+This repository is a centralized personal learning workspace for long-term technical study.
 
-Goals:
+The primary goals are:
 
 * preserve learning history
 * preserve topic-oriented organization
+* maintain roadmap-based learning continuity
 * keep experiments reproducible
 * maintain readable notes and lab records
+* support ChatGPT and Codex collaboration
 * prefer systems understanding over command memorization
 
 Favor clarity, incremental progress, and maintainability over broad automation.
 
 This repository contains:
 
-* topic roadmaps
+* active learning roadmaps
 * phase-based learning records
 * practical lab notes
+* archive documents
+* review questions
+* experiment records
 * small experiments and proof-of-concept code
 * repository operational documentation
 
 ---
 
-## Agent Document Index
+# Source Policy
 
-Additional agent-facing rules and templates live under `docs/agent/`.
+Labs uses both a local Git repository and a GitHub remote.
+
+For source-of-truth and ChatGPT Project Sources policy, read:
+
+```text
+docs/labs/LABS_SOURCE_SYNC.md
+```
+
+General rule:
+
+* GitHub remote and committed repository files are authoritative.
+* ChatGPT Project Sources are cached working references, not canonical originals.
+* Uncommitted local changes are invisible to ChatGPT unless pasted into the conversation or pushed to a branch.
+* If uploaded Project Sources and repository files conflict, repository files win.
+
+---
+
+# Agent Document Index
+
+Labs governance documents live under:
+
+```text
+docs/labs/
+```
 
 Before creating, moving, or refactoring lab documents, read the relevant documents below.
 
-* `docs/agent/DESIGN_PRINCIPLES.md`
-  * General design principles for this learning repository.
-* `docs/agent/LABS_SESSION_RULES.md`
-  * Rules for phase/session-based lab learning documents.
-* `docs/agent/QA_TEMPLATE_SPECIFICATION.md`
-  * QA document format and requirements.
-* `docs/agent/LAB_EXPERIMENT_TEMPLATE.md`
-  * Template for experiment-style lab notes.
-* `docs/agent/ARCHIVE_TEMPLATE.md`
+* `docs/labs/LABS_SOURCE_SYNC.md`
+
+  * Source-of-truth, Project Sources, and GitHub connector policy.
+* `docs/labs/DESIGN_PRINCIPLES.md`
+
+  * Stable design principles for the Labs project.
+* `docs/labs/LABS_SESSION_RULES.md`
+
+  * Rules for interactive learning sessions.
+* `docs/labs/ARCHIVE_TEMPLATE.md`
+
   * Template for archived learning/session documents.
-* `docs/agent/ROADMAP_FORMAT.md`
-  * Format rules for roadmap documents.
-* `docs/agent/ROADMAP_INDEX.md`
+* `docs/labs/QA_TEMPLATE_SPECIFICATION.md`
+
+  * QA document format and review-question requirements.
+* `docs/labs/LAB_EXPERIMENT_TEMPLATE.md`
+
+  * Template for experiment-style lab notes.
+* `docs/labs/ROADMAP_INDEX.md`
+
   * Index of roadmap documents and learning tracks.
+* `docs/labs/ROADMAP_FORMAT.md`
 
-## Required Reading Policy
+  * Format rules for roadmap documents.
+* `docs/labs/ARCHIVE_MIGRATION_PLAN.md`
 
-For ordinary small file edits, read only this `AGENTS.md`.
+  * Policy for handling older archive formats and future archive refactoring.
+
+---
+
+# Required Reading Policy
+
+For ordinary small file edits, read only this `AGENTS.md` unless the task touches a specific policy area.
+
+For source policy, Project Sources, or GitHub connector behavior, read:
+
+* `docs/labs/LABS_SOURCE_SYNC.md`
 
 For session archive generation, read:
 
-* `docs/agent/LABS_SESSION_RULES.md`
-* `docs/agent/ARCHIVE_TEMPLATE.md`
-* `docs/agent/QA_TEMPLATE_SPECIFICATION.md`
+* `docs/labs/LABS_SESSION_RULES.md`
+* `docs/labs/ARCHIVE_TEMPLATE.md`
+* `docs/labs/QA_TEMPLATE_SPECIFICATION.md`
+
+For experiment documentation, read:
+
+* `docs/labs/LAB_EXPERIMENT_TEMPLATE.md`
+
+For roadmap continuation, read:
+
+* `docs/labs/ROADMAP_INDEX.md`
+* the active roadmap's `<topic>/README.md`
 
 For roadmap creation or roadmap modification, read:
 
-* `docs/agent/ROADMAP_FORMAT.md`
-* `docs/agent/ROADMAP_INDEX.md`
+* `docs/labs/ROADMAP_FORMAT.md`
+* `docs/labs/ROADMAP_INDEX.md`
+* the relevant `<topic>/README.md` if it already exists
+
+For archive migration or archive format cleanup, read:
+
+* `docs/labs/ARCHIVE_TEMPLATE.md`
+* `docs/labs/QA_TEMPLATE_SPECIFICATION.md`
+* `docs/labs/ARCHIVE_MIGRATION_PLAN.md`
 
 For repository structure, taxonomy, or organization changes, read:
 
-* `docs/agent/DESIGN_PRINCIPLES.md`
+* `docs/labs/LABS_SOURCE_SYNC.md`
+* `docs/labs/ROADMAP_INDEX.md`
+* `docs/labs/DESIGN_PRINCIPLES.md`
+* `docs/labs/ARCHIVE_MIGRATION_PLAN.md`
+
+---
+
+# Roadmap Layout Policy
+
+Each active roadmap directory owns its roadmap document.
+
+The canonical roadmap path is:
+
+```text
+<topic>/README.md
+```
+
+Examples:
+
+```text
+unix/README.md
+c/README.md
+network/README.md
+server/README.md
+window/README.md
+crypto/README.md
+payload/README.md
+```
+
+Do not move roadmap documents into a central `roadmaps/` directory unless the user explicitly requests a structural redesign.
+
+Roadmap documents and their session archives should stay close to each other inside the topic directory.
 
 ---
 
 # Workspace Map
 
+Current high-level repository structure:
+
 ```text
-LFS/
+AGENTS.md
+README.md
+
+docs/
+└── labs/
+
+archive/
 
 c/
-└── phase01/
-
 crypto/
-├── phase01/
-└── phase02/
-
-flask/
-├── flask-lab/
-└── phase01/
-
-linux_admin/
-
+devtool/
 network/
-└── phase01/
-
+numbersystem/
 payload/
-├── phase01/
-└── phase02/
-
-toolsmith/
-└── networking/
-
+server/
 unix/
-├── phase01/
-└── phase02/
+window/
 ```
+
+`docs/labs/` contains governance documents, templates, and source policy.
+
+Top-level topic directories contain roadmap-specific material and learning records.
+
+`archive/` contains preserved historical or inactive learning material.
 
 ---
 
 # Directory Semantics
 
-## LFS/
+## docs/labs/
 
-Linux From Scratch or low-level Linux build notes.
+Labs governance and operational documentation.
 
 Use for:
 
-* Linux build process records
-* toolchain and bootstrapping observations
-* system construction notes
+* source sync policy
+* project design principles
+* session rules
+* archive templates
+* QA templates
+* experiment templates
+* roadmap index and roadmap format rules
+* archive migration policy
 
-Do not place unrelated Linux administration exercises here.
+Do not place ordinary session archives here.
 
 ---
 
 ## c/
 
 C, memory, debugging, embedded systems, firmware, and low-level systems learning.
+
+This track may lead toward embedded Linux, firmware analysis, and IoT systems.
 
 Use for:
 
@@ -140,41 +238,23 @@ Cryptography learning records and experiments.
 Use for:
 
 * cryptographic concepts
-* classical crypto exercises
+* byte-level reasoning
+* encoding and decoding
+* XOR and stream cipher reasoning
 * practical analysis notes
-* reusable explanations of crypto primitives
-
-Keep challenge-specific or one-off exercise history in the relevant phase directory.
 
 ---
 
-## flask/
+## devtool/
 
-Flask and web application learning.
-
-Use for:
-
-* Flask application experiments
-* web backend notes
-* route, template, session, and database exercises
-* local lab application code
-
-Keep runnable application code organized separately from conceptual notes when practical.
-
----
-
-## linux_admin/
-
-Linux server administration training.
+Browser DevTools and web troubleshooting learning records.
 
 Use for:
 
-* user, permission, service, logging, and maintenance notes
-* VM-based administration exercises
-* troubleshooting records
-* operational security observations
-
-Prefer lab VM changes over host system changes for administration experiments.
+* browser inspection notes
+* network panel observations
+* console observations
+* practical web debugging records
 
 ---
 
@@ -188,20 +268,34 @@ Use for:
 * packet capture observations
 * routing, DNS, TCP, UDP, HTTP, and TLS material
 * Linux networking experiments
+* authorized network lab observations
 
-When a note is primarily about system administration, place it under `linux_admin/`.
+---
+
+## numbersystem/
+
+Number systems and byte-representation learning records.
+
+Use for:
+
+* binary
+* hexadecimal
+* ASCII
+* byte/bit relationships
+* representation-focused notes
 
 ---
 
 ## payload/
 
-Payload construction and security lab material.
+Payload construction and parser reasoning material.
 
 Use for:
 
 * controlled payload experiments
-* exploit development learning records
-* offensive security concepts in an educational lab context
+* parser-boundary reasoning
+* input mutation observations
+* local and authorized security lab material
 
 Keep content ethical, local, and explicitly educational.
 
@@ -209,18 +303,23 @@ Do not add instructions intended for unauthorized use.
 
 ---
 
-## toolsmith/
+## server/
 
-Custom tooling and utility-building experiments.
+Linux server administration training.
 
 Use for:
 
-* small tools
-* scripts
-* networking utilities
-* reusable CLI workflows
+* users and permissions
+* authentication
+* services
+* logging
+* SSH
+* firewalling
+* troubleshooting
+* recovery
+* VM-based administration exercises
 
-Prefer simple, inspectable tools over hidden automation.
+Prefer lab VM changes over host system changes for administration experiments.
 
 ---
 
@@ -235,8 +334,41 @@ Use for:
 * pipelines
 * filesystem inspection
 * process and service observation
+* composable CLI practice
 
-Prefer composable commands and observable behavior.
+Prefer learner-first task solving and observable behavior.
+
+---
+
+## window/
+
+Windows fundamentals, enterprise systems, and security-oriented Windows learning.
+
+Use for:
+
+* Windows architecture
+* processes and services
+* NTFS
+* users and permissions
+* event logs
+* PowerShell
+* Active Directory fundamentals
+* Windows security observations
+
+---
+
+## archive/
+
+Preserved historical or inactive learning material.
+
+Use for:
+
+* archived roadmaps
+* old project records
+* historical learning notes
+* material that should remain accessible but is not a current top-level active roadmap
+
+Do not treat archived material as an active roadmap unless the user explicitly reactivates it.
 
 ---
 
@@ -250,6 +382,7 @@ Use them for:
 * reusable concepts
 * long-term notes
 * organized lab records
+* phase/session archives
 
 Use `phaseXX/` directories for:
 
@@ -269,6 +402,36 @@ When content fits multiple directories, choose the directory based on the primar
 
 ---
 
+# Archive Rules
+
+Archive documents are learning records.
+
+Do not silently rewrite old archives to match the latest template.
+
+Existing archives may use older formats.
+
+Future archives should follow:
+
+```text
+docs/labs/ARCHIVE_TEMPLATE.md
+```
+
+Future QA sections should follow:
+
+```text
+docs/labs/QA_TEMPLATE_SPECIFICATION.md
+```
+
+Archive migration should be handled only as an explicit refactoring task.
+
+Before migrating existing archives, read:
+
+```text
+docs/labs/ARCHIVE_MIGRATION_PLAN.md
+```
+
+---
+
 # Naming Rules
 
 Prefer:
@@ -280,17 +443,27 @@ Prefer:
 
 Examples:
 
-* process_memory_layout.md
-* tcp_three_way_handshake.md
-* file_permissions.md
-* flask_routing_basics.md
+```text
+process_memory_layout.md
+tcp_three_way_handshake.md
+file_permissions.md
+flask_routing_basics.md
+```
 
 Avoid:
 
 * duplicate topic files
-* vague names like `notes.md` when context is unclear
+* vague names when context is unclear
 * mixed naming styles
 * unnecessary mass renaming
+
+Roadmap files should normally remain:
+
+```text
+README.md
+```
+
+inside their topic directory.
 
 ---
 
@@ -311,6 +484,7 @@ Never:
 * rewrite notes for style alone
 * modify unrelated files
 * collapse phase history into polished notes without review
+* invent missing phase or session metadata
 
 Before significant changes:
 
@@ -344,6 +518,7 @@ Avoid refactors that:
 
 * increase nesting without clear benefit
 * rename files without strong justification
+* separate roadmaps from their topic directories without approval
 * mix roadmaps, notes, and runnable code in confusing ways
 * destroy historical learning context
 * obscure the reason a lab was created
@@ -384,9 +559,9 @@ Before destructive actions:
 After modifications, verify as appropriate:
 
 ```bash
-git status
+git status --short
 git diff --stat
-find . -maxdepth 2 -type d | sort
+git diff --check
 ```
 
 For structural refactors:

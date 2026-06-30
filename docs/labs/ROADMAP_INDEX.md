@@ -45,6 +45,36 @@ records. They are not automatically treated as current roadmaps.
 
 ---
 
+# Roadmap File Policy
+
+Each active roadmap directory owns its roadmap document.
+
+The canonical roadmap path is:
+
+```text
+<roadmap-directory>/README.md
+```
+
+Examples:
+
+```text
+unix/README.md
+c/README.md
+network/README.md
+server/README.md
+window/README.md
+crypto/README.md
+payload/README.md
+```
+
+Do not create duplicate canonical roadmap files in a separate central roadmap directory unless the project structure is explicitly revised.
+
+If a roadmap file is missing, moved, or conflicts with this index, report the conflict before continuing the learning sequence.
+
+Individual roadmap documents should normally be read from the GitHub remote or repository working tree, not treated as canonical ChatGPT Project Sources.
+
+---
+
 # Suggested Learning Relationships
 
 The roadmaps are designed to reinforce one another.
@@ -284,7 +314,7 @@ These should be added only after a dedicated roadmap has been created.
 When adding a new roadmap:
 
 * update this index
-* add the roadmap to Project Sources
+* create the canonical roadmap document at `<roadmap-directory>/README.md`
 * follow `ROADMAP_FORMAT.md`
 * preserve existing roadmap names whenever practical
 

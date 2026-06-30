@@ -16,6 +16,7 @@ Session:
 Title:
 Status:
 Review:
+ArchiveVersion:
 Date:
 ```
 
@@ -37,6 +38,16 @@ Recommended values:
 Pending
 Completed
 ```
+
+`ArchiveVersion` records the archive template version used by the document.
+
+Recommended current value:
+
+```text
+2
+```
+
+Archives without `ArchiveVersion` should be treated as legacy archives unless there is clear evidence that they already follow the current format.
 
 ---
 
