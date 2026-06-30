@@ -129,7 +129,7 @@ server/phase00/legacy/05_virtmanager_virsh.md
 
 Moving a file into `legacy/` must preserve its historical learning content. Do not delete the file or rewrite its technical content solely to match the current roadmap.
 
-Do not invent a missing current-roadmap session archive automatically. If the user explicitly approves creation, create a new Draft archive or study file using:
+Do not invent a missing current-roadmap session archive automatically. If the user explicitly approves creation and the conditions in `Current Session Creation Limit` are satisfied, create a new Draft archive or study file using:
 
 * the current canonical roadmap
 * `docs/labs/ARCHIVE_TEMPLATE.md`
@@ -146,6 +146,29 @@ ArchiveVersion: 2
 QA answers should remain blank.
 
 Prepared study archives must not fabricate completed observations, command outputs, screenshots, logs, packet captures, learner answers, or other completed learner work. Suggested observations and study targets should be labeled as such.
+
+## Current Session Creation Limit
+
+Do not create archives for future or not-yet-learned roadmap sessions during archive migration.
+
+A missing session in the current roadmap is not automatically a migration candidate. If no historical local archive occupied that session number or path, report it as:
+
+```text
+not yet learned / no archive expected
+```
+
+A replacement Draft archive or study file may be created only when all of the following are true:
+
+1. A historical local archive or session file already existed.
+2. Its session number or path conflicted with the current canonical roadmap.
+3. The historical file was moved into a local `legacy/` directory, creating a gap in the current roadmap-aligned sequence.
+4. The user explicitly approved creating a replacement current-roadmap Draft archive or study file for that reconciliation gap.
+
+Do not fabricate study completion, observations, command outputs, screenshots, logs, packet captures, or learner answers in a replacement file.
+
+Do not mark a replacement archive or study file as `Completed` unless explicit evidence supports that status.
+
+Treat future roadmap sessions as learning work, not archive migration work.
 
 Treat this work as roadmap reconciliation, not as a simple archive format migration. Reconciliation requires checking the current roadmap sequence, historical file identity, and content placement before applying format changes.
 
