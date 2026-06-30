@@ -11,6 +11,7 @@ Session: 07
 Title: Virtual Network Fundamentals
 Status: Completed
 Review: Pending
+ArchiveVersion: 2
 Date: 2026-06-26
 ```
 
@@ -259,57 +260,56 @@ A VM has its own network interface and IP address, so it behaves as a separate c
 
 # Review Questions
 
-<details>
-<summary>Q1. Why does a virtual machine not require its own physical network card?</summary>
+### Q1. Why does a virtual machine not require its own physical network card?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q2. Describe the path a packet takes from a Guest VM to the Internet.</summary>
+### Q2. Describe the path a packet takes from a Guest VM to the Internet.
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q3. What is a Virtual NIC?</summary>
+### Q3. What is a Virtual NIC?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q4. What is the role of the Host in Guest networking?</summary>
+### Q4. What is the role of the Host in Guest networking?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q5. Can two VMs communicate without using the Internet? Explain why.</summary>
+### Q5. Can two VMs communicate without using the Internet? Explain why.
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q6. What does a <code>vnet</code> interface represent?</summary>
+### Q6. What does a <code>vnet</code> interface represent?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q7. Why is a VM considered a separate computer from the network's perspective?</summary>
+### Q7. Why is a VM considered a separate computer from the network's perspective?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q8. Complete the packet flow:</summary>
+### Q8. Complete the packet flow:
 
 ```text
 Guest
@@ -329,21 +329,22 @@ Physical NIC
 Internet
 ```
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q9. What command can be used to observe <code>vnet</code> interfaces on the Host?</summary>
+### Q9. What command can be used to observe <code>vnet</code> interfaces on the Host?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q10. Explain the difference between where a VM runs and how it behaves on the network.</summary>
+### Q10. Explain the difference between where a VM runs and how it behaves on the network.
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
