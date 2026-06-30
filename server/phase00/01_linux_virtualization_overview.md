@@ -338,7 +338,7 @@ VM = A complete computer from the Guest perspective
 
 ---
 
-# QA
+# Review Questions
 
 ### Q1. What is the difference between a Host OS and a Guest OS?
 

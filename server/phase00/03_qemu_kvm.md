@@ -466,7 +466,7 @@ Acceleration
 
 ---
 
-# QA
+# Review Questions
 
 ### Q1. What is the primary responsibility of QEMU?
 

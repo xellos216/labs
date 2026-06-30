@@ -409,7 +409,7 @@ as data is written
 
 ---
 
-# QA
+# Review Questions
 
 ### Q1. What are the five common components configured when creating a VM?
 
