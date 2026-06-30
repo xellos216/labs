@@ -1,5 +1,18 @@
 # Process Memory Layout Overview
 
+## Metadata
+
+```yaml
+Roadmap: C Programming
+Phase: 01
+Session: 01
+Title: Process Memory Layout Overview
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Session Goal
 
 Understand that a running C program is not just source code.
@@ -333,153 +346,153 @@ A running program is not just executing instructions.
 It is a structured memory layout managed by Linux.
 
 ---
-# QA
+# Review Questions
 
-**Q1.**
-
-What is a process?
+### Q1. What is a process?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
-A process is a running instance of a program managed by the Linux kernel</details>
+A process is a running instance of a program managed by the Linux kernel
+
+</details>
 
 ---
 
-**Q2.**
-
-What transforms source code into a running process?
+### Q2. What transforms source code into a running process?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
-The complier creates an executable, and the Linux loader creates a running process from it</details>
+The complier creates an executable, and the Linux loader creates a running process from it
+
+</details>
 
 ---
 
-**Q3.**
-
-Why does a running process need memory?
+### Q3. Why does a running process need memory?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
-A running process needs memory to store instructions, variables, function information, and runtime data</details>
+A running process needs memory to store instructions, variables, function information, and runtime data
+
+</details>
 
 ---
 
-**Q4.**
-
-What is a process memory layout?
+### Q4. What is a process memory layout?
 
 <details>
-<summary><strong>A4.</strong></summary>
-Process memory layout is the organized arrangement of memory regions used by a running process</details>
+<summary>A</summary>
+
+Process memory layout is the organized arrangement of memory regions used by a running process
+
+</details>
 
 ---
 
-**Q5.**
-
-Name the five major memory regions introduced in this session.
+### Q5. Name the five major memory regions introduced in this session.
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
-Heap, Stack, BSS, Data, Code</details>
+Heap, Stack, BSS, Data, Code
+
+</details>
 
 ---
 
-**Q6.**
-
-What kind of information is stored in the code segment?
+### Q6. What kind of information is stored in the code segment?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
-Compiled instructions</details>
+Compiled instructions
+
+</details>
 
 ---
 
-**Q7.**
-
-What kind of variables typically live in the data segment?
+### Q7. What kind of variables typically live in the data segment?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
-Initialized global or static variables</details>
+Initialized global or static variables
+
+</details>
 
 ---
 
-**Q8.**
-
-What kind of variables typically live in the BSS segment?
+### Q8. What kind of variables typically live in the BSS segment?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
-uninitialized global or static variables</details>
+uninitialized global or static variables
+
+</details>
 
 ---
 
-**Q9.**
-
-What is the purpose of the heap?
+### Q9. What is the purpose of the heap?
 
 <details>
-<summary><strong>A9.</strong></summary>
+<summary>A</summary>
 
-The heap stores memory dynamically allocated during runtime</details>
+The heap stores memory dynamically allocated during runtime
+
+</details>
 
 ---
 
-**Q10.**
-
-What is the purpose of the stack?
+### Q10. What is the purpose of the stack?
 
 <details>
-<summary><strong>A10.</strong></summary>
+<summary>A</summary>
 
-function call, local variables, function arguments, return information</details>
+function call, local variables, function arguments, return information
+
+</details>
 
 ---
 
-**Q11.**
-
-Where would memory allocated by malloc() typically live?
+### Q11. Where would memory allocated by malloc() typically live?
 
 <details>
-<summary><strong>A11.</strong></summary>
+<summary>A</summary>
 
-Heap</details>
+Heap
+
+</details>
 
 ---
 
-**Q12.**
-
-Why is understanding process memory important for embedded systems?
+### Q12. Why is understanding process memory important for embedded systems?
 
 <details>
-<summary><strong>A12.</strong></summary>
-Because embedded systems, firmware analysis, and many vulnerabilities involve understanding how memory is organized and used.</details>
+<summary>A</summary>
+
+Because embedded systems, firmware analysis, and many vulnerabilities involve understanding how memory is organized and used.
+
+</details>
 
 
 ---
 
-**Q13.**
-
-When reading C code, what question should you begin asking about variables?
+### Q13. When reading C code, what question should you begin asking about variables?
 
 <details>
-<summary><strong>A13.</strong></summary>
+<summary>A</summary>
 
-Where does this variable live?</details>
+Where does this variable live?
+
+</details>
 
 ---
 
-**Q14.**
-
-Complete the mental model:
+### Q14. Complete the mental model:
 
 ```text
 Process Memory Layout
@@ -488,6 +501,8 @@ ________________
 ```
 
 <details>
-<summary><strong>A14.</strong></summary>
+<summary>A</summary>
 
-Organized Memory Regions</details>
+Organized Memory Regions
+
+</details>
