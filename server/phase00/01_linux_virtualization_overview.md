@@ -2,6 +2,19 @@
 ## Phase 00 — Session 01
 # Linux Virtualization Overview
 
+## Metadata
+
+```yaml
+Roadmap: Linux Server Administration
+Phase: 00
+Session: 01
+Title: Linux Virtualization Overview
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 Understand:
@@ -327,57 +340,56 @@ VM = A complete computer from the Guest perspective
 
 # QA
 
-<details>
-<summary>Q1. What is the difference between a Host OS and a Guest OS?</summary>
+### Q1. What is the difference between a Host OS and a Guest OS?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q2. From the Host perspective, what is a virtual machine?</summary>
+### Q2. From the Host perspective, what is a virtual machine?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q3. From the Guest perspective, what hardware does it believe it owns?</summary>
+### Q3. From the Guest perspective, what hardware does it believe it owns?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q4. Why does assigning 4 vCPUs not mean giving the VM four physical CPUs?</summary>
+### Q4. Why does assigning 4 vCPUs not mean giving the VM four physical CPUs?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q5. Why are snapshots valuable during administration training?</summary>
+### Q5. Why are snapshots valuable during administration training?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q6. Why are virtual machines safer than experimenting directly on the Host?</summary>
+### Q6. Why are virtual machines safer than experimenting directly on the Host?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q7. Explain the relationship between QEMU and KVM.</summary>
+### Q7. Explain the relationship between QEMU and KVM.
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q8. Complete the model:</summary>
+### Q8. Complete the model:
 
 ```text
 Physical Hardware
@@ -392,20 +404,21 @@ Physical Hardware
 Guest OS
 ```
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q9. Why can multiple VMs use the internet even when the Host only has one physical NIC?</summary>
+### Q9. Why can multiple VMs use the internet even when the Host only has one physical NIC?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
 
-<details>
-<summary>Q10. What is the most important mental model from this session?</summary>
+### Q10. What is the most important mental model from this session?
 
-A:
+<details>
+<summary>A</summary>
 
 </details>
