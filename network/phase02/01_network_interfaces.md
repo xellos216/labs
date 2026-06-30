@@ -1,6 +1,19 @@
 # Network Phase 02 — Session 01
 # Network Interfaces
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 02
+Session: 01
+Title: Network Interfaces
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Notes
 
 ### What Is a Network Interface?
@@ -221,110 +234,90 @@ Linux chooses an interface by consulting the routing table.
 
 ---
 
-## QA
+# Review Questions
 
-### Q1
-
-What is a network interface?
+### Q1. What is a network interface?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q2
-
-What command can be used to list network interfaces?
+### Q2. What command can be used to list network interfaces?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q3
-
-Do IP addresses belong to the computer or to interfaces?
+### Q3. Do IP addresses belong to the computer or to interfaces?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q4
-
-How does Linux decide which interface to use for a packet?
+### Q4. How does Linux decide which interface to use for a packet?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q5
-
-What is the role of the routing table?
+### Q5. What is the role of the routing table?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q6
-
-If the destination is 192.168.0.50 and a route exists for 192.168.0.0/24, which interface is selected?
+### Q6. If the destination is 192.168.0.50 and a route exists for 192.168.0.0/24, which interface is selected?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q7
-
-When is the default route used?
+### Q7. When is the default route used?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q8
-
-Which interface is typically used for 127.0.0.1?
+### Q8. Which interface is typically used for 127.0.0.1?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q9
-
-Is 127.0.0.1 the only loopback address?
+### Q9. Is 127.0.0.1 the only loopback address?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q10
-
-Complete the model:
+### Q10. Complete the model:
 
 ```text
 IP
@@ -337,6 +330,6 @@ Packet
 ```
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>

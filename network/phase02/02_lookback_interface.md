@@ -1,6 +1,19 @@
 # Network Phase 02 — Session 02
 # Loopback Interface
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 02
+Session: 02
+Title: Loopback Interface
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Notes
 
 ### What Is the Loopback Interface?
@@ -209,66 +222,54 @@ It is a virtual network interface that allows the full networking stack to commu
 
 ---
 
-## QA
+# Review Questions
 
-### Q1
-
-What is the purpose of the loopback interface?
+### Q1. What is the purpose of the loopback interface?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q2
-
-Which interface is typically used for communication with the local machine?
+### Q2. Which interface is typically used for communication with the local machine?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q3
-
-Do packets sent to 127.0.0.1 leave the physical network interface?
+### Q3. Do packets sent to 127.0.0.1 leave the physical network interface?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q4
-
-What network does 127.0.0.1 belong to?
+### Q4. What network does 127.0.0.1 belong to?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q5
-
-Which component selects the loopback interface?
+### Q5. Which component selects the loopback interface?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q6
-
-Complete the packet flow:
+### Q6. Complete the packet flow:
 
 ```text
 Application
@@ -283,48 +284,40 @@ Application
 ```
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q7
-
-Why does Linux use the same networking stack for both local and remote communication?
+### Q7. Why does Linux use the same networking stack for both local and remote communication?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q8
-
-Does loopback bypass the TCP/IP stack?
+### Q8. Does loopback bypass the TCP/IP stack?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q9
-
-Why can a program listening on `127.0.0.1:8000` later communicate with another computer without changing its socket logic?
+### Q9. Why can a program listening on `127.0.0.1:8000` later communicate with another computer without changing its socket logic?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q10
-
-Complete the statement:
+### Q10. Complete the statement:
 
 ```text
 Loopback is not a shortcut around networking.
@@ -333,6 +326,6 @@ It is a _______________________________.
 ```
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
