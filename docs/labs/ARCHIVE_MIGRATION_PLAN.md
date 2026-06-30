@@ -111,6 +111,18 @@ During migration:
 6. Preserve old wording when it reflects the actual learning process.
 7. Add notes only when needed to clarify migration decisions.
 
+## Unix Scope Exclusion
+
+The `unix/` directory is excluded from general archive migration and refactoring work.
+
+Unix uses a separate compact roadmap and archive format. Do not inspect, classify, migrate, normalize, or rewrite Unix files as part of a general archive migration task.
+
+Do not force Unix `notes.md` files or compact session files into the full archive template.
+
+Unix files may be modified only through an explicit Unix-specific task requested by the user.
+
+General archive inventory reports should either omit Unix entirely or identify it only as explicitly out of scope, not as migration work.
+
 ---
 
 # Roadmap Reconciliation Policy
