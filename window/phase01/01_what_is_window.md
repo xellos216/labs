@@ -1,6 +1,19 @@
 # Phase 01 — Session 01
 ## What Is Windows?
 
+## Metadata
+
+```yaml
+Roadmap: Windows Fundamentals
+Phase: 01
+Session: 01
+Title: What Is Windows?
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ### Notes
 
 Windows is not a graphical interface.
@@ -162,13 +175,16 @@ not the fundamental purpose of the operating system.
 
 ---
 
-## QA
+# Review Questions
 
 ### Q1
 
 What is the primary role of an operating system?
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
@@ -176,7 +192,10 @@ What is the primary role of an operating system?
 
 Why is Explorer.exe not considered the operating system itself?
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
@@ -189,7 +208,10 @@ Which component is closer to the operating system core?
 
 Why?
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
@@ -197,7 +219,10 @@ Why?
 
 When an application wants to use CPU or memory, does it directly control the hardware?
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
@@ -205,7 +230,10 @@ When an application wants to use CPU or memory, does it directly control the har
 
 Describe the simplified execution path of a Windows application.
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
@@ -213,7 +241,10 @@ Describe the simplified execution path of a Windows application.
 
 What is the relationship between Windows API and the NT Kernel?
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
@@ -221,7 +252,10 @@ What is the relationship between Windows API and the NT Kernel?
 
 Name three concepts that exist in both Linux and Windows.
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
@@ -234,7 +268,10 @@ What is a more accurate statement?
 
 Why?
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
@@ -242,7 +279,10 @@ Why?
 
 What happens if Explorer.exe crashes?
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
@@ -255,4 +295,7 @@ Windows and Linux differ more in implementation
 than in fundamental purpose.
 ```
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
