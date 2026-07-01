@@ -1,4 +1,17 @@
-# Session 04 — Repeating-Key XOR
+# Session 06 — Repeating-Key XOR
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 02
+Session: 06
+Title: Repeating-Key XOR
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Objective
 
@@ -155,14 +168,12 @@ The keystream is just much larger and usually generated dynamically.
 
 ---
 
-# QA
+# Review Questions
 
-### Q1
-
-What is repeating-key XOR?
+### Q1. What is repeating-key XOR?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 A short key is reused repeatedly across the plaintext.
 
@@ -170,9 +181,7 @@ A short key is reused repeatedly across the plaintext.
 
 ---
 
-### Q2
-
-Which key byte is applied to each position in the following plaintext?
+### Q2. Which key byte is applied to each position in the following plaintext?
 
 ```text
 Plaintext:
@@ -185,7 +194,7 @@ X Y
 Write the key sequence aligned with every plaintext position.
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 A B C D E F
 X Y X Y X Y
@@ -194,9 +203,7 @@ X Y X Y X Y
 
 ---
 
-### Q3
-
-XOR the following plaintext and key.
+### Q3. XOR the following plaintext and key.
 
 ```text
 Plaintext:
@@ -211,7 +218,7 @@ Key:
 Write the result after repeating the key.
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 = 0x40 0x40 0x42 0x46
 
@@ -219,9 +226,7 @@ Write the result after repeating the key.
 
 ---
 
-### Q4
-
-Which sequence correctly represents repeating-key XOR?
+### Q4. Which sequence correctly represents repeating-key XOR?
 
 A.
 
@@ -243,19 +248,17 @@ P4 XOR K2
 ```
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 B
 </details>
 
 ---
 
-### Q5
-
-Why does repeating-key XOR appear more complex than single-byte XOR?
+### Q5. Why does repeating-key XOR appear more complex than single-byte XOR?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Because different key bytes are used at different positions.
 
@@ -264,12 +267,10 @@ Because different key bytes are used at different positions.
 
 ---
 
-### Q6
-
-How is repeating-key XOR conceptually related to a stream cipher?
+### Q6. How is repeating-key XOR conceptually related to a stream cipher?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Both XOR plaintext with a keystream. Repeating-key XOR creates that
 keystream by repeating a short key, while a stream cipher usually generates
@@ -279,12 +280,10 @@ it dynamically.
 
 ---
 
-### Q7
-
-Why is repeating-key XOR reversible?
+### Q7. Why is repeating-key XOR reversible?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Because XOR is reversible and the same repeating key can be applied again.
 
@@ -294,12 +293,10 @@ Because XOR is reversible and the same repeating key can be applied again.
 
 ---
 
-### Q8
-
-Why can a repeated ciphertext pattern suggest repeating-key XOR?
+### Q8. Why can a repeated ciphertext pattern suggest repeating-key XOR?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Because reuse of a short key may leave periodic relationships in the
 ciphertext.
