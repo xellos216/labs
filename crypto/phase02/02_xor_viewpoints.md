@@ -1,4 +1,4 @@
-# Session 02 — XOR Viewpoints
+# Session 02 — XOR Truth Tables and Bitwise Reasoning
 
 ## Metadata
 
