@@ -1,4 +1,17 @@
-# Analysis Pipeline
+# Session 15 — Building a Token Inspection Utility
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 03
+Session: 15
+Title: Building a Token Inspection Utility
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -24,13 +37,14 @@ representation
 readable != modifiable != verifiable != trusted
 ```
 
-# QA
+# Review Questions
 
 ## Step 1 — Analysis Layers
 
-**Q1.** Which layer is observed first?
+### Q1. Which layer is observed first?
 
-<details><summary><strong>A1.</strong></summary>
+<details>
+<summary>A</summary>
 
 Representation.
 
@@ -38,9 +52,10 @@ Representation.
 
 ---
 
-**Q2.** Where do delimiters and segment counts belong?
+### Q2. Where do delimiters and segment counts belong?
 
-<details><summary><strong>A2.</strong></summary>
+<details>
+<summary>A</summary>
 
 Structure.
 
@@ -48,9 +63,10 @@ Structure.
 
 ---
 
-**Q3.** Where do metadata, payload, and signature belong?
+### Q3. Where do metadata, payload, and signature belong?
 
-<details><summary><strong>A3.</strong></summary>
+<details>
+<summary>A</summary>
 
 Semantic role.
 
@@ -58,9 +74,10 @@ Semantic role.
 
 ---
 
-**Q4.** Where do trusted and untrusted belong?
+### Q4. Where do trusted and untrusted belong?
 
-<details><summary><strong>A4.</strong></summary>
+<details>
+<summary>A</summary>
 
 Verification state.
 
@@ -78,9 +95,10 @@ token = (
 )
 ```
 
-**Q1.** What is inspected from the representation perspective?
+### Q5. What is inspected from the representation perspective?
 
-<details><summary><strong>A1.</strong></summary>
+<details>
+<summary>A</summary>
 
 Whether each visible value is raw data or an encoding wrapper.
 
@@ -88,9 +106,10 @@ Whether each visible value is raw data or an encoding wrapper.
 
 ---
 
-**Q2.** What is inspected from the structure perspective?
+### Q6. What is inspected from the structure perspective?
 
-<details><summary><strong>A2.</strong></summary>
+<details>
+<summary>A</summary>
 
 The delimiters, three segments, and JWT-like organization.
 
@@ -98,9 +117,10 @@ The delimiters, three segments, and JWT-like organization.
 
 ---
 
-**Q3.** What is inspected from the semantic-role perspective?
+### Q7. What is inspected from the semantic-role perspective?
 
-<details><summary><strong>A3.</strong></summary>
+<details>
+<summary>A</summary>
 
 Which segment is metadata, payload, or integrity data.
 
@@ -108,9 +128,10 @@ Which segment is metadata, payload, or integrity data.
 
 ---
 
-**Q4.** Can the verification state be known from appearance alone?
+### Q8. Can the verification state be known from appearance alone?
 
-<details><summary><strong>A4.</strong></summary>
+<details>
+<summary>A</summary>
 
 No. It remains unknown until verification is performed.
 
@@ -125,9 +146,10 @@ can: read payload, decode payload, inspect metadata
 cannot: verify signature, access secret key
 ```
 
-**Q1.** What observation capability exists?
+### Q9. What observation capability exists?
 
-<details><summary><strong>A1.</strong></summary>
+<details>
+<summary>A</summary>
 
 Reading claims and inspecting metadata.
 
@@ -135,9 +157,10 @@ Reading claims and inspecting metadata.
 
 ---
 
-**Q2.** What verification capability exists?
+### Q10. What verification capability exists?
 
-<details><summary><strong>A2.</strong></summary>
+<details>
+<summary>A</summary>
 
 None in the stated situation.
 
@@ -145,9 +168,10 @@ None in the stated situation.
 
 ---
 
-**Q3.** Why can trusted status not be determined?
+### Q11. Why can trusted status not be determined?
 
-<details><summary><strong>A3.</strong></summary>
+<details>
+<summary>A</summary>
 
 The signature has not been verified.
 
@@ -155,9 +179,10 @@ The signature has not been verified.
 
 ---
 
-**Q4.** What is the current verification state?
+### Q12. What is the current verification state?
 
-<details><summary><strong>A4.</strong></summary>
+<details>
+<summary>A</summary>
 
 Unknown.
 
@@ -173,9 +198,10 @@ signature: present
 verification: not performed
 ```
 
-**Q1.** Is the payload readable?
+### Q13. Is the payload readable?
 
-<details><summary><strong>A1.</strong></summary>
+<details>
+<summary>A</summary>
 
 Yes.
 
@@ -183,9 +209,10 @@ Yes.
 
 ---
 
-**Q2.** Is the payload trusted?
+### Q14. Is the payload trusted?
 
-<details><summary><strong>A2.</strong></summary>
+<details>
+<summary>A</summary>
 
 No; trust is not established.
 
@@ -193,9 +220,10 @@ No; trust is not established.
 
 ---
 
-**Q3.** Why is signature presence insufficient?
+### Q15. Why is signature presence insufficient?
 
-<details><summary><strong>A3.</strong></summary>
+<details>
+<summary>A</summary>
 
 A present signature may be invalid or unrelated to the content.
 
@@ -203,9 +231,10 @@ A present signature may be invalid or unrelated to the content.
 
 ---
 
-**Q4.** What additional operation is required?
+### Q16. What additional operation is required?
 
-<details><summary><strong>A4.</strong></summary>
+<details>
+<summary>A</summary>
 
 Signature verification under the expected algorithm and key.
 
@@ -228,9 +257,10 @@ Signature verification under the expected algorithm and key.
 10. verification capability
 ```
 
-**Q1.** Which item is representation?
+### Q17. Which item is representation?
 
-<details><summary><strong>A1.</strong></summary>
+<details>
+<summary>A</summary>
 
 1.
 
@@ -238,9 +268,10 @@ Signature verification under the expected algorithm and key.
 
 ---
 
-**Q2.** Which item is structure?
+### Q18. Which item is structure?
 
-<details><summary><strong>A2.</strong></summary>
+<details>
+<summary>A</summary>
 
 2.
 
@@ -248,9 +279,10 @@ Signature verification under the expected algorithm and key.
 
 ---
 
-**Q3.** Which items are semantic roles?
+### Q19. Which items are semantic roles?
 
-<details><summary><strong>A3.</strong></summary>
+<details>
+<summary>A</summary>
 
 3, 6, and 9.
 
@@ -258,9 +290,10 @@ Signature verification under the expected algorithm and key.
 
 ---
 
-**Q4.** Which items are capabilities?
+### Q20. Which items are capabilities?
 
-<details><summary><strong>A4.</strong></summary>
+<details>
+<summary>A</summary>
 
 4, 8, and 10.
 
@@ -268,9 +301,10 @@ Signature verification under the expected algorithm and key.
 
 ---
 
-**Q5.** Which items are verification states?
+### Q21. Which items are verification states?
 
-<details><summary><strong>A5.</strong></summary>
+<details>
+<summary>A</summary>
 
 5 and 7.
 
