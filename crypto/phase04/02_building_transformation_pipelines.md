@@ -1,4 +1,17 @@
-# Transformation Pipeline
+# Session 02 — Building Transformation Pipelines
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 04
+Session: 02
+Title: Building Transformation Pipelines
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -137,7 +150,7 @@ This session teaches a general reverse-analysis habit:
 
 That habit is more important than memorizing one specific token example.
 
-# QA
+# Review Questions
 
 ## Step 1 — Pipeline Recognition
 
@@ -151,11 +164,10 @@ hx = cipher.hex()
 token = base64.b64encode(hx.encode())
 ```
 
-**Q1.**
-Why is `hx.encode()` required?
+### Q1. Why is `hx.encode()` required?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because `hx` is a hexadecimal string and must be converted to bytes before
 being passed to Base64.
@@ -164,11 +176,10 @@ being passed to Base64.
 
 ---
 
-**Q2.**
-What content is Base64-encoded in `token`?
+### Q2. What content is Base64-encoded in `token`?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 It is the Base64 representation of the byte-encoded result of
 `cipher.hex()`.
@@ -177,11 +188,10 @@ It is the Base64 representation of the byte-encoded result of
 
 ---
 
-**Q3.**
-Where does the actual data transformation occur?
+### Q3. Where does the actual data transformation occur?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 At the XOR step.
 
@@ -198,11 +208,10 @@ print("cipher hex   :", hx)
 print("token        :", token)
 ```
 
-**Q1.**
-Why does the token become longer?
+### Q4. Why does the token become longer?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Hex represents each byte with two characters, and Base64 adds another
 representation layer.
@@ -211,11 +220,10 @@ representation layer.
 
 ---
 
-**Q2.**
-At which stages does the length change?
+### Q5. At which stages does the length change?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 At the hexadecimal and Base64 stages.
 
@@ -223,11 +231,10 @@ At the hexadecimal and Base64 stages.
 
 ---
 
-**Q3.**
-What do hexadecimal and Base64 both represent in this pipeline?
+### Q6. What do hexadecimal and Base64 both represent in this pipeline?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Outer representation layers.
 
@@ -241,11 +248,10 @@ Explain what remains after the following operation.
 raw = base64.b64decode(token)
 ```
 
-**Q1.**
-Why is the result bytes?
+### Q7. Why is the result bytes?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because Base64 decoding restores the inner bytes.
 
@@ -253,11 +259,10 @@ Because Base64 decoding restores the inner bytes.
 
 ---
 
-**Q2.**
-Why is the result not yet plaintext?
+### Q8. Why is the result not yet plaintext?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Because the hexadecimal wrapper remains and XOR has not been reversed.
 
@@ -265,11 +270,10 @@ Because the hexadecimal wrapper remains and XOR has not been reversed.
 
 ---
 
-**Q3.**
-Is `raw` plaintext, ciphertext, or hexadecimal string content?
+### Q9. Is `raw` plaintext, ciphertext, or hexadecimal string content?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Bytes containing the hexadecimal representation of the ciphertext.
 
@@ -283,11 +287,10 @@ Explain why the following order is necessary.
 cipher2 = bytes.fromhex(raw.decode())
 ```
 
-**Q1.**
-Why is `decode()` called before `fromhex()`?
+### Q10. Why is `decode()` called before `fromhex()`?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because `fromhex()` expects a hexadecimal string, so the bytes must first be
 converted to `str`.
@@ -296,11 +299,10 @@ converted to `str`.
 
 ---
 
-**Q2.**
-What state exists after this step?
+### Q11. What state exists after this step?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 raw cipher bytes
 
@@ -308,11 +310,10 @@ raw cipher bytes
 
 ---
 
-**Q3.**
-Is this actual decryption or representation recovery?
+### Q12. Is this actual decryption or representation recovery?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Representation recovery.
 
@@ -330,11 +331,10 @@ token
 ↓ XOR
 ```
 
-**Q1.**
-Which step performs actual plaintext recovery?
+### Q13. Which step performs actual plaintext recovery?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 XOR
 
@@ -342,11 +342,10 @@ XOR
 
 ---
 
-**Q2.**
-At which step do raw ciphertext bytes appear?
+### Q14. At which step do raw ciphertext bytes appear?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 At the `fromhex()` step.
 
@@ -354,11 +353,10 @@ At the `fromhex()` step.
 
 ---
 
-**Q3.**
-How should the remaining steps be classified?
+### Q15. How should the remaining steps be classified?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 representation-layer recovery
 
