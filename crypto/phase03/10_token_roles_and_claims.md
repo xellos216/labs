@@ -1,4 +1,17 @@
-# Token Roles
+# Session 10 — Token Roles and Claims
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 03
+Session: 10
+Title: Token Roles and Claims
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -159,7 +172,7 @@ semantic role tracing
 layer tracing
 ```
 
-# QA
+# Review Questions
 
 ## Step 1 — Segment Role Observation
 
@@ -172,11 +185,10 @@ C = b'eyJ0eXAiOiJKV1QifQ.eyJyb2xlIjoiZ3Vlc3QifQ.signature'
 ```
 
 
-**Q1.**
-Which semantic role is each segment likely to have?
+### Q1. Which semantic role is each segment likely to have?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 header -> metadata/configuration
 
@@ -188,11 +200,10 @@ signature -> integrity/authentication
 
 ---
 
-**Q2.**
-Which segments look like metadata?
+### Q2. Which segments look like metadata?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 eyJhbGciOiJIUzI1NiJ9
 
@@ -202,11 +213,10 @@ eyJ0eXAiOiJKV1QifQ
 
 ---
 
-**Q3.**
-Which segments look like application payloads?
+### Q3. Which segments look like application payloads?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 eyJ1c2VyIjoiYWRtaW4ifQ
 
@@ -216,11 +226,10 @@ eyJyb2xlIjoiZ3Vlc3QifQ
 
 ---
 
-**Q4.**
-Why does the signature segment differ from the semantic payload?
+### Q4. Why does the signature segment differ from the semantic payload?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 It likely contains integrity or authentication data rather than application
 data.
@@ -239,11 +248,10 @@ D = b'{"iat":1720000000}'
 ```
 
 
-**Q1.**
-Which values look like configuration or metadata?
+### Q5. Which values look like configuration or metadata?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 A, C, D
 
@@ -251,11 +259,10 @@ A, C, D
 
 ---
 
-**Q2.**
-Which value looks like a user payload?
+### Q6. Which value looks like a user payload?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 B
 
@@ -263,11 +270,10 @@ B
 
 ---
 
-**Q3.**
-Why are timestamp-like fields likely to serve a metadata role?
+### Q7. Why are timestamp-like fields likely to serve a metadata role?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because timestamps commonly control token state, issuance, or expiration.
 
@@ -282,11 +288,10 @@ base64(header).base64(payload).signature
 ```
 
 
-**Q1.**
-Why can the header and payload be analyzed separately?
+### Q8. Why can the header and payload be analyzed separately?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because they have different semantic roles.
 
@@ -294,11 +299,10 @@ Because they have different semantic roles.
 
 ---
 
-**Q2.**
-Why might the payload change while the header remains unchanged?
+### Q9. Why might the payload change while the header remains unchanged?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Because configuration metadata may remain stable while application data
 changes.
@@ -307,11 +311,10 @@ changes.
 
 ---
 
-**Q3.**
-Why must structure and semantic role be distinguished?
+### Q10. Why must structure and semantic role be distinguished?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because a value's shape and its actual purpose are separate properties.
 
@@ -326,11 +329,10 @@ token = b'ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKeWIyeGxJam9pWjNWbGMzUWlmUS5zaWduYXR1cm
 ```
 
 
-**Q1.**
-What does the outermost layer look like?
+### Q11. What does the outermost layer look like?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 base64 wrapper
 
@@ -338,11 +340,10 @@ base64 wrapper
 
 ---
 
-**Q2.**
-What should be inspected first after peeling one layer?
+### Q12. What should be inspected first after peeling one layer?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 delimiter, segment count, JWT-like structure, segment semantic role
 
@@ -350,11 +351,10 @@ delimiter, segment count, JWT-like structure, segment semantic role
 
 ---
 
-**Q3.**
-Why is payload fingerprinting important?
+### Q13. Why is payload fingerprinting important?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because the payload usually contains the application data.
 
@@ -362,11 +362,10 @@ Because the payload usually contains the application data.
 
 ---
 
-**Q4.**
-Why is structure recognition alone insufficient?
+### Q14. Why is structure recognition alone insufficient?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Recognizing structure does not establish semantic meaning.
 
@@ -393,11 +392,10 @@ Possible classifications:
 - structure layer
 
 
-**Q1.**
-Semantic role of `A`:
+### Q15. Semantic role of `A`:
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 metadata
 
@@ -405,11 +403,10 @@ metadata
 
 ---
 
-**Q2.**
-Semantic role of `B`:
+### Q16. Semantic role of `B`:
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 payload
 
@@ -417,11 +414,10 @@ payload
 
 ---
 
-**Q3.**
-Semantic role of `C`:
+### Q17. Semantic role of `C`:
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Integrity / authentication
 
@@ -429,11 +425,10 @@ Integrity / authentication
 
 ---
 
-**Q4.**
-Semantic role of `D`:
+### Q18. Semantic role of `D`:
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 wrapper
 
@@ -441,11 +436,10 @@ wrapper
 
 ---
 
-**Q5.**
-Semantic role of `E`:
+### Q19. Semantic role of `E`:
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 structure layer
 
