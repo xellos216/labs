@@ -1,4 +1,17 @@
-# Session 03 — Single-Byte XOR by Hand
+# Session 04 — Single-Byte XOR by Hand
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 02
+Session: 04
+Title: Single-Byte XOR by Hand
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Objective
 
@@ -139,14 +152,12 @@ Crypto operations happen in the byte layer.
 
 ---
 
-# QA
+# Review Questions
 
-### Q1
-
-What is the hexadecimal value of the ASCII character `A`?
+### Q1. What is the hexadecimal value of the ASCII character `A`?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 0x41
 
@@ -154,14 +165,12 @@ What is the hexadecimal value of the ASCII character `A`?
 
 ---
 
-### Q2
-
-Calculate the following expression.
+### Q2. Calculate the following expression.
 
 0x41 XOR 0x03
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 = 0x43
 
@@ -169,9 +178,7 @@ Calculate the following expression.
 
 ---
 
-### Q3
-
-Find `C` in the following expression.
+### Q3. Find `C` in the following expression.
 
 P = 0x41
 
@@ -180,7 +187,7 @@ K = 0x01
 C = P XOR K
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 C = 0x40
 
@@ -188,9 +195,7 @@ C = 0x40
 
 ---
 
-### Q4
-
-Find `P` in the following expression.
+### Q4. Find `P` in the following expression.
 
 C = 0x40
 
@@ -199,7 +204,7 @@ K = 0x01
 P = C XOR K
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 P = 0x41
 
@@ -207,12 +212,10 @@ P = 0x41
 
 ---
 
-### Q5
-
-Why do we say XOR transforms bytes rather than characters?
+### Q5. Why do we say XOR transforms bytes rather than characters?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Computers do not XOR characters. They XOR byte values.
 
@@ -220,14 +223,12 @@ Computers do not XOR characters. They XOR byte values.
 
 ---
 
-### Q6
-
-Calculate the following expression.
+### Q6. Calculate the following expression.
 
 (0x41 XOR 0x03) XOR 0x03
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 = 0x41
 
@@ -235,12 +236,10 @@ Calculate the following expression.
 
 ---
 
-### Q7
-
-Why is it important to examine bytes before characters in XOR analysis?
+### Q7. Why is it important to examine bytes before characters in XOR analysis?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Characters are only a human-friendly view; the actual calculation operates
 on bytes.
