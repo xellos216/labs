@@ -1,4 +1,17 @@
-# Integrity and Confidentiality
+# Session 11 — Integrity and Confidentiality
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 03
+Session: 11
+Title: Integrity and Confidentiality
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -182,7 +195,7 @@ semantic role tracing
 trust reasoning
 ```
 
-# QA
+# Review Questions
 
 ## Step 1 — Semantic Purpose Observation
 
@@ -193,11 +206,10 @@ header.payload.signature
 ```
 
 
-**Q1.**
-Which segment most likely contains application data?
+### Q1. Which segment most likely contains application data?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 payload
 
@@ -205,11 +217,10 @@ payload
 
 ---
 
-**Q2.**
-Which segment most likely serves integrity or authentication?
+### Q2. Which segment most likely serves integrity or authentication?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 signature
 
@@ -217,11 +228,10 @@ signature
 
 ---
 
-**Q3.**
-Why does the signature have a different purpose from the payload?
+### Q3. Why does the signature have a different purpose from the payload?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 The payload carries application data, while the signature helps verify
 integrity and authenticity.
@@ -230,11 +240,10 @@ integrity and authenticity.
 
 ---
 
-**Q4.**
-Why can a token remain security-relevant even when its payload is readable?
+### Q4. Why can a token remain security-relevant even when its payload is readable?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Readable does not mean trusted or freely modifiable. A signature can detect
 changes to a readable payload.
@@ -254,11 +263,10 @@ HMAC(...)
 ```
 
 
-**Q1.**
-What does payload readability imply?
+### Q5. What does payload readability imply?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 The payload is not confidential.
 
@@ -266,11 +274,10 @@ The payload is not confidential.
 
 ---
 
-**Q2.**
-What is the purpose of the signature?
+### Q6. What is the purpose of the signature?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 To determine whether the payload passes integrity and authenticity checks.
 
@@ -278,11 +285,10 @@ To determine whether the payload passes integrity and authenticity checks.
 
 ---
 
-**Q3.**
-Why does readable not mean safely modifiable?
+### Q7. Why does readable not mean safely modifiable?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because modifying readable data can cause signature verification to fail.
 
@@ -290,11 +296,10 @@ Because modifying readable data can cause signature verification to fail.
 
 ---
 
-**Q4.**
-Why must integrity and confidentiality be distinguished?
+### Q8. Why must integrity and confidentiality be distinguished?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Integrity detects unauthorized changes. Confidentiality hides content.
 
@@ -312,11 +317,10 @@ D = b'signature'
 ```
 
 
-**Q1.**
-Which values look like metadata or configuration?
+### Q9. Which values look like metadata or configuration?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 A, B
 
@@ -324,11 +328,10 @@ A, B
 
 ---
 
-**Q2.**
-Which value looks like the application payload?
+### Q10. Which value looks like the application payload?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 C
 
@@ -336,11 +339,10 @@ C
 
 ---
 
-**Q3.**
-Which value looks related to integrity or authentication?
+### Q11. Which value looks related to integrity or authentication?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 D
 
@@ -348,11 +350,10 @@ D
 
 ---
 
-**Q4.**
-Why is a field such as `exp` closer to metadata?
+### Q12. Why is a field such as `exp` closer to metadata?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Because it describes token validity, such as expiration, rather than primary
 application data.
@@ -368,11 +369,10 @@ token = b'ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKeWIyeGxJam9pWVdSdGFXNGlmUS5jMmxuYm1GMG
 ```
 
 
-**Q1.**
-What does the outermost layer look like?
+### Q13. What does the outermost layer look like?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 base64 wrapper
 
@@ -380,11 +380,10 @@ base64 wrapper
 
 ---
 
-**Q2.**
-What should be inspected first after peeling one layer?
+### Q14. What should be inspected first after peeling one layer?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 delimiter, JSON-like, hex-str-like, JWT-structure, ...
 
@@ -392,11 +391,10 @@ delimiter, JSON-like, hex-str-like, JWT-structure, ...
 
 ---
 
-**Q3.**
-How can each segment's semantic role be inferred?
+### Q15. How can each segment's semantic role be inferred?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 By inspecting its decoded structure, field names, and content.
 
@@ -404,11 +402,10 @@ By inspecting its decoded structure, field names, and content.
 
 ---
 
-**Q4.**
-Why is wrapper fingerprinting alone insufficient?
+### Q16. Why is wrapper fingerprinting alone insufficient?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 It identifies only the outer representation; meaningful data appears after
 the layer is peeled.
@@ -427,11 +424,10 @@ The payload becomes readable after Base64 decoding.
 ```
 
 
-**Q1.**
-Why does readability not establish trust?
+### Q17. Why does readability not establish trust?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because signature or integrity verification is needed to determine whether
 the server issued the value and whether it was modified.
@@ -440,11 +436,10 @@ the server issued the value and whether it was modified.
 
 ---
 
-**Q2.**
-Why is integrity verification required?
+### Q18. Why is integrity verification required?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 To detect whether the data has been modified.
 
@@ -452,11 +447,10 @@ To detect whether the data has been modified.
 
 ---
 
-**Q3.**
-Why are "visible" and "verified" different concepts?
+### Q19. Why are "visible" and "verified" different concepts?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Visibility concerns decoding and representation. Verification concerns
 integrity and trust. Readable data is not trusted before verification.
@@ -465,11 +459,10 @@ integrity and trust. Readable data is not trusted before verification.
 
 ---
 
-**Q4.**
-Why is semantic-purpose reasoning important in token analysis?
+### Q20. Why is semantic-purpose reasoning important in token analysis?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Because metadata, payload, and signature segments have different purposes and
 different effects on readability, trust, and tamper detection.
