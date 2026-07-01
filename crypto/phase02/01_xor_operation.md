@@ -1,5 +1,18 @@
 # Session 01 — What XOR Actually Does
 
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 02
+Session: 01
+Title: What XOR Actually Does
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 Understand XOR as a reversible byte transformation and distinguish it from representation changes such as Base64.
@@ -116,14 +129,12 @@ not visual appearance.
 
 ---
 
-# QA
+# Review Questions
 
-### Q1
-
-What does XOR return when both input bits are the same?
+### Q1. What does XOR return when both input bits are the same?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Result is 0
 
@@ -131,12 +142,10 @@ Result is 0
 
 ---
 
-### Q2
-
-What does XOR return when the two input bits are different?
+### Q2. What does XOR return when the two input bits are different?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Result is 1
 
@@ -144,12 +153,10 @@ Result is 1
 
 ---
 
-### Q3
-
-Why can XOR be understood as a toggle operation?
+### Q3. Why can XOR be understood as a toggle operation?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Because a key bit of 1 flips a bit and a key bit of 0 keeps it unchanged.
 
@@ -157,14 +164,12 @@ Because a key bit of 1 flips a bit and a key bit of 0 keeps it unchanged.
 
 ---
 
-### Q4
-
-Calculate the following expression.
+### Q4. Calculate the following expression.
 
 0101 XOR 0011
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 = 0110
 
@@ -172,14 +177,12 @@ Calculate the following expression.
 
 ---
 
-### Q5
-
-Why does the following identity hold?
+### Q5. Why does the following identity hold?
 
 (P XOR K) XOR K = P
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Applying the same key twice restores the original value.
 
@@ -187,12 +190,10 @@ Applying the same key twice restores the original value.
 
 ---
 
-### Q6
-
-What is the most important difference between Base64 and XOR?
+### Q6. What is the most important difference between Base64 and XOR?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Base64 changes representation, while XOR changes values.
 
@@ -200,12 +201,10 @@ Base64 changes representation, while XOR changes values.
 
 ---
 
-### Q7
-
-What XOR-related question should you ask when examining ciphertext?
+### Q7. What XOR-related question should you ask when examining ciphertext?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Could this data be XOR-transformed?
 
