@@ -1,4 +1,17 @@
-# Session 06 — Keystream Mental Model
+# Session 08 — The Keystream Mental Model
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 02
+Session: 08
+Title: The Keystream Mental Model
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Objective
 
@@ -169,14 +182,12 @@ Understanding the keystream is often more important than understanding the key i
 
 ---
 
-# QA
+# Review Questions
 
-### Q1
-
-What is a keystream?
+### Q1. What is a keystream?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 A keystream is the sequence of key bytes used directly in XOR operations.
 
@@ -184,9 +195,7 @@ A keystream is the sequence of key bytes used directly in XOR operations.
 
 ---
 
-### Q2
-
-Given:
+### Q2. Given:
 
 ```text
 Key
@@ -197,7 +206,7 @@ Key
 Write the first eight bytes of the generated keystream.
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 01 02 01 02 01 02 01 02
 
@@ -206,9 +215,7 @@ Write the first eight bytes of the generated keystream.
 
 ---
 
-### Q3
-
-Complete:
+### Q3. Complete:
 
 ```text
 Plaintext
@@ -219,7 +226,7 @@ Ciphertext
 ```
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Key-stream
 
@@ -227,12 +234,10 @@ Key-stream
 
 ---
 
-### Q4
-
-Why is a keystream more important than the original key during XOR operations?
+### Q4. Why is a keystream more important than the original key during XOR operations?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Because XOR is performed with the keystream, not directly with the original key.
 
@@ -241,9 +246,7 @@ Because XOR is performed with the keystream, not directly with the original key.
 
 ---
 
-### Q5
-
-What is the main difference between:
+### Q5. What is the main difference between:
 
 ```text
 Repeating-Key XOR
@@ -258,7 +261,7 @@ Stream Cipher
 from a keystream perspective?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Repeating-Key XOR uses a predictable key-stream.
 
@@ -268,12 +271,10 @@ Stream Cipher tries to generate a much less predictable key-stream.
 
 ---
 
-### Q6
-
-Why can a predictable keystream become a weakness?
+### Q6. Why can a predictable keystream become a weakness?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 If the keystream is predictable, an analyst recover plaintext or infer future transformatios.
 
@@ -282,9 +283,7 @@ If the keystream is predictable, an analyst recover plaintext or infer future tr
 
 ---
 
-### Q7
-
-In one sentence, explain the relationship between:
+### Q7. In one sentence, explain the relationship between:
 
 ```text
 Key
@@ -293,7 +292,7 @@ Ciphertext
 ```
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 The key generates the keystream, and the keystream is XORed with plaintext to produce ciphertext.
 
