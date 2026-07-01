@@ -1,5 +1,18 @@
 # Session 02 — XOR Viewpoints
 
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 02
+Session: 02
+Title: XOR Truth Tables and Bitwise Reasoning
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 Separate two XOR viewpoints.
@@ -124,16 +137,14 @@ Not in characters.
 
 ---
 
-# QA
+# Review Questions
 
-### Q1
-
-Calculate the following XOR result.
+### Q1. Calculate the following XOR result.
 
 1010 XOR 0000
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 = 1010
 
@@ -141,14 +152,12 @@ Calculate the following XOR result.
 
 ---
 
-### Q2
-
-Calculate the following XOR result.
+### Q2. Calculate the following XOR result.
 
 1010 XOR 1111
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 = 0101
 
@@ -156,14 +165,12 @@ Calculate the following XOR result.
 
 ---
 
-### Q3
-
-Calculate the following expression.
+### Q3. Calculate the following expression.
 
 1100 XOR 0101
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 1001
 
@@ -171,16 +178,14 @@ Calculate the following expression.
 
 ---
 
-### Q4
-
-Distinguish between the following two concepts.
+### Q4. Distinguish between the following two concepts.
 
 1. Same → 0 / Different → 1
 
 2. Key=0 → Keep / Key=1 → Flip
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 The first explains how XOR calculates its result. The second explains how
 the key affects the original bit.
@@ -189,14 +194,12 @@ the key affects the original bit.
 
 ---
 
-### Q5
-
-Explain why the following identity holds.
+### Q5. Explain why the following identity holds.
 
 (P XOR K) XOR K = P
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 XORing the same value twice restores the original value.
 
@@ -204,12 +207,10 @@ XORing the same value twice restores the original value.
 
 ---
 
-### Q6
-
-Why might XOR be considered when examining ciphertext?
+### Q6. Why might XOR be considered when examining ciphertext?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Because XOR is a common reversible transformation.
 
