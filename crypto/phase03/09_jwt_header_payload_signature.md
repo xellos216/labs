@@ -1,4 +1,17 @@
-# Segment Semantics
+# Session 09 — JWT Header, Payload and Signature
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 03
+Session: 09
+Title: JWT Header, Payload and Signature
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -166,7 +179,7 @@ Many practical problems become:
 structure + semantic layer tracing
 ```
 
-# QA
+# Review Questions
 
 ## Step 1 — Segment Meaning Observation
 
@@ -179,8 +192,7 @@ C = b'ZXlKaGJHY2lPaUpJVXpJMU5pU2o5LmV5SjFjMlZ5SWpvaVoyVmxjM1FpZlEuc2ln'
 ```
 
 
-**Q1.**
-What does each value look like?
+### Q1. What does each value look like?
 
 - plaintext structure
 - JWT-like structure
@@ -188,7 +200,7 @@ What does each value look like?
 - nested wrapper
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 A = JWT-like structure
 
@@ -200,11 +212,10 @@ C = base64 wrapper
 
 ---
 
-**Q2.**
-Which values directly expose semantic segment boundaries?
+### Q2. Which values directly expose semantic segment boundaries?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 A, B
 
@@ -212,11 +223,10 @@ A, B
 
 ---
 
-**Q3.**
-Which value appears to wrap a JWT-like structure?
+### Q3. Which value appears to wrap a JWT-like structure?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 B = structure visible
 
@@ -233,11 +243,10 @@ header.payload.signature
 ```
 
 
-**Q1.**
-Why can each segment have a different semantic meaning?
+### Q4. Why can each segment have a different semantic meaning?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 header = metadata
 
@@ -249,11 +258,10 @@ signature = integrity / authentication
 
 ---
 
-**Q2.**
-Why is the `.` delimiter an important fingerprint?
+### Q5. Why is the `.` delimiter an important fingerprint?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 semantic boundary clue
 
@@ -261,11 +269,10 @@ semantic boundary clue
 
 ---
 
-**Q3.**
-Why can separate wrappers be applied to individual segments?
+### Q6. Why can separate wrappers be applied to individual segments?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because each segment may have an independent semantic role.
 
@@ -280,11 +287,10 @@ token = b'ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKemRXSWlPaUpoWkcxcGJpSjkuYzJsbg=='
 ```
 
 
-**Q1.**
-What does the current outermost layer look like?
+### Q7. What does the current outermost layer look like?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 base64 wrapper
 
@@ -292,11 +298,10 @@ base64 wrapper
 
 ---
 
-**Q2.**
-What should be inspected after the first peel?
+### Q8. What should be inspected after the first peel?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 JSON-like, JWT-like, fingerfrint, hex-str-like, ...
 
@@ -304,11 +309,10 @@ JSON-like, JWT-like, fingerfrint, hex-str-like, ...
 
 ---
 
-**Q3.**
-Why should fingerprinting be repeated immediately after peeling?
+### Q9. Why should fingerprinting be repeated immediately after peeling?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because the result may contain additional layers.
 
@@ -316,11 +320,10 @@ Because the result may contain additional layers.
 
 ---
 
-**Q4.**
-Why should recursive decoding not be repeated blindly?
+### Q10. Why should recursive decoding not be repeated blindly?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Because the current transformation must be identified before choosing the
 matching reversal operation.
@@ -342,11 +345,10 @@ c = base64.b64encode(b)
 ```
 
 
-**Q1.**
-What is the semantic state of `a`?
+### Q11. What is the semantic state of `a`?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 base64 wrapper
 
@@ -354,11 +356,10 @@ base64 wrapper
 
 ---
 
-**Q2.**
-What is the semantic state of `b`?
+### Q12. What is the semantic state of `b`?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 JWT-like-structure token
 
@@ -366,11 +367,10 @@ JWT-like-structure token
 
 ---
 
-**Q3.**
-What is the semantic state of `c`?
+### Q13. What is the semantic state of `c`?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 JWT-structure in base64 wrpper
 
@@ -378,11 +378,10 @@ JWT-structure in base64 wrpper
 
 ---
 
-**Q4.**
-At which layer is the delimiter directly visible?
+### Q14. At which layer is the delimiter directly visible?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 b
 
@@ -399,11 +398,10 @@ D = b'91af23de'
 ```
 
 
-**Q1.**
-Which value directly exposes a JWT-like structure?
+### Q15. Which value directly exposes a JWT-like structure?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 A
 
@@ -411,11 +409,10 @@ A
 
 ---
 
-**Q2.**
-Which value likely wraps a JWT-like structure?
+### Q16. Which value likely wraps a JWT-like structure?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Most likely `B`.
 
@@ -423,11 +420,10 @@ Most likely `B`.
 
 ---
 
-**Q3.**
-Why must wrapper and structure layers be analyzed separately?
+### Q17. Why must wrapper and structure layers be analyzed separately?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Wrappers provide transport-safe representation, while structures organize
 semantic content.
