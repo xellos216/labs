@@ -1,4 +1,17 @@
-# JWT Fingerprinting
+# Session 08 — Token Structure Fingerprinting
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 03
+Session: 08
+Title: Token Structure Fingerprinting
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -159,7 +172,7 @@ structure + layer tracing problems
 ```
 
 
-# QA
+# Review Questions
 
 ## Step 1 — Visual Structure Observation
 
@@ -172,8 +185,7 @@ C = b'65794a68624763694f694a49557a49314e694a392e65794a7a645749694f694a685a473170
 ````
 
 
-**Q1.**
-What does each value look like?
+### Q1. What does each value look like?
 
 * structured token
 * base64 wrapper
@@ -181,7 +193,7 @@ What does each value look like?
 * layered wrapper
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 A = structure token / JWT-like structure
 
@@ -193,11 +205,10 @@ C = hex wrapper
 
 ---
 
-**Q2.**
-Which value directly exposes a delimiter-based structure?
+### Q2. Which value directly exposes a delimiter-based structure?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 A
 
@@ -205,11 +216,10 @@ A
 
 ---
 
-**Q3.**
-Which values appear to wrap another structured token?
+### Q3. Which values appear to wrap another structured token?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 B may contain a structured token inside a Base64 wrapper.
 
@@ -226,11 +236,10 @@ header.payload.signature
 ```
 
 
-**Q1.**
-Why can the `.` delimiter be important?
+### Q4. Why can the `.` delimiter be important?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 It exposes segment boundaries typical of a JWT-like structure.
 
@@ -238,11 +247,10 @@ It exposes segment boundaries typical of a JWT-like structure.
 
 ---
 
-**Q2.**
-What can happen to the delimiter when a wrapper is added?
+### Q5. What can happen to the delimiter when a wrapper is added?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 The wrapper can hide the delimiter, so peel the current layer and inspect the
 result again.
@@ -251,11 +259,10 @@ result again.
 
 ---
 
-**Q3.**
-Why is it important to inspect delimiters again after decoding?
+### Q6. Why is it important to inspect delimiters again after decoding?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because a wrapper may conceal a multi-segment structure.
 
@@ -273,11 +280,10 @@ D = b'91af23de'
 ```
 
 
-**Q1.**
-Which value is a JWT-like structured token?
+### Q7. Which value is a JWT-like structured token?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 B
 
@@ -285,11 +291,10 @@ B
 
 ---
 
-**Q2.**
-Which value is a hexadecimal wrapper around JSON?
+### Q8. Which value is a hexadecimal wrapper around JSON?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 C
 
@@ -297,11 +302,10 @@ C
 
 ---
 
-**Q3.**
-Which value contains only a Base64-wrapped payload?
+### Q9. Which value contains only a Base64-wrapped payload?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 A
 
@@ -322,11 +326,10 @@ c = b.hex()
 ```
 
 
-**Q1.**
-What is the semantic state of `a`?
+### Q10. What is the semantic state of `a`?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 base64 wrapper
 
@@ -334,11 +337,10 @@ base64 wrapper
 
 ---
 
-**Q2.**
-What is the semantic state of `b`?
+### Q11. What is the semantic state of `b`?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 JWT-like-structure
 
@@ -346,11 +348,10 @@ JWT-like-structure
 
 ---
 
-**Q3.**
-What is the semantic state of `c`?
+### Q12. What is the semantic state of `c`?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 JWT-like-structure hex wrapper
 
@@ -358,11 +359,10 @@ JWT-like-structure hex wrapper
 
 ---
 
-**Q4.**
-At which layer does the delimiter exist?
+### Q13. At which layer does the delimiter exist?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 The delimiter exists in the structured-token layer represented by `b`.
 
@@ -377,11 +377,10 @@ token = b'65794a68624763694f694a49557a49314e694a392e65794a3163325679496a6f695a33
 ```
 
 
-**Q1.**
-What does the current outermost layer look like?
+### Q14. What does the current outermost layer look like?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 hex-str-like-wrapper
 
@@ -389,11 +388,10 @@ hex-str-like-wrapper
 
 ---
 
-**Q2.**
-What is the first reversal step?
+### Q15. What is the first reversal step?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 bytes.fromhex()
 
@@ -401,11 +399,10 @@ bytes.fromhex()
 
 ---
 
-**Q3.**
-What should be inspected after reversal?
+### Q16. What should be inspected after reversal?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 JWT-like (delimiter)
 
@@ -413,11 +410,10 @@ JWT-like (delimiter)
 
 ---
 
-**Q4.**
-Why is delimiter fingerprinting important?
+### Q17. Why is delimiter fingerprinting important?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 A delimiter reveals structural segment boundaries. A wrapper may hide it, so
 inspect delimiters again after peeling the wrapper.
