@@ -1,5 +1,18 @@
 # Session 09 — Plaintext, Keystream and Ciphertext
 
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 02
+Session: 09
+Title: Plaintext, Keystream and Ciphertext
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 Understand the relationship between plaintext, keystream, and ciphertext in a stream cipher, and explain why the same XOR operation performs both encryption and decryption.
@@ -198,89 +211,65 @@ The same XOR operation performs both encryption and decryption because the keyst
 
 ---
 
-# QA
+# Review Questions
 
-### Q1
-
-Why can a stream cipher use the same XOR operation for both encryption and decryption?
+### Q1. Why can a stream cipher use the same XOR operation for both encryption and decryption?
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q2
-
-Which XOR properties make `C XOR K = P` possible?
+### Q2. Which XOR properties make `C XOR K = P` possible?
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q3
-
-Derive the following equation.
+### Q3. Derive the following equation.
 
 ```text
 C XOR K = P
 ```
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q4
-
-Simplify the following expression.
+### Q4. Simplify the following expression.
 
 ```text
 (P₁ XOR K) XOR (P₂ XOR K)
 ```
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q5
-
-Why does `C₁ XOR C₂` remove the keystream when the same keystream is reused?
+### Q5. Why does `C₁ XOR C₂` remove the keystream when the same keystream is reused?
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q6
-
-Why doesn't obtaining `P₁ XOR P₂` immediately reveal both plaintexts, and what additional information can allow recovery?
+### Q6. Why doesn't obtaining `P₁ XOR P₂` immediately reveal both plaintexts, and what additional information can allow recovery?
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
