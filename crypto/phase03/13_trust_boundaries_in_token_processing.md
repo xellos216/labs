@@ -1,4 +1,17 @@
-# Trust Boundaries
+# Session 13 — Trust Boundaries in Token Processing
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 03
+Session: 13
+Title: Trust Boundaries in Token Processing
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -173,7 +186,7 @@ semantic reasoning
 trust boundary analysis
 ```
 
-# QA
+# Review Questions
 
 ## Step 1 — Readable Versus Trusted
 
@@ -188,11 +201,10 @@ valid
 ```
 
 
-**Q1.**
-What does it mean that the payload is readable?
+### Q1. What does it mean that the payload is readable?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Its representation can be interpreted and its content observed.
 
@@ -200,11 +212,10 @@ Its representation can be interpreted and its content observed.
 
 ---
 
-**Q2.**
-What does a valid signature imply?
+### Q2. What does a valid signature imply?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Integrity verification passed, authenticity was validated, and no
 modification was detected.
@@ -213,11 +224,10 @@ modification was detected.
 
 ---
 
-**Q3.**
-Why are readable and trusted different concepts?
+### Q3. Why are readable and trusted different concepts?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because interpreting content and validating its origin or integrity are
 separate operations.
@@ -226,11 +236,10 @@ separate operations.
 
 ---
 
-**Q4.**
-Why should a payload not be trusted without integrity verification?
+### Q4. Why should a payload not be trusted without integrity verification?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Because its origin and modification state cannot be established without
 verification.
@@ -251,11 +260,10 @@ token
 ```
 
 
-**Q1.**
-Why is wrapper peeling alone insufficient?
+### Q5. Why is wrapper peeling alone insufficient?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because removing wrappers does not establish semantic role, integrity, or
 trust.
@@ -264,11 +272,10 @@ trust.
 
 ---
 
-**Q2.**
-Why is semantic-role inference needed?
+### Q6. Why is semantic-role inference needed?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Because different segments serve different purposes.
 
@@ -276,11 +283,10 @@ Because different segments serve different purposes.
 
 ---
 
-**Q3.**
-Why is integrity verification a separate reasoning layer?
+### Q7. Why is integrity verification a separate reasoning layer?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because it evaluates authenticity and modification rather than
 representation.
@@ -289,11 +295,10 @@ representation.
 
 ---
 
-**Q4.**
-Why does successful decoding not imply successful verification?
+### Q8. Why does successful decoding not imply successful verification?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Decoding is only an early-stage representation operation.
 
@@ -311,11 +316,10 @@ D = b'signature'
 ```
 
 
-**Q1.**
-Which values look like metadata?
+### Q9. Which values look like metadata?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 A, C
 
@@ -323,11 +327,10 @@ A, C
 
 ---
 
-**Q2.**
-Which value looks like a payload?
+### Q10. Which value looks like a payload?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 B
 
@@ -335,11 +338,10 @@ B
 
 ---
 
-**Q3.**
-Which value looks related to integrity or authentication?
+### Q11. Which value looks related to integrity or authentication?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 D
 
@@ -347,11 +349,10 @@ D
 
 ---
 
-**Q4.**
-Why can `exp` affect a trust decision?
+### Q12. Why can `exp` affect a trust decision?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Because it defines the time boundary after which the token is no longer
 valid.
@@ -367,11 +368,10 @@ token = b'ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKMWMyVnlJam9pWjNWbGMzUWlmUS5jMmxuYm1GMG
 ```
 
 
-**Q1.**
-What does the outermost layer look like?
+### Q13. What does the outermost layer look like?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 base64-like-wrapper
 
@@ -379,11 +379,10 @@ base64-like-wrapper
 
 ---
 
-**Q2.**
-What should be inspected first after peeling one layer?
+### Q14. What should be inspected first after peeling one layer?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 fingerprint, delimiter, structure, JSON-like, JWT-segments, ...
 
@@ -391,11 +390,10 @@ fingerprint, delimiter, structure, JSON-like, JWT-segments, ...
 
 ---
 
-**Q3.**
-Why must segment roles be analyzed separately?
+### Q15. Why must segment roles be analyzed separately?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because each segment may have a different semantic role.
 
@@ -403,11 +401,10 @@ Because each segment may have a different semantic role.
 
 ---
 
-**Q4.**
-Why is trust reasoning higher-level than wrapper fingerprinting?
+### Q16. Why is trust reasoning higher-level than wrapper fingerprinting?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Wrapper fingerprinting analyzes representation, while trust reasoning also
 evaluates integrity, authenticity, and acceptance.
@@ -426,11 +423,10 @@ An attacker modified the payload.
 ```
 
 
-**Q1.**
-Why does payload modification alone not guarantee privilege escalation?
+### Q17. Why does payload modification alone not guarantee privilege escalation?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because the modified token may fail signature verification.
 
@@ -438,11 +434,10 @@ Because the modified token may fail signature verification.
 
 ---
 
-**Q2.**
-Why is signature verification important?
+### Q18. Why is signature verification important?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 It detects unauthorized changes and validates the signed content.
 
@@ -450,11 +445,10 @@ It detects unauthorized changes and validates the signed content.
 
 ---
 
-**Q3.**
-Why must the integrity boundary be understood?
+### Q19. Why must the integrity boundary be understood?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 To identify which data is covered by verification and where trust is
 established.
@@ -463,11 +457,10 @@ established.
 
 ---
 
-**Q4.**
-Why are "readable" and "accepted" different concepts?
+### Q20. Why are "readable" and "accepted" different concepts?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Readable means the content is not confidential. Accepted means the relevant
 verification and policy checks succeeded.
