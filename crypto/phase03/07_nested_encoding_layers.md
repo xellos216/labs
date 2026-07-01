@@ -1,4 +1,17 @@
-# Nested Wrappers
+# Session 07 — Nested Encoding Layers
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 03
+Session: 07
+Title: Nested Encoding Layers
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -168,7 +181,7 @@ Many practical problems become:
 nested layer tracing problems
 ```
 
-# QA
+# Review Questions
 
 ## Step 1 — Observe Structure
 
@@ -182,8 +195,7 @@ D = b'WlhsS2FHRkhNbkJpU1Raa1NrcDFaM2s9'
 ````
 
 
-**Q1.**
-What does each value look like?
+### Q1. What does each value look like?
 
 * raw bytes
 * JSON-like
@@ -192,7 +204,7 @@ What does each value look like?
 * layered printable encoding
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 A = JSON-like
 
@@ -206,11 +218,10 @@ D = base64 wrapper
 
 ---
 
-**Q2.**
-Which value most directly resembles structured data?
+### Q2. Which value most directly resembles structured data?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 A
 
@@ -218,11 +229,10 @@ A
 
 ---
 
-**Q3.**
-Which values resemble nested wrappers?
+### Q3. Which values resemble nested wrappers?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 C, D
 
@@ -241,11 +251,10 @@ JSON
 ```
 
 
-**Q1.**
-What is the outermost layer?
+### Q4. What is the outermost layer?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 outermost layer = base64
 
@@ -253,11 +262,10 @@ outermost layer = base64
 
 ---
 
-**Q2.**
-Which state is likely after the first reversal?
+### Q5. Which state is likely after the first reversal?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 hex wrapper
 
@@ -265,11 +273,10 @@ hex wrapper
 
 ---
 
-**Q3.**
-Why can printable wrappers be nested multiple times?
+### Q6. Why can printable wrappers be nested multiple times?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because wrappers change representation rather than the underlying semantic
 content. They provide printable, transport-safe forms.
@@ -288,11 +295,10 @@ D = b'91af23d1'
 ```
 
 
-**Q1.**
-Which value contains actual JSON bytes?
+### Q7. Which value contains actual JSON bytes?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 A
 
@@ -300,11 +306,10 @@ A
 
 ---
 
-**Q2.**
-Which value is JSON wrapped in hexadecimal?
+### Q8. Which value is JSON wrapped in hexadecimal?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 B
 
@@ -312,11 +317,10 @@ B
 
 ---
 
-**Q3.**
-Which value is JSON wrapped in Base64?
+### Q9. Which value is JSON wrapped in Base64?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 C
 
@@ -337,11 +341,10 @@ c = base64.b64encode(b.encode())
 ```
 
 
-**Q1.**
-What is the semantic meaning of `a`?
+### Q10. What is the semantic meaning of `a`?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 base64 wrapper
 
@@ -349,11 +352,10 @@ base64 wrapper
 
 ---
 
-**Q2.**
-What is the semantic meaning of `b`?
+### Q11. What is the semantic meaning of `b`?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 hex wrapper str
 
@@ -361,11 +363,10 @@ hex wrapper str
 
 ---
 
-**Q3.**
-What is the semantic meaning of `c`?
+### Q12. What is the semantic meaning of `c`?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 base64 wrapper around hex-wrapper-bytes
 
@@ -373,11 +374,10 @@ base64 wrapper around hex-wrapper-bytes
 
 ---
 
-**Q4.**
-Where does the actual payload currently exist?
+### Q13. Where does the actual payload currently exist?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 x
 
@@ -392,11 +392,10 @@ token = b'5a586c4b61474648626d4a7053545a6b536b70315a336b39'
 ```
 
 
-**Q1.**
-What does this value look like?
+### Q14. What does this value look like?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 hexstr-like-wrapper
 
@@ -404,11 +403,10 @@ hexstr-like-wrapper
 
 ---
 
-**Q2.**
-What is the first reversal?
+### Q15. What is the first reversal?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 bytes.fromhex()
 
@@ -416,11 +414,10 @@ bytes.fromhex()
 
 ---
 
-**Q3.**
-Which fingerprints should be inspected next?
+### Q16. Which fingerprints should be inspected next?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 base64-like, JSON-like, ...
 
@@ -428,11 +425,10 @@ base64-like, JSON-like, ...
 
 ---
 
-**Q4.**
-Why is semantic state tracking important?
+### Q17. Why is semantic state tracking important?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Because representations can be nested repeatedly, and values with the same
 `bytes` type may have completely different semantic states.
