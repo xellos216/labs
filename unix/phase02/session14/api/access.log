@@ -1,0 +1,4 @@
+200 /api/users
+403 /api/admin
+404 /api/none
+500 /api/error
