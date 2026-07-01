@@ -1,4 +1,17 @@
-# Phase 01 Review
+# Session 16 — Phase Review Lab — Reconstructing a Web Token Flow
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 03
+Session: 16
+Title: Phase Review Lab — Reconstructing a Web Token Flow
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Goal
 
@@ -32,13 +45,14 @@ modifiable != valid after modification
 signature present != verification passed
 ```
 
-# QA
+# Review Questions
 
 ## Step 1 — Complete Pipeline
 
-**Q1.** What does each analysis layer describe?
+### Q1. What does each analysis layer describe?
 
-<details><summary><strong>A1.</strong></summary>
+<details>
+<summary>A</summary>
 
 Representation describes the visible form; structure describes organization;
 semantic role describes purpose; capability describes possible actions; and
@@ -48,9 +62,10 @@ verification state describes the result of security checks.
 
 ---
 
-**Q2.** Why are representation and semantic role different?
+### Q2. Why are representation and semantic role different?
 
-<details><summary><strong>A2.</strong></summary>
+<details>
+<summary>A</summary>
 
 Representation describes appearance, while semantic role describes purpose.
 
@@ -58,9 +73,10 @@ Representation describes appearance, while semantic role describes purpose.
 
 ---
 
-**Q3.** Why are semantic role and capability different?
+### Q3. Why are semantic role and capability different?
 
-<details><summary><strong>A3.</strong></summary>
+<details>
+<summary>A</summary>
 
 A role belongs to data; a capability belongs to an actor or process.
 
@@ -68,9 +84,10 @@ A role belongs to data; a capability belongs to an actor or process.
 
 ---
 
-**Q4.** Why are capability and verification state different?
+### Q4. Why are capability and verification state different?
 
-<details><summary><strong>A4.</strong></summary>
+<details>
+<summary>A</summary>
 
 The ability to attempt an action does not establish its result.
 
@@ -80,9 +97,10 @@ The ability to attempt an action does not establish its result.
 
 ## Step 2 — Classification Drill
 
-**Q1.** Which items are representations?
+### Q5. Which items are representations?
 
-<details><summary><strong>A1.</strong></summary>
+<details>
+<summary>A</summary>
 
 Base64 wrapper and hexadecimal wrapper.
 
@@ -90,9 +108,10 @@ Base64 wrapper and hexadecimal wrapper.
 
 ---
 
-**Q2.** Which items describe structure?
+### Q6. Which items describe structure?
 
-<details><summary><strong>A2.</strong></summary>
+<details>
+<summary>A</summary>
 
 JWT-like organization, segment count, and delimiters.
 
@@ -100,9 +119,10 @@ JWT-like organization, segment count, and delimiters.
 
 ---
 
-**Q3.** Which items are semantic roles?
+### Q7. Which items are semantic roles?
 
-<details><summary><strong>A3.</strong></summary>
+<details>
+<summary>A</summary>
 
 Metadata, payload, and signature.
 
@@ -110,9 +130,10 @@ Metadata, payload, and signature.
 
 ---
 
-**Q4.** Which items are capabilities?
+### Q8. Which items are capabilities?
 
-<details><summary><strong>A4.</strong></summary>
+<details>
+<summary>A</summary>
 
 Observation, modification, and verification.
 
@@ -120,9 +141,10 @@ Observation, modification, and verification.
 
 ---
 
-**Q5.** Which items are verification states?
+### Q9. Which items are verification states?
 
-<details><summary><strong>A5.</strong></summary>
+<details>
+<summary>A</summary>
 
 Trusted, untrusted, unknown, failed, and passed.
 
@@ -140,9 +162,10 @@ token = (
 )
 ```
 
-**Q1.** What is the representation?
+### Q10. What is the representation?
 
-<details><summary><strong>A1.</strong></summary>
+<details>
+<summary>A</summary>
 
 Printable Base64-like segments.
 
@@ -150,9 +173,10 @@ Printable Base64-like segments.
 
 ---
 
-**Q2.** What is the structure?
+### Q11. What is the structure?
 
-<details><summary><strong>A2.</strong></summary>
+<details>
+<summary>A</summary>
 
 A three-segment, dot-delimited JWT-like structure.
 
@@ -160,9 +184,10 @@ A three-segment, dot-delimited JWT-like structure.
 
 ---
 
-**Q3.** What are the likely semantic roles?
+### Q12. What are the likely semantic roles?
 
-<details><summary><strong>A3.</strong></summary>
+<details>
+<summary>A</summary>
 
 Segment 0 is header-like metadata, segment 1 is claims-like payload, and
 segment 2 is signature-like integrity data.
@@ -171,9 +196,10 @@ segment 2 is signature-like integrity data.
 
 ---
 
-**Q4.** Is the verification state known?
+### Q13. Is the verification state known?
 
-<details><summary><strong>A4.</strong></summary>
+<details>
+<summary>A</summary>
 
 No. It remains unknown until verification is performed.
 
@@ -183,9 +209,10 @@ No. It remains unknown until verification is performed.
 
 ## Step 4 — Common Mistakes
 
-**Q1.** Why is `readable = trusted` wrong?
+### Q14. Why is `readable = trusted` wrong?
 
-<details><summary><strong>A1.</strong></summary>
+<details>
+<summary>A</summary>
 
 Readable content may be forged or modified.
 
@@ -193,9 +220,10 @@ Readable content may be forged or modified.
 
 ---
 
-**Q2.** Why is `payload = capability` wrong?
+### Q15. Why is `payload = capability` wrong?
 
-<details><summary><strong>A2.</strong></summary>
+<details>
+<summary>A</summary>
 
 Payload is a semantic role; capability describes what an actor can do.
 
@@ -203,9 +231,10 @@ Payload is a semantic role; capability describes what an actor can do.
 
 ---
 
-**Q3.** Why is `signature exists = verification passed` wrong?
+### Q16. Why is `signature exists = verification passed` wrong?
 
-<details><summary><strong>A3.</strong></summary>
+<details>
+<summary>A</summary>
 
 The signature may be invalid and has not necessarily been checked.
 
@@ -213,9 +242,10 @@ The signature may be invalid and has not necessarily been checked.
 
 ---
 
-**Q4.** Why is `modifiable = valid after modification` wrong?
+### Q17. Why is `modifiable = valid after modification` wrong?
 
-<details><summary><strong>A4.</strong></summary>
+<details>
+<summary>A</summary>
 
 Modification can invalidate authentication data.
 
@@ -225,9 +255,10 @@ Modification can invalidate authentication data.
 
 ## Step 5 — Final Mental Model
 
-**Q1.** What should happen first when a new token is observed?
+### Q18. What should happen first when a new token is observed?
 
-<details><summary><strong>A1.</strong></summary>
+<details>
+<summary>A</summary>
 
 Fingerprint its representation and visible structure.
 
@@ -235,9 +266,10 @@ Fingerprint its representation and visible structure.
 
 ---
 
-**Q2.** Why peel only one layer before inspecting again?
+### Q19. Why peel only one layer before inspecting again?
 
-<details><summary><strong>A2.</strong></summary>
+<details>
+<summary>A</summary>
 
 Each peel can reveal a new semantic state requiring a different next step.
 
@@ -245,9 +277,10 @@ Each peel can reveal a new semantic state requiring a different next step.
 
 ---
 
-**Q3.** Why does verification state come last?
+### Q20. Why does verification state come last?
 
-<details><summary><strong>A3.</strong></summary>
+<details>
+<summary>A</summary>
 
 The relevant representation, structure, roles, algorithm, and key context
 must be known before a trust decision can be made.
@@ -256,9 +289,10 @@ must be known before a trust decision can be made.
 
 ---
 
-**Q4.** Summarize Phase 01 in one sentence.
+### Q21. Summarize Phase 01 in one sentence.
 
-<details><summary><strong>A4.</strong></summary>
+<details>
+<summary>A</summary>
 
 Track each layer, separate purpose from capability, and never infer trust
 without verification.
