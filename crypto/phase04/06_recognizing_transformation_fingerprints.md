@@ -1,4 +1,17 @@
-# Token Fingerprinting
+# Session 06 — Recognizing Transformation Fingerprints
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 04
+Session: 06
+Title: Recognizing Transformation Fingerprints
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Idea
 
@@ -204,7 +217,7 @@ Most analysis problems become:
 layer tracing problems
 ```
 
-# QA
+# Review Questions
 
 ## Step 1 — Visual Fingerprinting
 
@@ -218,11 +231,10 @@ D = "U0dWc2JHOD0="
 E = "7b2261646d696e223a747275657d"
 ````
 
-**Q1.**
-Which values look hexadecimal?
+### Q1. Which values look hexadecimal?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 A, C
 
@@ -230,11 +242,10 @@ A, C
 
 ---
 
-**Q2.**
-Which values look like Base64?
+### Q2. Which values look like Base64?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 B, D
 
@@ -242,11 +253,10 @@ B, D
 
 ---
 
-**Q3.**
-Which value may decode into JSON?
+### Q3. Which value may decode into JSON?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 E, JSON fingerprint sign
 
@@ -254,11 +264,10 @@ E, JSON fingerprint sign
 
 ---
 
-**Q4.**
-Which value appears to contain another printable layer inside Base64?
+### Q4. Which value appears to contain another printable layer inside Base64?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 D
 
@@ -274,11 +283,10 @@ token
 aGVsbG8=
 ```
 
-**Q1.**
-Which transformation most likely produced this token?
+### Q5. Which transformation most likely produced this token?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 base64
 
@@ -286,11 +294,10 @@ base64
 
 ---
 
-**Q2.**
-What should be attempted first during analysis?
+### Q6. What should be attempted first during analysis?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 base64.b64decode()
 
@@ -298,11 +305,10 @@ base64.b64decode()
 
 ---
 
-**Q3.**
-What data state is likely after Base64 decoding?
+### Q7. What data state is likely after Base64 decoding?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 printable raw bytes, printable-like bytes
 
@@ -319,11 +325,10 @@ plaintext
 → token
 ```
 
-**Q1.**
-Why might hexadecimal conversion appear before Base64?
+### Q8. Why might hexadecimal conversion appear before Base64?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because `.hex()` returns a string, which can be encoded to bytes and then
 wrapped in Base64 for transport.
@@ -332,11 +337,10 @@ wrapped in Base64 for transport.
 
 ---
 
-**Q2.**
-What feature is likely to appear after Base64 decoding?
+### Q9. What feature is likely to appear after Base64 decoding?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 printable, human-readable patterns
 
@@ -344,11 +348,10 @@ printable, human-readable patterns
 
 ---
 
-**Q3.**
-How can a "hex inside Base64" structure be recognized?
+### Q10. How can a "hex inside Base64" structure be recognized?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 The decoded text contains only hexadecimal characters and has a plausible
 even length.
@@ -376,11 +379,10 @@ Possible states:
 * printable wrapper bytes
 
 
-**Q1.**
-State of `A`:
+### Q11. State of `A`:
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 raw bytes
 
@@ -388,11 +390,10 @@ raw bytes
 
 ---
 
-**Q2.**
-State of `B`:
+### Q12. State of `B`:
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 human-readable hex wrapper
 
@@ -400,10 +401,10 @@ human-readable hex wrapper
 
 ---
 
-**Q3.**
-State of `C`:
+### Q13. State of `C`:
+
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 hex wrapper
 
@@ -411,11 +412,10 @@ hex wrapper
 
 ---
 
-**Q4.**
-State of `D`:
+### Q14. State of `D`:
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 printable wrapper bytes
 
@@ -423,11 +423,10 @@ printable wrapper bytes
 
 ---
 
-**Q5.**
-State of `E`:
+### Q15. State of `E`:
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 raw bytes
 
@@ -441,8 +440,7 @@ Make a prediction before fully decoding the value.
 token = b"4d5467794d7a5131"
 ```
 
-**Q1.**
-What does this value look like?
+### Q16. What does this value look like?
 
 * raw cipher bytes
 * hex
@@ -450,7 +448,7 @@ What does this value look like?
 * layered printable encoding
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 layered printable encoding
 
@@ -458,11 +456,10 @@ layered printable encoding
 
 ---
 
-**Q2.**
-What should be attempted first?
+### Q17. What should be attempted first?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 bytes.fromhex()
 
@@ -470,11 +467,10 @@ bytes.fromhex()
 
 ---
 
-**Q3.**
-What kind of data may appear next?
+### Q18. What kind of data may appear next?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 A printable string that may itself be Base64-like.
 
