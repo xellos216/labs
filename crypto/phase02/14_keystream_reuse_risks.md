@@ -1,4 +1,17 @@
-# Keystream Reuse
+# Session 14 — Keystream Reuse Risks
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 02
+Session: 14
+Title: Keystream Reuse Risks
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -147,7 +160,7 @@ I have byte relationships caused by keystream reuse
 
 That shift is essential for understanding both attacks and safe design.
 
-# QA
+# Review Questions
 
 ## Step 1 — Keystream Observation
 
@@ -162,11 +175,10 @@ cipher = bytes([
 ])
 ```
 
-**Q1.**
-Why is the length preserved?
+### Q1. Why is the length preserved?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because XOR transforms one byte at each position without changing the number
 of bytes.
@@ -175,11 +187,10 @@ of bytes.
 
 ---
 
-**Q2.**
-What does the effective key sequence look like?
+### Q2. What does the effective key sequence look like?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 A repeated keystream such as `KEYKE`.
 
@@ -187,11 +198,10 @@ A repeated keystream such as `KEYKE`.
 
 ---
 
-**Q3.**
-Is the primary focus of this session the ciphertext or the keystream?
+### Q3. Is the primary focus of this session the ciphertext or the keystream?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 keystream
 
@@ -208,11 +218,10 @@ recovered = bytes([
 ])
 ```
 
-**Q1.**
-Why does `plaintext ^ cipher` recover the keystream?
+### Q4. Why does `plaintext ^ cipher` recover the keystream?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because `cipher = plaintext ^ keystream`; XORing with the plaintext again
 cancels the plaintext and leaves the keystream.
@@ -221,11 +230,10 @@ cancels the plaintext and leaves the keystream.
 
 ---
 
-**Q2.**
-Why might the result contain a repeating pattern?
+### Q5. Why might the result contain a repeating pattern?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Because a short key is repeated to form the keystream.
 
@@ -233,11 +241,10 @@ Because a short key is repeated to form the keystream.
 
 ---
 
-**Q3.**
-Why is known plaintext important?
+### Q6. Why is known plaintext important?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because it directly recovers the keystream segment used over the known
 plaintext range.
@@ -252,11 +259,10 @@ Determine what increases in the following code as `known` grows.
 partial = bytes([cipher[i] ^ known[i] for i in range(len(known))])
 ```
 
-**Q1.**
-What increases as `known` becomes longer?
+### Q7. What increases as `known` becomes longer?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 The recoverable keystream segment.
 
@@ -264,11 +270,10 @@ The recoverable keystream segment.
 
 ---
 
-**Q2.**
-Why is the complete key not always recovered immediately?
+### Q8. Why is the complete key not always recovered immediately?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Because only the keystream positions covered by known plaintext are exposed.
 
@@ -276,11 +281,10 @@ Because only the keystream positions covered by known plaintext are exposed.
 
 ---
 
-**Q3.**
-Why is partial information still dangerous?
+### Q9. Why is partial information still dangerous?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because it may help analyze or forge data at matching positions in other
 ciphertexts.
@@ -295,11 +299,10 @@ Determine what remains after the following operation.
 x = bytes([c1[i] ^ c2[i] for i in range(len(c1))])
 ```
 
-**Q1.**
-Is `x` the key or another relationship?
+### Q10. Is `x` the key or another relationship?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 It is `p1 ^ p2`, which remains after the shared keystream cancels.
 
@@ -307,11 +310,10 @@ It is `p1 ^ p2`, which remains after the shared keystream cancels.
 
 ---
 
-**Q2.**
-Why is this value useful for analysis?
+### Q11. Why is this value useful for analysis?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Because it can reveal differences and structural relationships between the
 two plaintexts.
@@ -320,11 +322,10 @@ two plaintexts.
 
 ---
 
-**Q3.**
-Why is this called a reuse problem?
+### Q12. Why is this called a reuse problem?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because the same keystream is used for multiple messages.
 
@@ -348,11 +349,10 @@ Possible states:
 * recovered keystream
 * plaintext relation
 
-**Q1.**
-State of `A`:
+### Q13. State of `A`:
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 plaintext bytes
 
@@ -360,11 +360,10 @@ plaintext bytes
 
 ---
 
-**Q2.**
-State of `B`:
+### Q14. State of `B`:
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 cipher bytes
 
@@ -372,11 +371,10 @@ cipher bytes
 
 ---
 
-**Q3.**
-State of `C`:
+### Q15. State of `C`:
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 recovered keystream
 
@@ -384,11 +382,10 @@ recovered keystream
 
 ---
 
-**Q4.**
-State of `D`:
+### Q16. State of `D`:
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 plaintext relation
 
