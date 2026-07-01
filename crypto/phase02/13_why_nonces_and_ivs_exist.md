@@ -1,4 +1,17 @@
-# Session 08 — Why Nonces and IVs Exist
+# Session 13 — Why Nonces and IVs Exist
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 02
+Session: 13
+Title: Why Nonces and IVs Exist
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Objective
 
@@ -142,80 +155,58 @@ The purpose of a Nonce or IV is **not to store the keystream**, but to ensure th
 
 ---
 
-# QA
+# Review Questions
 
-### Q1
-
-Why is reusing the same keystream dangerous in a stream cipher?
+### Q1. Why is reusing the same keystream dangerous in a stream cipher?
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q2
-
-Simplify the following expression:
+### Q2. Simplify the following expression:
 
 ```text
 (P₁ XOR K) XOR (P₂ XOR K)
 ```
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q3
-
-Why doesn't an attacker immediately recover both plaintexts after obtaining `P₁ XOR P₂`?
+### Q3. Why doesn't an attacker immediately recover both plaintexts after obtaining `P₁ XOR P₂`?
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q4
-
-What additional information often allows an attacker to recover plaintext after keystream reuse?
+### Q4. What additional information often allows an attacker to recover plaintext after keystream reuse?
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q5
-
-Why are Nonces or IVs used together with a secret key?
+### Q5. Why are Nonces or IVs used together with a secret key?
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q6
-
-Complete the following pipeline.
+### Q6. Complete the following pipeline.
 
 ```text
 Secret Key
@@ -230,9 +221,7 @@ Ciphertext
 ```
 
 <details>
-<summary><strong>A</strong></summary>
-
-&nbsp;
+<summary>A</summary>
 
 </details>
 
