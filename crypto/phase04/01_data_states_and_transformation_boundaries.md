@@ -1,4 +1,17 @@
-# Data States
+# Session 01 — Data States and Transformation Boundaries
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 04
+Session: 01
+Title: Data States and Transformation Boundaries
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -185,7 +198,7 @@ That habit becomes essential once tokens contain:
 * nested encodings
 * mixed printable and raw states
 
-# QA
+# Review Questions
 
 ## Step 1 — Wrapper Versus Real Data
 
@@ -195,11 +208,10 @@ Determine whether the following value is actual data or a wrapper.
 x = b'68656c6c6f'
 ```
 
-**Q1.**
-Is `x` actual plaintext bytes or another form of representation?
+### Q1. Is `x` actual plaintext bytes or another form of representation?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Wrapper bytes representing the plaintext.
 
@@ -207,11 +219,10 @@ Wrapper bytes representing the plaintext.
 
 ---
 
-**Q2.**
-What is the type returned by `x.decode()`?
+### Q2. What is the type returned by `x.decode()`?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 str
 
@@ -219,11 +230,10 @@ str
 
 ---
 
-**Q3.**
-What does the value mean after `x.decode()`?
+### Q3. What does the value mean after `x.decode()`?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 human-readable hex wrapper
 
@@ -239,11 +249,10 @@ y = x.decode()
 z = bytes.fromhex(y)
 ```
 
-**Q1.**
-What is the type of `y`?
+### Q4. What is the type of `y`?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 str
 
@@ -251,11 +260,10 @@ str
 
 ---
 
-**Q2.**
-What is the type of `z`?
+### Q5. What is the type of `z`?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 bytes
 
@@ -263,11 +271,10 @@ bytes
 
 ---
 
-**Q3.**
-What data state does `z` represent?
+### Q6. What data state does `z` represent?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 restored raw bytes
 
@@ -275,11 +282,10 @@ restored raw bytes
 
 ---
 
-**Q4.**
-Why is `fromhex()` required?
+### Q7. Why is `fromhex()` required?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 To restore actual bytes from the hexadecimal wrapper.
 
@@ -298,11 +304,10 @@ print(bytes.fromhex(x.decode()))
 print(bytes.fromhex(x.decode()).decode())
 ```
 
-**Q1.**
-What does the first output show?
+### Q8. What does the first output show?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 printable wrapper bytes
 
@@ -310,11 +315,10 @@ printable wrapper bytes
 
 ---
 
-**Q2.**
-What does the second output show?
+### Q9. What does the second output show?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 human-readable hex string
 
@@ -322,11 +326,10 @@ human-readable hex string
 
 ---
 
-**Q3.**
-What does the third output show?
+### Q10. What does the third output show?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 restored raw bytes
 
@@ -334,11 +337,10 @@ restored raw bytes
 
 ---
 
-**Q4.**
-What does the fourth output show?
+### Q11. What does the fourth output show?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 human-readable plaintext
 
@@ -360,11 +362,10 @@ fromhex()
 raw bytes
 ```
 
-**Q1.**
-Why is `decode()` required first?
+### Q12. Why is `decode()` required first?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because the current value is wrapper content stored as bytes.
 
@@ -372,11 +373,10 @@ Because the current value is wrapper content stored as bytes.
 
 ---
 
-**Q2.**
-Why must `fromhex()` come next?
+### Q13. Why must `fromhex()` come next?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Because the hexadecimal text must be converted back into actual bytes.
 
@@ -384,11 +384,10 @@ Because the hexadecimal text must be converted back into actual bytes.
 
 ---
 
-**Q3.**
-What is the key skill demonstrated by this flow?
+### Q14. What is the key skill demonstrated by this flow?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Reversing one layer at a time while distinguishing type from semantic state.
 
@@ -412,11 +411,10 @@ Possible states:
 * printable wrapper bytes
 * restored raw bytes
 
-**Q1.**
-State of `A`:
+### Q15. State of `A`:
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 raw bytes
 
@@ -424,11 +422,10 @@ raw bytes
 
 ---
 
-**Q2.**
-State of `B`:
+### Q16. State of `B`:
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 human-readable hex wrapper
 
@@ -436,11 +433,10 @@ human-readable hex wrapper
 
 ---
 
-**Q3.**
-State of `C`:
+### Q17. State of `C`:
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 printable wrapper bytes
 
@@ -448,11 +444,10 @@ printable wrapper bytes
 
 ---
 
-**Q4.**
-State of `D`:
+### Q18. State of `D`:
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 restored raw bytes
 
