@@ -1,4 +1,17 @@
-# Session 05 — Detecting Repeating Patterns
+# Session 07 — Detecting Repeating Patterns
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 02
+Session: 07
+Title: Detecting Repeating Patterns
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Objective
 
@@ -112,14 +125,12 @@ Observation comes before recovery.
 
 ---
 
-# QA
+# Review Questions
 
-### Q1
-
-What is a repeating pattern in the context of Repeating-Key XOR?
+### Q1. What is a repeating pattern in the context of Repeating-Key XOR?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 A pattern that appears again and again because a short key is reused.
 
@@ -128,12 +139,10 @@ A pattern that appears again and again because a short key is reused.
 
 ---
 
-### Q2
-
-Why is key length important when analyzing Repeating-Key XOR?
+### Q2. Why is key length important when analyzing Repeating-Key XOR?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Because the key length determines how often the pattern repeats
 
@@ -142,12 +151,10 @@ Because the key length determines how often the pattern repeats
 
 ---
 
-### Q3
-
-What observation might suggest that a short key is being reused?
+### Q3. What observation might suggest that a short key is being reused?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 repeated structures, repeated relationships, periodic patterns
 
@@ -156,12 +163,10 @@ repeated structures, repeated relationships, periodic patterns
 
 ---
 
-### Q4
-
-Why does a repeating key sometimes leave detectable patterns?
+### Q4. Why does a repeating key sometimes leave detectable patterns?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Because the same key bytes are reused again and again
 
@@ -170,12 +175,10 @@ Because the same key bytes are reused again and again
 
 ---
 
-### Q5
-
-Why is Repeating-Key XOR generally weaker than using a completely unique key for every byte?
+### Q5. Why is Repeating-Key XOR generally weaker than using a completely unique key for every byte?
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Repeated key usage can create:
 
@@ -189,12 +192,10 @@ observable structure
 
 ---
 
-### Q6
-
-In one sentence, explain why pattern detection is useful in crypto analysis.
+### Q6. In one sentence, explain why pattern detection is useful in crypto analysis.
 
 <details>
-<summary><strong>A</strong></summary>
+<summary>A</summary>
 
 Patterns may reveal key reuse and transformation behavior
 
