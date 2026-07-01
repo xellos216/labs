@@ -1,4 +1,17 @@
-# Layer Peeling
+# Session 05 — Layer Peeling by Observation
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 04
+Session: 05
+Title: Layer Peeling by Observation
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -203,7 +216,7 @@ Often become:
 layer tracing problems
 ```
 
-# QA
+# Review Questions
 
 ## Step 1 — Observe Before Decoding
 
@@ -215,8 +228,7 @@ B = b"614756736247383d"
 C = b"65794a68624763694f694a49557a49314e694a39"
 ````
 
-**Q1.**
-What does each value look like?
+### Q1. What does each value look like?
 
 * raw bytes
 * hex wrapper
@@ -224,7 +236,7 @@ What does each value look like?
 * layered printable encoding
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 A: layered printable encoding
 
@@ -236,11 +248,10 @@ C: layered printable encoding
 
 ---
 
-**Q2.**
-Why do these values not look like raw ciphertext bytes?
+### Q2. Why do these values not look like raw ciphertext bytes?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Because they consist only of printable hexadecimal characters.
 
@@ -248,11 +259,10 @@ Because they consist only of printable hexadecimal characters.
 
 ---
 
-**Q3.**
-Which transformation should be attempted first?
+### Q3. Which transformation should be attempted first?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 bytes.fromhex()
 
@@ -276,11 +286,10 @@ token = b"614756736247383d"
 ```
 
 
-**Q1.**
-What is the current token state?
+### Q4. What is the current token state?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 hex str wrapper
 
@@ -288,11 +297,10 @@ hex str wrapper
 
 ---
 
-**Q2.**
-What is the first reversal step?
+### Q5. What is the first reversal step?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 bytes.fromhex()
 
@@ -300,11 +308,10 @@ bytes.fromhex()
 
 ---
 
-**Q3.**
-What form of data is likely to appear afterward?
+### Q6. What form of data is likely to appear afterward?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 base64 wrapper
 
@@ -312,11 +319,10 @@ base64 wrapper
 
 ---
 
-**Q4.**
-Which reversal should follow?
+### Q7. Which reversal should follow?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 base64.b64decode()
 
@@ -335,11 +341,10 @@ plaintext
 → token
 ```
 
-**Q1.**
-Where is the raw binary-like state?
+### Q8. Where is the raw binary-like state?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 raw cipher bytes
 
@@ -347,11 +352,10 @@ raw cipher bytes
 
 ---
 
-**Q2.**
-Where does the human-readable state begin?
+### Q9. Where does the human-readable state begin?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 hex
 
@@ -359,11 +363,10 @@ hex
 
 ---
 
-**Q3.**
-Which layer serves as the printable transport representation?
+### Q10. Which layer serves as the printable transport representation?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 base64
 
@@ -384,11 +387,10 @@ c = b.encode()
 ```
 
 
-**Q1.**
-What is the semantic meaning of `a`?
+### Q11. What is the semantic meaning of `a`?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 base64 wrapper
 
@@ -396,11 +398,10 @@ base64 wrapper
 
 ---
 
-**Q2.**
-What is the semantic meaning of `b`?
+### Q12. What is the semantic meaning of `b`?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 hex wrapper
 
@@ -408,11 +409,10 @@ hex wrapper
 
 ---
 
-**Q3.**
-Is `c` a raw payload or a wrapper representation?
+### Q13. Is `c` a raw payload or a wrapper representation?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 wrapper representation
 
@@ -420,11 +420,10 @@ wrapper representation
 
 ---
 
-**Q4.**
-What is the current outermost layer?
+### Q14. What is the current outermost layer?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 hex wrapper bytes (b'hexstr')
 
@@ -440,11 +439,10 @@ ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKemRXSWlPaUpoWkcxcGJpSjku
 ```
 
 
-**Q1.**
-What does this value look like visually?
+### Q15. What does this value look like visually?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 base64-like printable wrapper
 
@@ -452,11 +450,10 @@ base64-like printable wrapper
 
 ---
 
-**Q2.**
-What should be attempted first?
+### Q16. What should be attempted first?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 base64.b64decode()
 
@@ -464,11 +461,10 @@ base64.b64decode()
 
 ---
 
-**Q3.**
-Which features should be inspected after decoding?
+### Q17. Which features should be inspected after decoding?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 printable, structured, JSON-like, hex-like, another base64, compressed
 
@@ -476,11 +472,10 @@ printable, structured, JSON-like, hex-like, another base64, compressed
 
 ---
 
-**Q4.**
-Why should you avoid decoding every layer at once?
+### Q18. Why should you avoid decoding every layer at once?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Because the semantic state of the decoded result is not yet known.
 
