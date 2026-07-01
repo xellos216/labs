@@ -1,4 +1,17 @@
-# XOR Cookie
+# Session 06 — Reconstructing Cookie Pipelines
+
+## Metadata
+
+```yaml
+Roadmap: Cryptography
+Phase: 03
+Session: 06
+Title: Reconstructing Cookie Pipelines
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Concept
 
@@ -167,7 +180,7 @@ Often the correct workflow is:
 3. ask what real transformation remains
 ```
 
-# QA
+# Review Questions
 
 ## Step 1 — Wrapper Recognition
 
@@ -179,11 +192,10 @@ raw = text.encode()
 token = base64.b64encode(raw)
 ```
 
-**Q1.**
-Why is `encode()` called before `b64encode()`?
+### Q1. Why is `encode()` called before `b64encode()`?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because `base64.b64encode()` expects a bytes-like input.
 
@@ -191,11 +203,10 @@ Because `base64.b64encode()` expects a bytes-like input.
 
 ---
 
-**Q2.**
-What is the actual type of `token`, even if it looks textual?
+### Q2. What is the actual type of `token`, even if it looks textual?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 bytes
 
@@ -203,11 +214,10 @@ bytes
 
 ---
 
-**Q3.**
-Why does Base64 output look printable?
+### Q3. Why does Base64 output look printable?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because the Base64 alphabet consists of printable ASCII characters.
 
@@ -222,11 +232,10 @@ raw = base64.b64decode(token)
 plain = raw.decode()
 ```
 
-**Q1.**
-Why does `b64decode()` not return a `str` directly?
+### Q4. Why does `b64decode()` not return a `str` directly?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because Base64 decoding restores the original raw bytes.
 
@@ -234,11 +243,10 @@ Because Base64 decoding restores the original raw bytes.
 
 ---
 
-**Q2.**
-What is the next step for viewing the result as human-readable text?
+### Q5. What is the next step for viewing the result as human-readable text?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 `decode()`
 
@@ -246,11 +254,10 @@ What is the next step for viewing the result as human-readable text?
 
 ---
 
-**Q3.**
-Does analysis always end after Base64 decoding?
+### Q6. Does analysis always end after Base64 decoding?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 No. Inner transformations or wrappers such as XOR or hexadecimal may remain.
 
@@ -267,11 +274,10 @@ cipher = bytes([x ^ key for x in plaintext])
 token = base64.b64encode(cipher)
 ```
 
-**Q1.**
-Which operation performs the actual encryption-like transformation?
+### Q7. Which operation performs the actual encryption-like transformation?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 XOR
 
@@ -279,11 +285,10 @@ XOR
 
 ---
 
-**Q2.**
-What role does Base64 play?
+### Q8. What role does Base64 play?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 It is a wrapper that converts raw ciphertext bytes into a printable
 representation.
@@ -292,11 +297,10 @@ representation.
 
 ---
 
-**Q3.**
-Why does the token look like a printable string?
+### Q9. Why does the token look like a printable string?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because Base64 is applied as the outermost wrapper.
 
@@ -311,11 +315,10 @@ raw = base64.b64decode(token)
 recovered = bytes([x ^ key for x in raw])
 ```
 
-**Q1.**
-Why does Base64 decoding alone not produce plaintext?
+### Q10. Why does Base64 decoding alone not produce plaintext?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Because the decoded result is still XOR-transformed ciphertext bytes.
 
@@ -323,11 +326,10 @@ Because the decoded result is still XOR-transformed ciphertext bytes.
 
 ---
 
-**Q2.**
-At which step does actual plaintext recovery occur?
+### Q11. At which step does actual plaintext recovery occur?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 At the XOR step that computes `cipher ^ key`.
 
@@ -335,11 +337,10 @@ At the XOR step that computes `cipher ^ key`.
 
 ---
 
-**Q3.**
-Why is the recovered result still `bytes`?
+### Q12. Why is the recovered result still `bytes`?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Because XOR operates on and returns bytes. Use `decode()` afterward if a text
 interpretation is appropriate.
@@ -364,11 +365,10 @@ Possible states:
 * cipher bytes
 * printable token wrapper
 
-**Q1.**
-State of `A`:
+### Q13. State of `A`:
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 raw plaintext bytes
 
@@ -376,11 +376,10 @@ raw plaintext bytes
 
 ---
 
-**Q2.**
-State of `B`:
+### Q14. State of `B`:
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 base64 wrapper
 
@@ -388,11 +387,10 @@ base64 wrapper
 
 ---
 
-**Q3.**
-State of `C`:
+### Q15. State of `C`:
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 cipher bytes
 
@@ -400,11 +398,10 @@ cipher bytes
 
 ---
 
-**Q4.**
-State of `D`:
+### Q16. State of `D`:
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 printable token wrapper
 
