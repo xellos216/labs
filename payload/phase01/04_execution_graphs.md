@@ -1,4 +1,17 @@
-# Pipeline Processes
+# Session 04 — Execution Graphs
+
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 01
+Session: 04
+Title: Execution Graphs
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Process Graph
 
@@ -58,13 +71,12 @@ Behavior varies by shell and options.
 4. Pipeline status policy is shell-dependent.
 5. State-changing builtins in pipelines require careful context analysis.
 
-# QA
+# Review Questions
 
-**Q1.**
-Why is `producer | filter | consumer` a process graph?
+### Q1. Why is `producer | filter | consumer` a process graph?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Each stage generally runs in its own execution context, and pipes connect the
 stdout of one process to the stdin of the next.
@@ -73,11 +85,10 @@ stdout of one process to the stdin of the next.
 
 ---
 
-**Q2.**
-What must the shell prepare before the pipeline can run usefully?
+### Q2. What must the shell prepare before the pipeline can run usefully?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 It must parse the pipeline, create pipes, create command processes, wire
 descriptors to pipe ends, and close unused descriptors.
@@ -86,11 +97,10 @@ descriptors to pipe ends, and close unused descriptors.
 
 ---
 
-**Q3.**
-Why can pipeline exit status be surprising?
+### Q3. Why can pipeline exit status be surprising?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Many shells report the final command's status by default. Options such as
 Bash `pipefail` can make earlier stage failures affect the pipeline status.
@@ -99,11 +109,10 @@ Bash `pipefail` can make earlier stage failures affect the pipeline status.
 
 ---
 
-**Q4.**
-Why are builtins in pipelines context-sensitive?
+### Q4. Why are builtins in pipelines context-sensitive?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Pipeline components may run in child contexts. A state-changing builtin such
 as `read` or `cd` may therefore not modify the parent shell.

@@ -1,4 +1,17 @@
-# Quote Parsing
+# Session 06 — Single and Double Quotes
+
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 01
+Session: 06
+Title: Single and Double Quotes
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Goal
 
@@ -492,13 +505,12 @@ input
 
 Never mix parser stages mentally.
 
-# QA
+# Review Questions
 
-**Q1.**
-Why do `;`, `&&`, `|`, `$`, and `$(...)` lose their shell behavior inside single quotes?
+### Q1. Why do `;`, `&&`, `|`, `$`, and `$(...)` lose their shell behavior inside single quotes?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Inside single quotes, almost all shell syntax becomes literal string data.
 For example:
@@ -513,11 +525,10 @@ Here, `;` is an ordinary character rather than an operator.
 
 ---
 
-**Q2.**
-Why can input such as `hello';id;'` break the quote boundary?
+### Q2. Why can input such as `hello';id;'` break the quote boundary?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 The quote supplied by the input closes the server-opened single quote. The
 parser then enters a state where:
@@ -532,11 +543,10 @@ and `; id ;` is interpreted as active shell syntax.
 
 ---
 
-**Q3.**
-Why is rebalancing with a trailing `;'` or `''` necessary?
+### Q3. Why is rebalancing with a trailing `;'` or `''` necessary?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 The complete command must remain syntactically balanced, including the quote
 appended by the server. For example:
@@ -557,11 +567,10 @@ consumes the trailing quote without a syntax error.
 
 ---
 
-**Q4.**
-Why is `;` literal inside double quotes while `$(id)` can still execute?
+### Q4. Why is `;` literal inside double quotes while `$(id)` can still execute?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Double quotes make command separators literal but still permit selected
 expansions:
@@ -585,11 +594,10 @@ still expand.
 
 ---
 
-**Q5.**
-Why are `${USER}` and `$(id)` fundamentally different?
+### Q5. Why are `${USER}` and `$(id)` fundamentally different?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 `${USER}` reads a variable, while `$(id)` starts a new command:
 
@@ -602,11 +610,10 @@ $(id)    -> command substitution
 
 ---
 
-**Q6.**
-When does `hello%24%28id%29` become `hello$(id)`?
+### Q6. When does `hello%24%28id%29` become `hello$(id)`?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
 After URL decoding at the HTTP layer:
 
@@ -625,11 +632,10 @@ server-side shell parses it.
 
 ---
 
-**Q7.**
-Why can decoded `hello&&id` remain literal text in the shell?
+### Q7. Why can decoded `hello&&id` remain literal text in the shell?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
 If `&&` remains inside double quotes, it is string data rather than a command
 separator. Both the parser stage and:
@@ -644,11 +650,10 @@ must be tracked.
 
 ---
 
-**Q8.**
-Why can `> /dev/null 2>&1` create the false impression that execution did not occur?
+### Q8. Why can `> /dev/null 2>&1` create the false impression that execution did not occur?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
 It is easy to confuse observable output with command execution:
 

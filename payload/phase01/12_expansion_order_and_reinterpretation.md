@@ -1,4 +1,17 @@
-# Expansion Order
+# Session 12 — Expansion Order and Reinterpretation
+
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 01
+Session: 12
+Title: Expansion Order and Reinterpretation
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Model
 
@@ -69,13 +82,12 @@ printf '%s\n' *.txt
 4. The final argv may differ significantly from the source text.
 5. Analyze intermediate parser states rather than only the typed command.
 
-# QA
+# Review Questions
 
-**Q1.**
-Why can final argv differ from the command text the user typed?
+### Q1. Why can final argv differ from the command text the user typed?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 The shell expands variables and substitutions, may split fields, may expand
 globs, removes quotes, and then executes the resulting command.
@@ -84,11 +96,10 @@ globs, removes quotes, and then executes the resulting command.
 
 ---
 
-**Q2.**
-Why does quoting affect field splitting and globbing?
+### Q2. Why does quoting affect field splitting and globbing?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Quote context marks text as protected. Quoted expansion stays one argument
 and does not undergo the same later splitting and pathname expansion.
@@ -97,11 +108,10 @@ and does not undergo the same later splitting and pathname expansion.
 
 ---
 
-**Q3.**
-When does command substitution output become part of the outer command?
+### Q3. When does command substitution output become part of the outer command?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 The inner command runs during expansion. Its stdout is reinserted before the
 outer command is executed.
@@ -110,11 +120,10 @@ outer command is executed.
 
 ---
 
-**Q4.**
-Why is it useful to analyze intermediate parser states?
+### Q4. Why is it useful to analyze intermediate parser states?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Intermediate states show where text changes meaning: variable values appear,
 fields split, globs expand, and operators are separated from argv.

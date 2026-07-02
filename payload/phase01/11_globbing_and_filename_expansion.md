@@ -1,4 +1,17 @@
-# Globbing
+# Session 11 — Globbing and Filename Expansion
+
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 01
+Session: 11
+Title: Globbing and Filename Expansion
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Model
 
@@ -57,13 +70,12 @@ command -- ./*
 4. No-match behavior is shell-specific.
 5. Pathname expansion can alter command meaning and option parsing.
 
-# QA
+# Review Questions
 
-**Q1.**
-Who expands `*.txt`, the shell or the program?
+### Q1. Who expands `*.txt`, the shell or the program?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 The shell expands it before program execution. The program normally receives
 matching pathnames, not the literal pattern.
@@ -72,11 +84,10 @@ matching pathnames, not the literal pattern.
 
 ---
 
-**Q2.**
-How can `*.txt` be passed literally?
+### Q2. How can `*.txt` be passed literally?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Quote or escape the glob metacharacter, for example `"*.txt"` or `\*.txt`.
 
@@ -84,11 +95,10 @@ Quote or escape the glob metacharacter, for example `"*.txt"` or `\*.txt`.
 
 ---
 
-**Q3.**
-Why does no-match behavior matter?
+### Q3. Why does no-match behavior matter?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Different shells and options handle unmatched patterns differently. The
 pattern may remain literal, disappear, or raise an error.
@@ -97,11 +107,10 @@ pattern may remain literal, disappear, or raise an error.
 
 ---
 
-**Q4.**
-Why can attacker-controlled filenames affect command meaning?
+### Q4. Why can attacker-controlled filenames affect command meaning?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Expanded filenames become argv entries. A filename beginning with `-` can be
 interpreted as an option unless the command is protected with patterns such

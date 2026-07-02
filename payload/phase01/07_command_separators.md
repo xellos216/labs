@@ -1,4 +1,17 @@
-# Conditional Execution
+# Session 07 — Command Separators
+
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 01
+Session: 07
+Title: Command Separators
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Exit Status
 
@@ -68,13 +81,12 @@ The choice of separator changes execution conditions:
 4. `&&` and `||` create status-dependent control flow.
 5. Parser structure and process result are separate layers.
 
-# QA
+# Review Questions
 
-**Q1.**
-What does exit status `0` conventionally mean?
+### Q1. What does exit status `0` conventionally mean?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 It conventionally means success. A nonzero status indicates failure or some
 other command-specific condition.
@@ -83,11 +95,10 @@ other command-specific condition.
 
 ---
 
-**Q2.**
-How does `cmd1 && cmd2` decide whether to run `cmd2`?
+### Q2. How does `cmd1 && cmd2` decide whether to run `cmd2`?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 `cmd2` runs only if `cmd1` exits successfully with status `0`.
 
@@ -95,11 +106,10 @@ How does `cmd1 && cmd2` decide whether to run `cmd2`?
 
 ---
 
-**Q3.**
-How does `cmd1 || cmd2` decide whether to run `cmd2`?
+### Q3. How does `cmd1 || cmd2` decide whether to run `cmd2`?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 `cmd2` runs only if `cmd1` exits with a nonzero status.
 
@@ -107,11 +117,10 @@ How does `cmd1 || cmd2` decide whether to run `cmd2`?
 
 ---
 
-**Q4.**
-Why is `a && b || c` not always the same as a full `if` statement?
+### Q4. Why is `a && b || c` not always the same as a full `if` statement?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 If `a` succeeds but `b` fails, the `|| c` branch can still run. The status of
 the middle command participates in the list.

@@ -1,4 +1,17 @@
-# Command Substitution
+# Session 10 — Command Substitution
+
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 01
+Session: 10
+Title: Command Substitution
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Model
 
@@ -89,13 +102,12 @@ HTTP decoding
 4. Inserted output may join an existing token.
 5. Execution and visible output are separate observations.
 
-# QA
+# Review Questions
 
-**Q1.**
-When does command substitution run relative to the outer command?
+### Q1. When does command substitution run relative to the outer command?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 It runs before the outer command executes. The shell executes the inner
 command, captures its stdout, inserts that text, and then continues building
@@ -105,11 +117,10 @@ the outer command.
 
 ---
 
-**Q2.**
-Why can `echo$(whoami)` become a different command name?
+### Q2. Why can `echo$(whoami)` become a different command name?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Command substitution does not automatically create an argument boundary. If
 `whoami` prints `alice`, the source can become one token such as
@@ -119,11 +130,10 @@ Command substitution does not automatically create an argument boundary. If
 
 ---
 
-**Q3.**
-Why does `'$(id)'` not execute while `"$(id)"` does?
+### Q3. Why does `'$(id)'` not execute while `"$(id)"` does?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Single quotes protect the text literally and suppress substitution. Double
 quotes still allow command substitution, while keeping the substituted result
@@ -133,11 +143,10 @@ inside one argument.
 
 ---
 
-**Q4.**
-What stream is captured by command substitution by default?
+### Q4. What stream is captured by command substitution by default?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Only stdout is captured by default. Stderr remains separate unless it is
 explicitly redirected, for example with `2>&1`.

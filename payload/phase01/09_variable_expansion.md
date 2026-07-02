@@ -1,4 +1,17 @@
-# Environment Variables
+# Session 09 — Variable Expansion
+
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 01
+Session: 09
+Title: Variable Expansion
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Shell Variables and Environment
 
@@ -71,13 +84,12 @@ trusting arbitrary inherited values.
 4. Per-command assignments have limited scope.
 5. Environment data crosses a process trust boundary.
 
-# QA
+# Review Questions
 
-**Q1.**
-When does a shell variable become part of a child process environment?
+### Q1. When does a shell variable become part of a child process environment?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 After it is exported. A plain shell variable stays in the current shell unless
 `export` marks it for inheritance by future child processes.
@@ -86,11 +98,10 @@ After it is exported. A plain shell variable stays in the current shell unless
 
 ---
 
-**Q2.**
-Why do child changes not propagate back to the parent shell?
+### Q2. Why do child changes not propagate back to the parent shell?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 The child inherits a copy of the environment. Mutating that copy does not
 modify the parent's shell state.
@@ -99,11 +110,10 @@ modify the parent's shell state.
 
 ---
 
-**Q3.**
-What is the scope of `MODE=test command`?
+### Q3. What is the scope of `MODE=test command`?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 `MODE=test` is placed in the environment for that command invocation. It does
 not permanently export `MODE` in the current shell.
@@ -112,11 +122,10 @@ not permanently export `MODE` in the current shell.
 
 ---
 
-**Q4.**
-Why are environment variables security-relevant?
+### Q4. Why are environment variables security-relevant?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 They can influence command lookup, locale behavior, library loading,
 configuration, and credentials. Inherited environment values cross a process
