@@ -1,4 +1,17 @@
-# Process Lifecycle
+# Session 13 — Processes, Arguments and File Descriptors
+
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 01
+Session: 13
+Title: Processes, Arguments and File Descriptors
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## External Command Execution
 
@@ -50,13 +63,12 @@ entry until collected.
 4. The parent commonly waits for foreground work.
 5. Exit status connects child completion to shell control flow.
 
-# QA
+# Review Questions
 
-**Q1.**
-What is the usual shell flow for running an external command?
+### Q1. What is the usual shell flow for running an external command?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 The shell parses the command, forks a child, configures descriptors and
 environment, execs the program in the child, and then waits or continues
@@ -66,11 +78,10 @@ depending on foreground or background execution.
 
 ---
 
-**Q2.**
-What does `fork()` create?
+### Q2. What does `fork()` create?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 It creates a child process based on the parent, with inherited state such as
 environment, descriptors, and working directory, but separate mutable state
@@ -80,11 +91,10 @@ afterward.
 
 ---
 
-**Q3.**
-What does `exec` change?
+### Q3. What does `exec` change?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 It replaces the current process image with a new program. The PID normally
 remains the same across that replacement.
@@ -93,11 +103,10 @@ remains the same across that replacement.
 
 ---
 
-**Q4.**
-Why does a zombie process exist?
+### Q4. Why does a zombie process exist?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 A terminated child remains as a zombie entry until its parent collects its
 exit status with a wait operation.
