@@ -238,7 +238,7 @@ The definition creates the virtual computer. The installer still has to create t
 
 ---
 
-## Review Questions
+# Review Questions
 
 ### Q1. What distinct roles do the Ubuntu Server ISO and virtual disk serve during installation?
 

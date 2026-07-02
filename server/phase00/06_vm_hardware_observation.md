@@ -259,7 +259,7 @@ The Guest sees vCPUs whose execution is scheduled on Host CPU resources.
 
 ---
 
-## Review Questions
+# Review Questions
 
 ### Q1. How do the Host view and Guest view of VM hardware differ?
 
