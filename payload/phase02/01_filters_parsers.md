@@ -1,6 +1,19 @@
 # Phase 02 - Session 01
 # Filters and Parsers Are Different Systems
 
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 02
+Session: 01
+Title: Filters and Parsers Are Different Systems
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 Understand that an **input filter** and a **parser** are different components with different responsibilities.
@@ -144,49 +157,49 @@ Never confuse:
 
 ---
 
-# QA
+# Review Questions
 
-## Q1. What is the primary responsibility of a filter?
+### Q1. What is the primary responsibility of a filter?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q2. What is the primary responsibility of a parser?
+### Q2. What is the primary responsibility of a parser?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q3. Why can a filter and a parser disagree about the same input?
+### Q3. Why can a filter and a parser disagree about the same input?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q4. Complete the processing pipeline:
+### Q4. Complete the processing pipeline:
 
 `Input → ______ → ______ → Behavior`
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q5. Why is it important to distinguish "acceptance" from "interpretation" when analyzing application behavior?
+### Q5. Why is it important to distinguish "acceptance" from "interpretation" when analyzing application behavior?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>

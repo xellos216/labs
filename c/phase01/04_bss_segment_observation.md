@@ -1,5 +1,18 @@
 # BSS Segment Observation
 
+## Metadata
+
+```yaml
+Roadmap: C Programming
+Phase: 01
+Session: 04
+Title: BSS Segment Observation
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Session Goal
 
 Observe how uninitialized global variables are stored and why the BSS segment exists.
@@ -397,88 +410,72 @@ Only size information stored
 Zero-filled when the process starts
 ```
 
-# QA
+# Review Questions
 
-**Q1.**
-
-What kind of variables are typically stored in the BSS segment?
+### Q1. What kind of variables are typically stored in the BSS segment?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q2.**
-
-Why is `int global_b;` stored in `.bss` instead of `.data`?
+### Q2. Why is `int global_b;` stored in `.bss` instead of `.data`?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q3.**
-
-What does `NOBITS` mean?
+### Q3. What does `NOBITS` mean?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q4.**
-
-Why does `.bss` reduce executable size?
+### Q4. Why does `.bss` reduce executable size?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q5.**
-
-Why does `char big_data[10000000] = {1};` make the executable much larger?
+### Q5. Why does `char big_data[10000000] = {1};` make the executable much larger?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q6.**
-
-Why does `char big_bss[10000000];` not significantly increase executable size?
+### Q6. Why does `char big_bss[10000000];` not significantly increase executable size?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q7.**
-
-What value does an uninitialized global variable have when the program starts?
+### Q7. What value does an uninitialized global variable have when the program starts?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q8.**
-
-Complete:
+### Q8. Complete:
 
 ```text
 Uninitialized Global Variable
@@ -489,15 +486,13 @@ NOBITS
 ```
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q9.**
-
-Complete:
+### Q9. Complete:
 
 ```text
 .bss
@@ -506,39 +501,33 @@ Only __________ information is stored in the ELF file.
 ```
 
 <details>
-<summary><strong>A9.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q10.**
-
-What initializes the BSS region before `main()` begins?
+### Q10. What initializes the BSS region before `main()` begins?
 
 <details>
-<summary><strong>A10.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q11.**
-
-Which tool shows that `.bss` is marked as `NOBITS`?
+### Q11. Which tool shows that `.bss` is marked as `NOBITS`?
 
 <details>
-<summary><strong>A11.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q12.**
-
-Explain the difference between `.data` and `.bss` in one or two sentences.
+### Q12. Explain the difference between `.data` and `.bss` in one or two sentences.
 
 <details>
-<summary><strong>A12.</strong></summary>
+<summary>A</summary>
 
 </details>

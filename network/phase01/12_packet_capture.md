@@ -1,5 +1,18 @@
 # Packet Capture
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 01
+Session: 12
+Title: Packet Capture
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 By the end of this session, you should be able to explain:
@@ -211,67 +224,76 @@ Did the server respond?
 Was traffic encrypted?
 ```
 
-# QA
+# Review Questions
 
-**Q1.**
-What problem does packet capture solve?
-
-<details>
-<summary><strong>A1.</strong></summary>
-
-What really happened in the communication</details>
-
-**Q2.**
-Why might logs be insufficient when troubleshooting networking problems?
+### Q1. What problem does packet capture solve?
 
 <details>
-<summary><strong>A2.</strong></summary>
-Logs cannot show everything what actually happened</details>
+<summary>A</summary>
 
-**Q3.**
-What is a packet capture?
+What really happened in the communication
 
-<details>
-<summary><strong>A3.</strong></summary>
+</details>
 
-Network Telescope</details>
-
-**Q4.**
-Why is packet capture often described as a network telescope?
+### Q2. Why might logs be insufficient when troubleshooting networking problems?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
-They can reveal what happened below</details>
+Logs cannot show everything what actually happened
 
-**Q5.**
-What kinds of information can commonly be observed in packets?
+</details>
 
-<details>
-<summary><strong>A5.</strong></summary>
-
-IP, Port, protocol, packet size, time</details>
-
-**Q6.**
-Why might packet capture be useful during security investigations?
+### Q3. What is a packet capture?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
-They give us the clue what happen</details>
+Network Telescope
 
-**Q7.**
-What is the relationship between packet captures and network troubleshooting?
+</details>
 
-<details>
-<summary><strong>A7.</strong></summary>
-
-Packet capture is like assistant for troubleshooting</details>
-
-**Q8.**
-How does packet capture relate to DNS, TCP, TLS, and sockets?
+### Q4. Why is packet capture often described as a network telescope?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
-Packet capture can reveal what they do</details>
+They can reveal what happened below
+
+</details>
+
+### Q5. What kinds of information can commonly be observed in packets?
+
+<details>
+<summary>A</summary>
+
+IP, Port, protocol, packet size, time
+
+</details>
+
+### Q6. Why might packet capture be useful during security investigations?
+
+<details>
+<summary>A</summary>
+
+They give us the clue what happen
+
+</details>
+
+### Q7. What is the relationship between packet captures and network troubleshooting?
+
+<details>
+<summary>A</summary>
+
+Packet capture is like assistant for troubleshooting
+
+</details>
+
+### Q8. How does packet capture relate to DNS, TCP, TLS, and sockets?
+
+<details>
+<summary>A</summary>
+
+Packet capture can reveal what they do
+
+</details>

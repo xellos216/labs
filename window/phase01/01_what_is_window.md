@@ -1,6 +1,19 @@
 # Phase 01 — Session 01
 ## What Is Windows?
 
+## Metadata
+
+```yaml
+Roadmap: Windows Fundamentals
+Phase: 01
+Session: 01
+Title: What Is Windows?
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ### Notes
 
 Windows is not a graphical interface.
@@ -162,97 +175,107 @@ not the fundamental purpose of the operating system.
 
 ---
 
-## QA
+# Review Questions
 
-### Q1
+### Q1. What is the primary role of an operating system?
 
-What is the primary role of an operating system?
+<details>
+<summary>A</summary>
 
-**A**
-
----
-
-### Q2
-
-Why is Explorer.exe not considered the operating system itself?
-
-**A**
+</details>
 
 ---
 
-### Q3
+### Q2. Why is Explorer.exe not considered the operating system itself?
 
-Which component is closer to the operating system core?
+<details>
+<summary>A</summary>
+
+</details>
+
+---
+
+### Q3. Which component is closer to the operating system core?
 
 - Explorer.exe
 - NT Kernel
 
 Why?
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
-### Q4
+### Q4. When an application wants to use CPU or memory, does it directly control the hardware?
 
-When an application wants to use CPU or memory, does it directly control the hardware?
+<details>
+<summary>A</summary>
 
-**A**
-
----
-
-### Q5
-
-Describe the simplified execution path of a Windows application.
-
-**A**
+</details>
 
 ---
 
-### Q6
+### Q5. Describe the simplified execution path of a Windows application.
 
-What is the relationship between Windows API and the NT Kernel?
+<details>
+<summary>A</summary>
 
-**A**
-
----
-
-### Q7
-
-Name three concepts that exist in both Linux and Windows.
-
-**A**
+</details>
 
 ---
 
-### Q8
+### Q6. What is the relationship between Windows API and the NT Kernel?
 
-What is a more accurate statement?
+<details>
+<summary>A</summary>
+
+</details>
+
+---
+
+### Q7. Name three concepts that exist in both Linux and Windows.
+
+<details>
+<summary>A</summary>
+
+</details>
+
+---
+
+### Q8. What is a more accurate statement?
 
 - Windows is a GUI.
 - Windows is an operating system that includes a GUI.
 
 Why?
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>
 
 ---
 
-### Q9
+### Q9. What happens if Explorer.exe crashes?
 
-What happens if Explorer.exe crashes?
+<details>
+<summary>A</summary>
 
-**A**
+</details>
 
 ---
 
-### Q10
-
-Explain in your own words:
+### Q10. Explain in your own words:
 
 ```text
 Windows and Linux differ more in implementation
 than in fundamental purpose.
 ```
 
-**A**
+<details>
+<summary>A</summary>
+
+</details>

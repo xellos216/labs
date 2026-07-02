@@ -1,5 +1,18 @@
 # Routing
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 01
+Session: 08
+Title: Routing
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Why Routing Exists
 
 Knowing a destination is not enough.
@@ -48,13 +61,12 @@ Before memorizing routing terminology, ask:
 - How do packets get there?
 - Who decides the next step?
 
-# QA
+# Review Questions
 
-**Q1.**
-What problem does routing solve?
+### Q1. What problem does routing solve?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Routing solves the problem of determining how packets reach their destination.
 
@@ -62,11 +74,10 @@ Routing solves the problem of determining how packets reach their destination.
 
 ---
 
-**Q2.**
-Why is knowing an IP address insufficient for packet delivery?
+### Q2. Why is knowing an IP address insufficient for packet delivery?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Knowing an IP address identifies the destination, but it does not determine the path to reach it.
 
@@ -74,11 +85,10 @@ Knowing an IP address identifies the destination, but it does not determine the 
 
 ---
 
-**Q3.**
-What is the difference between a destination and a path?
+### Q3. What is the difference between a destination and a path?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 A destination is where the packet should go. A path is the route the packet takes to get there.
 
@@ -86,11 +96,10 @@ A destination is where the packet should go. A path is the route the packet take
 
 ---
 
-**Q4.**
-What does a router fundamentally do?
+### Q4. What does a router fundamentally do?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 A router decides the next path a packet should take toward its destination.
 
@@ -98,11 +107,10 @@ A router decides the next path a packet should take toward its destination.
 
 ---
 
-**Q5.**
-Why might packets travel through multiple routers?
+### Q5. Why might packets travel through multiple routers?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 Packets may travel through multiple routers because large networks are built from many interconnected networks.
 
@@ -110,11 +118,10 @@ Packets may travel through multiple routers because large networks are built fro
 
 ---
 
-**Q6.**
-What is a default gateway?
+### Q6. What is a default gateway?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
 A default gateway is the router that receives packets when the destination is outside the local network.
 
@@ -122,11 +129,10 @@ A default gateway is the router that receives packets when the destination is ou
 
 ---
 
-**Q7.**
-What does a hop represent?
+### Q7. What does a hop represent?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
 A hop represents one routing step through an intermediate device, usually a router.
 
@@ -134,11 +140,10 @@ A hop represents one routing step through an intermediate device, usually a rout
 
 ---
 
-**Q8.**
-How does routing relate to the networking concepts learned previously?
+### Q8. How does routing relate to the networking concepts learned previously?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
 Routing guides packets toward the destination identified by IP address.
 

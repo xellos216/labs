@@ -1,6 +1,19 @@
 # Phase 02 - Session 03
 # Normalization Before Validation
 
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 02
+Session: 03
+Title: Normalization Before Validation
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 Understand why input should be **normalized before validation**, and how processing order affects application behavior.
@@ -203,45 +216,45 @@ Always ask:
 
 ---
 
-# QA
+# Review Questions
 
-## Q1. What is the purpose of normalization?
+### Q1. What is the purpose of normalization?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q2. Why can validation before normalization produce inconsistent results?
+### Q2. Why can validation before normalization produce inconsistent results?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q3. What is meant by the term "canonical form"?
+### Q3. What is meant by the term "canonical form"?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q4. Why should validation operate on the canonical form instead of the original user input?
+### Q4. Why should validation operate on the canonical form instead of the original user input?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q5. In the processing flow below, which component should generally come first, and why?
+### Q5. In the processing flow below, which component should generally come first, and why?
 
 ```text
 Input
@@ -257,9 +270,8 @@ Parser
 ```
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
-````
 
 이 문서는 **Payload Construction Roadmap**의 **Phase 02 - Session 03 (Normalization Before Validation)** 아카이브 및 복습용 문서이다. 

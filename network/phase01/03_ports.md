@@ -1,5 +1,18 @@
 # Ports
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 01
+Session: 03
+Title: Ports
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Why Ports Exist
 
 Ports exist because one machine can run multiple networked applications.
@@ -50,13 +63,12 @@ Before memorizing port numbers, ask:
 - Which application uses it?
 - What problem is being solved?
 
-# QA
+# Review Questions
 
-**Q1.**
-What problem do ports solve?
+### Q1. What problem do ports solve?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Ports solve the problem of determining which application should receive incoming data.
 
@@ -64,11 +76,10 @@ Ports solve the problem of determining which application should receive incoming
 
 ---
 
-**Q2.**
-Why are IP addresses alone insufficient?
+### Q2. Why are IP addresses alone insufficient?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 IP addresses alone are insufficient because a single computer can run multiple application simultaneously.
 
@@ -76,11 +87,10 @@ IP addresses alone are insufficient because a single computer can run multiple a
 
 ---
 
-**Q3.**
-Why can multiple applications share the same IP address?
+### Q3. Why can multiple applications share the same IP address?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Multiple applications can share the same IP address because ports distinguish one application from another.
 
@@ -88,11 +98,10 @@ Multiple applications can share the same IP address because ports distinguish on
 
 ---
 
-**Q4.**
-What does a port identify?
+### Q4. What does a port identify?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 A port identifies a communication endpoint or application on a machine.
 
@@ -100,11 +109,10 @@ A port identifies a communication endpoint or application on a machine.
 
 ---
 
-**Q5.**
-Why is a port better understood as an application identifier than a protocol identifier?
+### Q5. Why is a port better understood as an application identifier than a protocol identifier?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 A port is better understood as an application identifier because it determines which application should receive incoming data.
 
@@ -112,11 +120,10 @@ A port is better understood as an application identifier because it determines w
 
 ---
 
-**Q6.**
-Why does a browser need both an IP address and a port?
+### Q6. Why does a browser need both an IP address and a port?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
 A browser needs both an IP address and a port to reach the correct application on the correct machine.
 
@@ -124,11 +131,10 @@ A browser needs both an IP address and a port to reach the correct application o
 
 ---
 
-**Q7.**
-What could happen if two applications attempt to listen on the same IP and port?
+### Q7. What could happen if two applications attempt to listen on the same IP and port?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
 One of the applications would fail to bind to the port because the port is already in use.
 
@@ -136,11 +142,10 @@ One of the applications would fail to bind to the port because the port is alrea
 
 ---
 
-**Q8.**
-What is the relationship between IP addresses and ports?
+### Q8. What is the relationship between IP addresses and ports?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
 An IP address identifies a machine, while a port identifies an application on that machine.
 

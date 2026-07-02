@@ -1,5 +1,18 @@
 # Network Troubleshooting
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 01
+Session: 13
+Title: Network Troubleshooting
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 By the end of this session, you should be able to explain:
@@ -208,68 +221,60 @@ The network does not care about assumptions.
 
 It only reveals evidence.
 
-# QA
+# Review Questions
 
-**Q1.**
-What is the goal of network troubleshooting?
+### Q1. What is the goal of network troubleshooting?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 </details>
 
-**Q2.**
-Why is guessing a poor troubleshooting strategy?
+### Q2. Why is guessing a poor troubleshooting strategy?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 </details>
 
-**Q3.**
-Why should troubleshooting proceed layer by layer?
+### Q3. Why should troubleshooting proceed layer by layer?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 </details>
 
-**Q4.**
-What does it mean to eliminate possibilities?
+### Q4. What does it mean to eliminate possibilities?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 </details>
 
-**Q5.**
-What kinds of failures can produce a simple "connection failed" error?
+### Q5. What kinds of failures can produce a simple "connection failed" error?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 </details>
 
-**Q6.**
-Why is observation more valuable than assumptions?
+### Q6. Why is observation more valuable than assumptions?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
 </details>
 
-**Q7.**
-How does packet capture help troubleshooting?
+### Q7. How does packet capture help troubleshooting?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
 </details>
 
-**Q8.**
-How does troubleshooting relate to DNS, IP, Routing, TCP, TLS, HTTP, and sockets?
+### Q8. How does troubleshooting relate to DNS, IP, Routing, TCP, TLS, HTTP, and sockets?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
 </details>

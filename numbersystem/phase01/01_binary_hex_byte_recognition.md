@@ -5,6 +5,7 @@ Session: Session 01
 Title: Binary, Hexadecimal, and Byte Recognition
 Status: Completed
 Review: Pending
+ArchiveVersion: 2
 Date:
 ---
 

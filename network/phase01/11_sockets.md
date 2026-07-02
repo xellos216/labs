@@ -1,5 +1,18 @@
 # Sockets
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 01
+Session: 11
+Title: Sockets
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 By the end of this session, you should be able to explain:
@@ -212,81 +225,92 @@ managing networking internals directly.
 
 ---
 
-# QA
+# Review Questions
 
-**Q1.**
-What problem do sockets solve?
+### Q1. What problem do sockets solve?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
-Sockets provide an interface between applications and the kernel networking stack.</details>
+Sockets provide an interface between applications and the kernel networking stack.
+
+</details>
 
 ---
 
-**Q2.**
-Why can't applications directly use TCP and IP?
+### Q2. Why can't applications directly use TCP and IP?
 
 <details>
-<summary><strong>A2.</strong></summary>
-Applications rely on the kernel to manage TCP and IP operations..</details>
+<summary>A</summary>
+
+Applications rely on the kernel to manage TCP and IP operations..
+
+</details>
 
 ---
 
-**Q3.**
-What is a socket?
+### Q3. What is a socket?
 
 <details>
-<summary><strong>A3.</strong></summary>
-Network doorway</details>
+<summary>A</summary>
+
+Network doorway
+
+</details>
 
 ---
 
-**Q4.**
-Why are sockets often described as an interface between applications and the network stack?
+### Q4. Why are sockets often described as an interface between applications and the network stack?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
-Because socket can connect each of them</details>
+Because socket can connect each of them
+
+</details>
 
 ---
 
-**Q5.**
-What is the relationship between sockets and ports?
+### Q5. What is the relationship between sockets and ports?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
+
 Ports identify applications.
 
-Sockets are the kernel objects application use to communicate through those ports.</details>
+Sockets are the kernel objects application use to communicate through those ports.
+
+</details>
 
 ---
 
-**Q6.**
-Why might a web server create a listening socket?
+### Q6. Why might a web server create a listening socket?
 
 <details>
-<summary><strong>A6.</strong></summary>
-They have to be ready for accepting the data</details>
+<summary>A</summary>
+
+They have to be ready for accepting the data
+
+</details>
 
 ---
 
-**Q7.**
-How does incoming network data reach the correct application?
+### Q7. How does incoming network data reach the correct application?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
-Ports and sockets lead them</details>
+Ports and sockets lead them
+
+</details>
 
 ---
 
-**Q8.**
-How do sockets relate to DNS, IP, Routing, TCP, HTTP, and TLS?
+### Q8. How do sockets relate to DNS, IP, Routing, TCP, HTTP, and TLS?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
+
 DNS = finding address
 
 IP = which machine
@@ -299,4 +323,6 @@ HTTP = rules of request and response
 
 TLS = secure envelope
 
-sockets = network door</details>
+sockets = network door
+
+</details>

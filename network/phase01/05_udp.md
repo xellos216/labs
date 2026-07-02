@@ -1,5 +1,18 @@
 # UDP
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 01
+Session: 05
+Title: UDP
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Why UDP Exists
 
 TCP reliability introduces overhead.
@@ -60,13 +73,12 @@ Ask:
 
 Which problem is being solved?
 
-# QA
+# Review Questions
 
-**Q1.**
-Why does UDP exist if TCP already provides reliable communication?
+### Q1. Why does UDP exist if TCP already provides reliable communication?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 UDP exists because not every application wants TCP's guarantees.
 
@@ -74,11 +86,10 @@ UDP exists because not every application wants TCP's guarantees.
 
 ---
 
-**Q2.**
-What tradeoff does UDP make compared to TCP?
+### Q2. What tradeoff does UDP make compared to TCP?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 UDP priortizes speed and low overhead over reliability.
 
@@ -86,11 +97,10 @@ UDP priortizes speed and low overhead over reliability.
 
 ---
 
-**Q3.**
-Why might real-time applications prefer UDP?
+### Q3. Why might real-time applications prefer UDP?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 Real-time applications prefer UDP because continous communication is more important than perfect delivery.
 
@@ -98,11 +108,10 @@ Real-time applications prefer UDP because continous communication is more import
 
 ---
 
-**Q4.**
-Why are file transfers usually better suited to TCP?
+### Q4. Why are file transfers usually better suited to TCP?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 File transfers are better suited to TCP because missing or corrupted data can make the entire file ususable.
 
@@ -110,11 +119,10 @@ File transfers are better suited to TCP because missing or corrupted data can ma
 
 ---
 
-**Q5.**
-What does "best-effort delivery" mean?
+### Q5. What does "best-effort delivery" mean?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 Best-effort delivery means data is sent without guaranteeing successful delivery.
 
@@ -122,11 +130,10 @@ Best-effort delivery means data is sent without guaranteeing successful delivery
 
 ---
 
-**Q6.**
-Why might retransmission be undesirable in some applications?
+### Q6. Why might retransmission be undesirable in some applications?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
 Retransmission may be undesirable because waiting for missing data can introduce delays.
 
@@ -134,11 +141,10 @@ Retransmission may be undesirable because waiting for missing data can introduce
 
 ---
 
-**Q7.**
-How do TCP and UDP differ in their goals?
+### Q7. How do TCP and UDP differ in their goals?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
 TCP prioritizes reliable delivery, while UDP prioritizes speed and low latency.
 
@@ -146,11 +152,10 @@ TCP prioritizes reliable delivery, while UDP prioritizes speed and low latency.
 
 ---
 
-**Q8.**
-What is the relationship between IP, Port, TCP, and UDP?
+### Q8. What is the relationship between IP, Port, TCP, and UDP?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
 IP address = Building address
 

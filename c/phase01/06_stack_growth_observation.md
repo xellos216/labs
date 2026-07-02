@@ -1,4 +1,4 @@
-# Phase 01 - Session 06
+# Session 06 — Stack Growth Observation
 
 ## Metadata
 
@@ -9,6 +9,7 @@ Session: 06
 Title: Stack Growth Observation
 Status: Completed
 Review: Pending
+ArchiveVersion: 2
 Date: 2026-06-30
 ```
 

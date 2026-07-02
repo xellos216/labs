@@ -1,5 +1,18 @@
 # Code Segment Observation
 
+## Metadata
+
+```yaml
+Roadmap: C Programming
+Phase: 01
+Session: 02
+Title: Code Segment Observation
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Session Goal
 
 Observe what actually exists inside the Code Segment of a running process.
@@ -387,55 +400,45 @@ The CPU executes instructions from the Code Segment.
 
 ---
 
-# QA
+# Review Questions
 
-**Q1.**
-
-What is stored in the Code Segment?
+### Q1. What is stored in the Code Segment?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q2.**
-
-Does the CPU execute C source code directly?
+### Q2. Does the CPU execute C source code directly?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q3.**
-
-What transforms C source code into machine instructions?
+### Q3. What transforms C source code into machine instructions?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q4.**
-
-Why are variables not stored in the Code Segment?
+### Q4. Why are variables not stored in the Code Segment?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q5.**
-
-Complete:
+### Q5. Complete:
 
 ```text
 Data
@@ -448,103 +451,85 @@ __________
 ```
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q6.**
-
-What permission typically identifies executable memory in `/proc/<PID>/maps`?
+### Q6. What permission typically identifies executable memory in `/proc/<PID>/maps`?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q7.**
-
-What does the `x` permission mean in a memory mapping?
+### Q7. What does the `x` permission mean in a memory mapping?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q8.**
-
-Which tool can display ELF sections?
+### Q8. Which tool can display ELF sections?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q9.**
-
-Which ELF section commonly contains executable code?
+### Q9. Which ELF section commonly contains executable code?
 
 <details>
-<summary><strong>A9.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q10.**
-
-Which tool can disassemble a binary into assembly instructions?
+### Q10. Which tool can disassemble a binary into assembly instructions?
 
 <details>
-<summary><strong>A10.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q11.**
-
-Name three assembly instructions you observed during this session.
+### Q11. Name three assembly instructions you observed during this session.
 
 <details>
-<summary><strong>A11.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q12.**
-
-Where do machine instructions live while a program is running?
+### Q12. Where do machine instructions live while a program is running?
 
 <details>
-<summary><strong>A12.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q13.**
-
-Why is distinguishing code from data important in firmware analysis?
+### Q13. Why is distinguishing code from data important in firmware analysis?
 
 <details>
-<summary><strong>A13.</strong></summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-**Q14.**
-
-Complete the mental model:
+### Q14. Complete the mental model:
 
 ```text
 Code Segment
@@ -553,6 +538,6 @@ ________________
 ```
 
 <details>
-<summary><strong>A14.</strong></summary>
+<summary>A</summary>
 
 </details>

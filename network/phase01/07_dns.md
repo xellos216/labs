@@ -1,5 +1,18 @@
 # DNS
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 01
+Session: 07
+Title: DNS
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Why DNS Exists
 
 Humans are good at remembering names.
@@ -58,13 +71,12 @@ Before memorizing DNS record types, ask:
 - What problem does it solve?
 - What would happen without it?
 
-# QA
+# Review Questions
 
-**Q1.**
-What problem does DNS solve?
+### Q1. What problem does DNS solve?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 DNS translates human-friendly domain names into IP addresses.
 
@@ -72,11 +84,10 @@ DNS translates human-friendly domain names into IP addresses.
 
 ---
 
-**Q2.**
-Why do humans prefer domain names over IP addresses?
+### Q2. Why do humans prefer domain names over IP addresses?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 Humans prefer domain names because they are easier to remember than numeric IP addresses.
 
@@ -84,11 +95,10 @@ Humans prefer domain names because they are easier to remember than numeric IP a
 
 ---
 
-**Q3.**
-What is the relationship between a domain name and an IP address?
+### Q3. What is the relationship between a domain name and an IP address?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 A domain name is a human-friendly identifier that DNS translates into an IP address.
 
@@ -96,11 +106,10 @@ A domain name is a human-friendly identifier that DNS translates into an IP addr
 
 ---
 
-**Q4.**
-Why can't computers communicate using only domain names?
+### Q4. Why can't computers communicate using only domain names?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Computers ultimately communicate using IP addresses, not domain names.
 
@@ -108,11 +117,10 @@ Computers ultimately communicate using IP addresses, not domain names.
 
 ---
 
-**Q5.**
-Why might a domain name point to different IP addresses over time?
+### Q5. Why might a domain name point to different IP addresses over time?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
 
 Because the server behind a domain can change. DNS can return different IP addresses for the same domain because of server migration, load balancing, CDN, or failure recovery.
 
@@ -120,11 +128,10 @@ Because the server behind a domain can change. DNS can return different IP addre
 
 ---
 
-**Q6.**
-What role does a DNS server play?
+### Q6. What role does a DNS server play?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
 
 A DNS server answers queries by providing the IP address associated with a domain name.
 
@@ -132,11 +139,10 @@ A DNS server answers queries by providing the IP address associated with a domai
 
 ---
 
-**Q7.**
-Why is DNS often compared to a phone book?
+### Q7. Why is DNS often compared to a phone book?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
 
 DNS is compared to a phone book because it translates human-readable names into network addressess
 
@@ -144,11 +150,10 @@ DNS is compared to a phone book because it translates human-readable names into 
 
 ---
 
-**Q8.**
-What is the relationship between DNS and the networking concepts learned previously?
+### Q8. What is the relationship between DNS and the networking concepts learned previously?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
 
 DNS helps find the IP address that communication should be sent to before TCP and ports can be used.
 

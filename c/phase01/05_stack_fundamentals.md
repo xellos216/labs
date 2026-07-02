@@ -1,4 +1,4 @@
-# Phase 01 - Session 05
+# Session 05 — Stack Fundamentals
 
 ## Metadata
 
@@ -9,6 +9,7 @@ Session: 05
 Title: Stack Fundamentals
 Status: Completed
 Review: Pending
+ArchiveVersion: 2
 Date: 2026-06-27
 ```
 

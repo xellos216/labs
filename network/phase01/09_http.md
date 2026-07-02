@@ -1,5 +1,18 @@
 # HTTP
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 01
+Session: 09
+Title: HTTP
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Why HTTP Exists
 
 DNS finds addresses.
@@ -62,79 +75,79 @@ Before memorizing status codes, ask:
 - What did the server understand?
 - Why did the server respond that way?
 
-# QA
+# Review Questions
 
-**Q1.**
-What problem does HTTP solve?
+### Q1. What problem does HTTP solve?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
+
 HTTP provides rules for requesting and delivering web resouces.
 
 </details>
 
 ---
 
-**Q2.**
-Why are DNS, IP, Routing, and TCP insufficient for web communication?
+### Q2. Why are DNS, IP, Routing, and TCP insufficient for web communication?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
+
 DNS, IP, Routing, and TCP can establish communication, but they do not define how web resources should be requested or delivered.
 
 </details>
 
 ---
 
-**Q3.**
-What is an HTTP request?
+### Q3. What is an HTTP request?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
+
 method, path, headers
 
 </details>
 
 ---
 
-**Q4.**
-What is an HTTP response?
+### Q4. What is an HTTP response?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
+
 status code, headers, content
 
 </details>
 
 ---
 
-**Q5.**
-Why does a browser need to specify a path such as "/"?
+### Q5. Why does a browser need to specify a path such as "/"?
 
 <details>
-<summary><strong>A5.</strong></summary>
+<summary>A</summary>
+
 Without a path, the server would not know which resource the client wants.
 
 </details>
 
 ---
 
-**Q6.**
-Why might a server return a 404 response?
+### Q6. Why might a server return a 404 response?
 
 <details>
-<summary><strong>A6.</strong></summary>
+<summary>A</summary>
+
 A server returns a 404 response when the requested resource does not exist.
 
 </details>
 
 ---
 
-**Q7.**
-Why is HTTP often described as a request/response protocol?
+### Q7. Why is HTTP often described as a request/response protocol?
 
 <details>
-<summary><strong>A7.</strong></summary>
+<summary>A</summary>
+
 Because HTTP is structured around a client sending a request and a server returning a response.
 
 The sever usually does not send content by itself  first; it responds to what the client asked for.
@@ -143,11 +156,11 @@ The sever usually does not send content by itself  first; it responds to what th
 
 ---
 
-**Q8.**
-How does HTTP relate to the networking concepts learned previously?
+### Q8. How does HTTP relate to the networking concepts learned previously?
 
 <details>
-<summary><strong>A8.</strong></summary>
+<summary>A</summary>
+
 HTTP uses DNS, IP, Routing, and TCP to reach a server, then defines how web resources are requested and delivered.
 
 </details>

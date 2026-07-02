@@ -1,6 +1,19 @@
 # Phase 02 - Session 02
 # Allow Lists and Deny Lists
 
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 02
+Session: 02
+Title: Allow Lists and Deny Lists
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Objective
 
 Understand the differences between **Allow Lists** and **Deny Lists**, when each approach is appropriate, and why input validation depends on the nature of the expected input rather than a universal rule.
@@ -206,49 +219,49 @@ Always begin by asking:
 
 ---
 
-# QA
+# Review Questions
 
-## Q1. What is the main difference between an Allow List and a Deny List?
+### Q1. What is the main difference between an Allow List and a Deny List?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q2. Why can a Deny List become incomplete over time?
+### Q2. Why can a Deny List become incomplete over time?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q3. Give three examples of inputs that are good candidates for an Allow List.
+### Q3. Give three examples of inputs that are good candidates for an Allow List.
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q4. Why is a forum post or blog comment usually not a good candidate for a strict Allow List?
+### Q4. Why is a forum post or blog comment usually not a good candidate for a strict Allow List?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-## Q5. Complete the sentence:
+### Q5. Complete the sentence:
 
 > The correct validation strategy should be chosen based on _____________________.
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>

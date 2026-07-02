@@ -1,14 +1,17 @@
-# Phase 02 - Session 04
+# Session 04 — Neighbor Tables
 
 ## Metadata
 
+```yaml
 Roadmap: Networking
 Phase: 02
-Session: 05
-Title: Neighbor Tables 
+Session: 04
+Title: Neighbor Tables
 Status: Completed
 Review: Pending
+ArchiveVersion: 2
 Date: 2026-06-26
+```
 
 ---
 

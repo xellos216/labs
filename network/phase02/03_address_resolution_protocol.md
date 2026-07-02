@@ -1,6 +1,19 @@
 # Network Phase 02 — Session 03
 # ARP (Address Resolution Protocol)
 
+## Metadata
+
+```yaml
+Roadmap: Networking
+Phase: 02
+Session: 03
+Title: ARP
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
+
 ## Notes
 
 ### The Problem
@@ -271,33 +284,27 @@ Ethernet Frame
 
 ---
 
-## QA
+# Review Questions
 
-### Q1
-
-Why can't Linux create an Ethernet frame using only the destination IP address?
+### Q1. Why can't Linux create an Ethernet frame using only the destination IP address?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q2
-
-What problem does ARP solve?
+### Q2. What problem does ARP solve?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q3
-
-Complete the transformation:
+### Q3. Complete the transformation:
 
 ```text
 Destination IP
@@ -311,37 +318,31 @@ Destination MAC
 ```
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q4
-
-What command displays the neighbor table?
+### Q4. What command displays the neighbor table?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q5
-
-What does `lladdr` stand for?
+### Q5. What does `lladdr` stand for?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q6
-
-In the neighbor table, what does each field represent?
+### Q6. In the neighbor table, what does each field represent?
 
 - IP
 - dev
@@ -349,48 +350,40 @@ In the neighbor table, what does each field represent?
 - State
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q7
-
-Why does Linux cache ARP results?
+### Q7. Why does Linux cache ARP results?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q8
-
-What is the difference between `REACHABLE` and `STALE`?
+### Q8. What is the difference between `REACHABLE` and `STALE`?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q9
-
-Does `STALE` mean the MAC address has been deleted?
+### Q9. Does `STALE` mean the MAC address has been deleted?
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
 
 ---
 
-### Q10
-
-Complete the packet flow:
+### Q10. Complete the packet flow:
 
 ```text
 Application
@@ -411,6 +404,6 @@ Ethernet Frame
 ```
 
 <details>
-<summary>Answer</summary>
+<summary>A</summary>
 
 </details>
