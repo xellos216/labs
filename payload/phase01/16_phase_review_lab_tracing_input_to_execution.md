@@ -1,4 +1,17 @@
-# Phase 01 Integration
+# Session 16 — Phase Review Lab — Tracing Input to Execution
+
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 01
+Session: 16
+Title: Phase Review Lab — Tracing Input to Execution
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Integrated Shell Model
 
@@ -71,13 +84,12 @@ mechanisms.
 - Distinguish visible output from execution and exit status.
 - Treat command resolution and environment as security inputs.
 
-# QA
+# Review Questions
 
-**Q1.**
-Why should shell input be analyzed in layers?
+### Q1. Why should shell input be analyzed in layers?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 Each layer can change meaning: quotes affect parsing, expansions change text,
 splitting and globbing change argv, redirections change descriptors, and
@@ -87,11 +99,10 @@ execution creates runtime behavior.
 
 ---
 
-**Q2.**
-In `printf '%s\n' "$HOME" | grep home >result.txt 2>errors.txt &`, what parser structures are present?
+### Q2. In `printf '%s\n' "$HOME" | grep home >result.txt 2>errors.txt &`, what parser structures are present?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 The command contains quoting, parameter expansion, a pipeline, stdout and
 stderr redirections, and background execution.
@@ -100,11 +111,10 @@ stderr redirections, and background execution.
 
 ---
 
-**Q3.**
-What descriptor graph does the example create around `grep`?
+### Q3. What descriptor graph does the example create around `grep`?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 `grep` receives stdin from the pipe, writes stdout to `result.txt`, and writes
 stderr to `errors.txt`.
@@ -113,11 +123,10 @@ stderr to `errors.txt`.
 
 ---
 
-**Q4.**
-Why is filtering one character class a weak injection defense?
+### Q4. Why is filtering one character class a weak injection defense?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Shell grammar has many mechanisms for changing interpretation, including
 quoting, expansion, redirection, separators, and command resolution. Blocking
