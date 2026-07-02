@@ -1,4 +1,17 @@
-# Pipe Basics
+# Session 08 — Pipelines and Redirection
+
+## Metadata
+
+```yaml
+Roadmap: Payload Construction & Parser Reasoning
+Phase: 01
+Session: 08
+Title: Pipelines and Redirection
+Status:
+Review:
+ArchiveVersion: 2
+Date:
+```
 
 ## Core Model
 
@@ -70,13 +83,12 @@ command 2>&1 | consumer
 4. Stderr is not piped unless explicitly redirected.
 5. Parser syntax determines the process and descriptor graph.
 
-# QA
+# Review Questions
 
-**Q1.**
-What descriptor connection does a normal pipe create?
+### Q1. What descriptor connection does a normal pipe create?
 
 <details>
-<summary><strong>A1.</strong></summary>
+<summary>A</summary>
 
 It connects the producer's stdout, FD 1, to the consumer's stdin, FD 0,
 through a kernel pipe.
@@ -85,11 +97,10 @@ through a kernel pipe.
 
 ---
 
-**Q2.**
-Why is `|` not visible to either command as an argument?
+### Q2. Why is `|` not visible to either command as an argument?
 
 <details>
-<summary><strong>A2.</strong></summary>
+<summary>A</summary>
 
 `|` is shell parser syntax. The shell uses it to construct a pipeline and
 does not include it in either command's argv.
@@ -98,11 +109,10 @@ does not include it in either command's argv.
 
 ---
 
-**Q3.**
-What happens if the consumer ignores stdin?
+### Q3. What happens if the consumer ignores stdin?
 
 <details>
-<summary><strong>A3.</strong></summary>
+<summary>A</summary>
 
 The pipe may still be created, but the consumer does not read the data. The
 producer's output can become unread and may be discarded or trigger pipe
@@ -112,11 +122,10 @@ closure behavior.
 
 ---
 
-**Q4.**
-How can stderr be included in a pipe?
+### Q4. How can stderr be included in a pipe?
 
 <details>
-<summary><strong>A4.</strong></summary>
+<summary>A</summary>
 
 Redirect stderr to stdout before the pipe, for example `command 2>&1 |
 consumer`.
