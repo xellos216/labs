@@ -1,4 +1,4 @@
-# Phase 01 - Session 05
+# Session 05 — Stack Fundamentals
 
 ## Metadata
 

@@ -1,4 +1,4 @@
-# Phase 02 - Session 04
+# Session 04 — Neighbor Tables
 
 ## Metadata
 

@@ -1,4 +1,4 @@
-# Phase 01 - Session 06
+# Session 06 — Stack Growth Observation
 
 ## Metadata
 

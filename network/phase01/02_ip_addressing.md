@@ -1,4 +1,4 @@
-# IP Addressing
+# Session 02 — IP Addresses
 
 ## Metadata
 

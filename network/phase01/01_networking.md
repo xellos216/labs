@@ -1,4 +1,4 @@
-# Networking
+# Session 01 — What is a Network?
 
 ## Metadata
 

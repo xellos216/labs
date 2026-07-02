@@ -1,4 +1,4 @@
-# TCP Handshake
+# Session 06 — TCP Three-Way Handshake
 
 ## Metadata
 
