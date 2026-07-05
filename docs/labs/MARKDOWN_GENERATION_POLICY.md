@@ -17,7 +17,9 @@ backlog/**/*.md
 docs/labs/**/*.md
 ```
 
-Do not normalize `legacy/**` unless the user explicitly requests a legacy migration, cleanup task, or privacy redaction task.
+Repository Markdown outside these paths should be handled only when the task explicitly includes it.
+
+The public repository baseline does not keep a `legacy/` tree. Do not reintroduce historical archive directories unless the user explicitly requests a dedicated restoration or migration task.
 
 ---
 
@@ -46,7 +48,6 @@ When creating or editing Markdown, follow these rules by default:
 - Avoid trailing spaces.
 - Avoid repeated blank lines unless a template explicitly requires them.
 - Do not rewrite learner answers for style-only reasons.
-- Do not normalize historical `legacy/**` files unless explicitly requested.
 
 Example list formatting:
 
@@ -125,7 +126,7 @@ aa:bb:cc:dd:ee:ff
 
 The purpose is to preserve the network model without exposing the user's actual environment.
 
-Do not rewrite `legacy/**` for style-only reasons. Redact `legacy/**` only when the task is explicitly about privacy, public-repository safety, or legacy migration.
+Historical or pre-redaction material must not be reintroduced into the public repository unless the task is explicitly about audited restoration, migration, or private archival work.
 
 ---
 
@@ -161,7 +162,7 @@ Check MAC addresses:
 ```bash
 rg -n --pcre2 \
   -e '\b[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){5}\b' \
-  -- active backlog docs legacy README.md AGENTS.md
+  -- active backlog docs README.md AGENTS.md
 ```
 
 Check public IPv4 addresses:
@@ -169,7 +170,7 @@ Check public IPv4 addresses:
 ```bash
 rg -n --pcre2 \
   -e '\b(?!(?:10|127)\.)(?!(?:172\.(?:1[6-9]|2[0-9]|3[01]))\.)(?!(?:192\.168)\.)(?!(?:169\.254)\.)(?!(?:0|255)\.)(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3}\b' \
-  -- active backlog docs legacy README.md AGENTS.md
+  -- active backlog docs README.md AGENTS.md
 ```
 
 Review matches manually because documentation ranges such as `203.0.113.0/24`, `198.51.100.0/24`, `192.0.2.0/24`, and well-known public examples such as `8.8.8.8` may be intentional.
@@ -185,7 +186,7 @@ When an agent generates or edits Markdown for Labs, it must:
 1. Read this policy when the task involves Markdown generation, Markdown cleanup, privacy redaction, or Markdown policy changes.
 2. Keep changes scoped to the requested files.
 3. Preserve learner answers and historical context.
-4. Exclude `legacy/**` from normalization unless explicitly requested.
+4. Avoid reintroducing historical or pre-redaction material into the public repository unless explicitly requested.
 5. Mask personal or local environment identifiers before writing public Markdown.
 6. Run or request the repository markdownlint command before commit.
 7. Run or request redaction checks when real network or host output appears in the generated Markdown.
@@ -197,5 +198,5 @@ When an agent generates or edits Markdown for Labs, it must:
 Use this short instruction in the ChatGPT Labs project settings:
 
 ```text
-When creating or editing Markdown for Labs, follow the canonical repository policy in docs/labs/MARKDOWN_GENERATION_POLICY.md. The GitHub repository is authoritative over Project Sources; do not normalize legacy/** unless explicitly requested.
+When creating or editing Markdown for Labs, follow the canonical repository policy in docs/labs/MARKDOWN_GENERATION_POLICY.md. The GitHub repository is authoritative over Project Sources; do not reintroduce historical or pre-redaction material unless explicitly requested.
 ```

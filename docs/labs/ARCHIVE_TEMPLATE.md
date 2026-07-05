@@ -47,7 +47,7 @@ Recommended current value:
 2
 ```
 
-Archives without `ArchiveVersion` should be treated as legacy archives unless there is clear evidence that they already follow the current format.
+Archives without `ArchiveVersion` should be treated as older-format archives unless there is clear evidence that they already follow the current format.
 
 ---
 

@@ -246,8 +246,6 @@ When a session produces or modifies Markdown under `active/**`, `backlog/**`, or
 docs/labs/MARKDOWN_GENERATION_POLICY.md
 ```
 
-Do not normalize `legacy/**` unless explicitly requested.
-
 Before committing Markdown changes, validate with the repository markdownlint command documented in that policy.
 
 ---
