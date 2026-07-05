@@ -98,6 +98,8 @@ Keep the following in ChatGPT Project Sources:
 Optionally keep:
 
 * `docs/labs/DESIGN_PRINCIPLES.md`
+* `docs/labs/ARCHIVE_MIGRATION_PLAN.md`
+* `docs/labs/ROADMAP_FORMAT.md`
 
 Do not keep ordinary session archives, handoff files, temporary notes, or frequently changing progress records in ChatGPT Project Sources.
 
