@@ -1,6 +1,6 @@
 # Labs Archive Migration Plan
 
-> This document records how Labs handles historical archive documents that were generated under older formats.
+> This document records how Labs handles archive documents that were generated under older formats.
 >
 > Existing archives are learning records. They should not be silently rewritten without an explicit migration task.
 
@@ -12,7 +12,7 @@ Labs archives have been created over time while the project rules, archive templ
 
 As a result, older archive documents may not match the current archive format.
 
-This document defines how to classify, preserve, and later refactor those archives.
+This document defines how to classify, preserve, and later refactor those archives when the user explicitly requests archive maintenance.
 
 ---
 
@@ -62,13 +62,13 @@ Recommended current value:
 ArchiveVersion: 2
 ```
 
-Archives without `ArchiveVersion` should be treated as legacy archives unless there is clear evidence that they already follow the current format.
+Archives without `ArchiveVersion` should be treated as older-format archives unless there is clear evidence that they already follow the current format.
 
 ---
 
-# Legacy Archive Indicators
+# Older-Format Archive Indicators
 
-A document may be treated as a legacy archive if it has one or more of the following:
+A document may require migration review if it has one or more of the following:
 
 * no `ArchiveVersion` field
 * missing `Review` metadata
@@ -113,7 +113,7 @@ During migration:
 
 ## Unix Scope Exclusion
 
-The `unix/` directory is excluded from general archive migration and refactoring work.
+The `active/unix/` directory is excluded from general archive migration and refactoring work.
 
 Unix uses a separate compact roadmap and archive format. Do not inspect, classify, migrate, normalize, or rewrite Unix files as part of a general archive migration task.
 
@@ -131,15 +131,7 @@ The current canonical roadmap is authoritative for the active roadmap session se
 
 If an existing archive path, title, or session conflicts with the current roadmap, do not silently rename the file or rewrite its content to make it appear that the historical session followed the current sequence.
 
-Preserve mismatched files as historical or pre-roadmap archives. When appropriate, move them into a local `legacy/` directory near their original phase or session location.
-
-Example:
-
-```text
-server/phase00/legacy/05_virtmanager_virsh.md
-```
-
-Moving a file into `legacy/` must preserve its historical learning content. Do not delete the file or rewrite its technical content solely to match the current roadmap.
+Preserve mismatched files as historical or pre-roadmap archives within their current roadmap context unless the user explicitly approves a relocation or deletion.
 
 Do not invent a missing current-roadmap session archive automatically. If the user explicitly approves creation and the conditions in `Current Session Creation Limit` are satisfied, create a new Draft archive or study file using:
 
@@ -173,8 +165,7 @@ A replacement Draft archive or study file may be created only when all of the fo
 
 1. A historical local archive or session file already existed.
 2. Its session number or path conflicted with the current canonical roadmap.
-3. The historical file was moved into a local `legacy/` directory, creating a gap in the current roadmap-aligned sequence.
-4. The user explicitly approved creating a replacement current-roadmap Draft archive or study file for that reconciliation gap.
+3. The user explicitly approved creating a replacement current-roadmap Draft archive or study file for that reconciliation gap.
 
 Do not fabricate study completion, observations, command outputs, screenshots, logs, packet captures, or learner answers in a replacement file.
 
@@ -201,7 +192,7 @@ Recommended process:
 ```text
 Inventory archives
 ↓
-Classify legacy/current format
+Classify current/older format
 ↓
 Identify missing metadata
 ↓
