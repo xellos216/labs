@@ -19,6 +19,8 @@ docs/labs/**/*.md
 
 Repository Markdown outside these paths should be handled only when the task explicitly includes it.
 
+The public repository baseline does not keep a `legacy/` tree. Do not reintroduce historical archive directories unless the user explicitly requests a dedicated restoration or migration task.
+
 ---
 
 # Source of Truth
@@ -124,6 +126,8 @@ aa:bb:cc:dd:ee:ff
 
 The purpose is to preserve the network model without exposing the user's actual environment.
 
+Historical or pre-redaction material must not be reintroduced into the public repository unless the task is explicitly about audited restoration, migration, or private archival work.
+
 ---
 
 # Required Validation
@@ -182,9 +186,10 @@ When an agent generates or edits Markdown for Labs, it must:
 1. Read this policy when the task involves Markdown generation, Markdown cleanup, privacy redaction, or Markdown policy changes.
 2. Keep changes scoped to the requested files.
 3. Preserve learner answers and historical context.
-4. Mask personal or local environment identifiers before writing public Markdown.
-5. Run or request the repository markdownlint command before commit.
-6. Run or request redaction checks when real network or host output appears in the generated Markdown.
+4. Avoid reintroducing historical or pre-redaction material into the public repository unless explicitly requested.
+5. Mask personal or local environment identifiers before writing public Markdown.
+6. Run or request the repository markdownlint command before commit.
+7. Run or request redaction checks when real network or host output appears in the generated Markdown.
 
 ---
 
@@ -193,5 +198,5 @@ When an agent generates or edits Markdown for Labs, it must:
 Use this short instruction in the ChatGPT Labs project settings:
 
 ```text
-When creating or editing Markdown for Labs, follow the canonical repository policy in docs/labs/MARKDOWN_GENERATION_POLICY.md. The GitHub repository is authoritative over Project Sources.
+When creating or editing Markdown for Labs, follow the canonical repository policy in docs/labs/MARKDOWN_GENERATION_POLICY.md. The GitHub repository is authoritative over Project Sources; do not reintroduce historical or pre-redaction material unless explicitly requested.
 ```
