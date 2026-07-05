@@ -8,9 +8,9 @@ This repository is a centralized personal learning workspace for long-term techn
 
 The primary goals are:
 
-* preserve learning history
+* preserve learning continuity
 * preserve topic-oriented organization
-* maintain roadmap-based learning continuity
+* maintain roadmap-based progress
 * keep experiments reproducible
 * maintain readable notes and lab records
 * support ChatGPT and Codex collaboration
@@ -21,9 +21,10 @@ Favor clarity, incremental progress, and maintainability over broad automation.
 This repository contains:
 
 * active learning roadmaps
+* backlog roadmaps
 * phase-based learning records
 * practical lab notes
-* archive documents
+* archive documents inside active or backlog tracks
 * review questions
 * experiment records
 * small experiments and proof-of-concept code
@@ -71,7 +72,7 @@ Before creating, moving, or refactoring lab documents, read the relevant documen
   * Rules for interactive learning sessions.
 * `docs/labs/MARKDOWN_GENERATION_POLICY.md`
 
-  * Markdown generation, formatting, markdownlint validation, and legacy exclusion policy.
+  * Markdown generation, formatting, markdownlint validation, and redaction policy.
 * `docs/labs/ARCHIVE_TEMPLATE.md`
 
   * Template for archived learning/session documents.
@@ -87,9 +88,6 @@ Before creating, moving, or refactoring lab documents, read the relevant documen
 * `docs/labs/ROADMAP_FORMAT.md`
 
   * Format rules for roadmap documents.
-* `docs/labs/ARCHIVE_MIGRATION_PLAN.md`
-
-  * Policy for handling older archive formats and future archive refactoring.
 
 ---
 
@@ -101,7 +99,7 @@ For source policy, Project Sources, or GitHub connector behavior, read:
 
 * `docs/labs/LABS_SOURCE_SYNC.md`
 
-For Markdown generation, Markdown cleanup, or Markdown policy changes, read:
+For Markdown generation, Markdown cleanup, privacy redaction, or Markdown policy changes, read:
 
 * `docs/labs/MARKDOWN_GENERATION_POLICY.md`
 
@@ -118,26 +116,81 @@ For experiment documentation, read:
 For roadmap continuation, read:
 
 * `docs/labs/ROADMAP_INDEX.md`
-* the active roadmap's `<topic>/README.md`
+* the active roadmap's `active/<roadmap>/README.md`
 
 For roadmap creation or roadmap modification, read:
 
 * `docs/labs/ROADMAP_FORMAT.md`
 * `docs/labs/ROADMAP_INDEX.md`
-* the relevant `<topic>/README.md` if it already exists
-
-For archive migration or archive format cleanup, read:
-
-* `docs/labs/ARCHIVE_TEMPLATE.md`
-* `docs/labs/QA_TEMPLATE_SPECIFICATION.md`
-* `docs/labs/ARCHIVE_MIGRATION_PLAN.md`
+* the relevant `active/<roadmap>/README.md` or `backlog/<roadmap>/README.md` if it already exists
 
 For repository structure, taxonomy, or organization changes, read:
 
 * `docs/labs/LABS_SOURCE_SYNC.md`
 * `docs/labs/ROADMAP_INDEX.md`
 * `docs/labs/DESIGN_PRINCIPLES.md`
-* `docs/labs/ARCHIVE_MIGRATION_PLAN.md`
+
+---
+
+# Repository Layout Policy
+
+Current high-level repository structure:
+
+```text
+AGENTS.md
+README.md
+active/
+backlog/
+docs/
+```
+
+## active/
+
+`active/` contains roadmaps that are currently practiced, reviewed, or expanded.
+
+Canonical active roadmap path:
+
+```text
+active/<roadmap>/README.md
+```
+
+Use active roadmap directories for:
+
+* topic roadmaps
+* reusable concepts
+* long-term notes
+* organized lab records
+* phase/session archives
+* practical observations
+
+## backlog/
+
+`backlog/` contains planned, paused, or future roadmaps.
+
+Backlog roadmap path:
+
+```text
+backlog/<roadmap>/README.md
+```
+
+Backlog material is not active unless explicitly reactivated.
+
+## docs/labs/
+
+`docs/labs/` contains governance and operational documentation.
+
+Use for:
+
+* source sync policy
+* project design principles
+* session rules
+* Markdown generation policy
+* archive templates
+* QA templates
+* experiment templates
+* roadmap index and roadmap format rules
+
+Do not place ordinary session archives here.
 
 ---
 
@@ -145,22 +198,23 @@ For repository structure, taxonomy, or organization changes, read:
 
 Each active roadmap directory owns its roadmap document.
 
-The canonical roadmap path is:
+The canonical active roadmap path is:
 
 ```text
-<topic>/README.md
+active/<roadmap>/README.md
 ```
 
 Examples:
 
 ```text
-unix/README.md
-c/README.md
-network/README.md
-server/README.md
-window/README.md
-crypto/README.md
-payload/README.md
+active/unix/README.md
+active/c/README.md
+active/network/README.md
+active/server/README.md
+active/window/README.md
+active/crypto/README.md
+active/payload/README.md
+active/numbersystem/README.md
 ```
 
 Do not move roadmap documents into a central `roadmaps/` directory unless the user explicitly requests a structural redesign.
@@ -169,227 +223,7 @@ Roadmap documents and their session archives should stay close to each other ins
 
 ---
 
-# Workspace Map
-
-Current high-level repository structure:
-
-```text
-AGENTS.md
-README.md
-
-docs/
-└── labs/
-
-archive/
-
-c/
-crypto/
-devtool/
-network/
-numbersystem/
-payload/
-server/
-unix/
-window/
-```
-
-`docs/labs/` contains governance documents, templates, and source policy.
-
-Top-level topic directories contain roadmap-specific material and learning records.
-
-`archive/` contains preserved historical or inactive learning material.
-
----
-
-# Directory Semantics
-
-## docs/labs/
-
-Labs governance and operational documentation.
-
-Use for:
-
-* source sync policy
-* project design principles
-* session rules
-* archive templates
-* QA templates
-* experiment templates
-* roadmap index and roadmap format rules
-* archive migration policy
-
-Do not place ordinary session archives here.
-
----
-
-## c/
-
-C, memory, debugging, embedded systems, firmware, and low-level systems learning.
-
-This track may lead toward embedded Linux, firmware analysis, and IoT systems.
-
-Use for:
-
-* C language experiments
-* memory layout observations
-* GDB notes
-* ELF and binary internals
-* embedded Linux and firmware analysis material
-
----
-
-## crypto/
-
-Cryptography learning records and experiments.
-
-Use for:
-
-* cryptographic concepts
-* byte-level reasoning
-* encoding and decoding
-* XOR and stream cipher reasoning
-* practical analysis notes
-
----
-
-## devtool/
-
-Browser DevTools and web troubleshooting learning records.
-
-Use for:
-
-* browser inspection notes
-* network panel observations
-* console observations
-* practical web debugging records
-
----
-
-## network/
-
-Networking concepts, Linux networking, packet analysis, and protocol learning.
-
-Use for:
-
-* protocol notes
-* packet capture observations
-* routing, DNS, TCP, UDP, HTTP, and TLS material
-* Linux networking experiments
-* authorized network lab observations
-
----
-
-## numbersystem/
-
-Number systems and byte-representation learning records.
-
-Use for:
-
-* binary
-* hexadecimal
-* ASCII
-* byte/bit relationships
-* representation-focused notes
-
----
-
-## payload/
-
-Payload construction and parser reasoning material.
-
-Use for:
-
-* controlled payload experiments
-* parser-boundary reasoning
-* input mutation observations
-* local and authorized security lab material
-
-Keep content ethical, local, and explicitly educational.
-
-Do not add instructions intended for unauthorized use.
-
----
-
-## server/
-
-Linux server administration training.
-
-Use for:
-
-* users and permissions
-* authentication
-* services
-* logging
-* SSH
-* firewalling
-* troubleshooting
-* recovery
-* VM-based administration exercises
-
-Prefer lab VM changes over host system changes for administration experiments.
-
----
-
-## unix/
-
-Unix and Linux command-line training.
-
-Use for:
-
-* shell workflows
-* text processing
-* pipelines
-* filesystem inspection
-* process and service observation
-* composable CLI practice
-
-Prefer learner-first task solving and observable behavior.
-
----
-
-## window/
-
-Windows fundamentals, enterprise systems, and security-oriented Windows learning.
-
-Use for:
-
-* Windows architecture
-* processes and services
-* NTFS
-* users and permissions
-* event logs
-* PowerShell
-* Active Directory fundamentals
-* Windows security observations
-
----
-
-## archive/
-
-Preserved historical or inactive learning material.
-
-Use for:
-
-* archived roadmaps
-* old project records
-* historical learning notes
-* material that should remain accessible but is not a current top-level active roadmap
-
-Do not treat archived material as an active roadmap unless the user explicitly reactivates it.
-
----
-
 # Content Placement Rules
-
-Top-level topic directories are stable learning areas.
-
-Use them for:
-
-* topic roadmaps
-* reusable concepts
-* long-term notes
-* organized lab records
-* phase/session archives
 
 Use `phaseXX/` directories for:
 
@@ -413,10 +247,6 @@ When content fits multiple directories, choose the directory based on the primar
 
 Archive documents are learning records.
 
-Do not silently rewrite old archives to match the latest template.
-
-Existing archives may use older formats.
-
 Future archives should follow:
 
 ```text
@@ -429,13 +259,9 @@ Future QA sections should follow:
 docs/labs/QA_TEMPLATE_SPECIFICATION.md
 ```
 
-Archive migration should be handled only as an explicit refactoring task.
+Do not silently rewrite populated learner answers.
 
-Before migrating existing archives, read:
-
-```text
-docs/labs/ARCHIVE_MIGRATION_PLAN.md
-```
+Do not collapse phase history into polished notes without review.
 
 ---
 
@@ -464,13 +290,11 @@ Avoid:
 * mixed naming styles
 * unnecessary mass renaming
 
-Roadmap files should normally remain:
+Roadmap files should normally remain named:
 
 ```text
 README.md
 ```
-
-inside their topic directory.
 
 ---
 
@@ -481,12 +305,12 @@ Always prefer:
 * small diffs
 * explicit reasoning
 * incremental changes
-* preserving existing learning history
+* preserving learning continuity
 * reading local README files before changing a topic area
 
 Never:
 
-* mass-delete files
+* mass-delete files without explicit approval
 * perform large reorganizations without approval
 * rewrite notes for style alone
 * modify unrelated files
@@ -527,10 +351,24 @@ Avoid refactors that:
 * rename files without strong justification
 * separate roadmaps from their topic directories without approval
 * mix roadmaps, notes, and runnable code in confusing ways
-* destroy historical learning context
+* destroy learning context without explicit approval
 * obscure the reason a lab was created
 
 When extracting reusable knowledge from phase notes, preserve the original phase record unless the user explicitly approves consolidation.
+
+---
+
+# Privacy and Redaction
+
+Labs may be public.
+
+Before committing Markdown produced from real local output, follow:
+
+```text
+docs/labs/MARKDOWN_GENERATION_POLICY.md
+```
+
+Mask personal and local environment identifiers such as public IPs, MAC addresses, host-specific interface names, usernames, hostnames, local paths, tokens, or account IDs.
 
 ---
 
@@ -569,6 +407,22 @@ After modifications, verify as appropriate:
 git status --short
 git diff --stat
 git diff --check
+```
+
+For Markdown changes, run:
+
+```bash
+npx markdownlint-cli2@latest \
+  "AGENTS.md" \
+  "active/**/*.md" \
+  "backlog/**/*.md" \
+  "docs/labs/**/*.md"
+```
+
+For public Markdown generated from real network or host output, run the redaction checks documented in:
+
+```text
+docs/labs/MARKDOWN_GENERATION_POLICY.md
 ```
 
 For structural refactors:
