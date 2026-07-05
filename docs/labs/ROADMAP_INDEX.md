@@ -22,12 +22,13 @@ It should remain concise and stable.
 
 # Repository Structure
 
-Labs is organized by learning status.
+Labs is organized by learning status and project function.
 
 ```text
 active/
 backlog/
 docs/
+AGENTS.md
 README.md
 ```
 
@@ -53,7 +54,9 @@ backlog/<roadmap>/README.md
 
 ## docs/
 
-`docs/labs/` contains project governance documents, templates, and operational policies.
+`docs/labs/` contains project governance, templates, source policy, and workflow rules.
+
+The public repository baseline does not keep a historical archive tree. Historical or pre-redaction material should not be reintroduced unless the user explicitly requests a dedicated restoration, migration, or private archival task.
 
 ---
 
@@ -123,7 +126,6 @@ Examples:
 backlog/flask/README.md
 backlog/toolsmith/README.md
 backlog/devtool/README.md
-backlog/vulnerability_report_lab/README.md
 ```
 
 Do not create duplicate canonical roadmap files in a separate central roadmap directory unless the project structure is explicitly revised.
@@ -490,6 +492,13 @@ When adding a backlog roadmap:
 * add it under `backlog/<roadmap>/`
 * create `backlog/<roadmap>/README.md`
 * update this index if it is a meaningful project roadmap
+
+When restoring historical material:
+
+* use a dedicated branch
+* verify privacy and redaction before commit
+* preserve original context when possible
+* avoid reintroducing pre-redaction material into the public baseline without explicit approval
 
 This document should remain an overview, not a detailed curriculum.
 
