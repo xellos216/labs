@@ -1,0 +1,6 @@
+May01 nginx INFO started
+May01 nginx ERROR failed
+May02 sshd INFO login
+May02 mysql ERROR crash
+May03 nginx INFO reload
+May03 mysql INFO recovered

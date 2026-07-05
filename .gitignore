@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Virtual env
+.venv/
+
+# Editor
+*.swp
+*.swo
+
+# dotfiles
+.agents/
+.codex/
+
+# directory
+tmp/

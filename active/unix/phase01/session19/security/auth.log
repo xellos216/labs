@@ -1,0 +1,6 @@
+INFO alice login
+WARN bob password_fail
+ERROR alice sudo_fail
+INFO charlie login
+ERROR bob sudo_fail
+WARN alice password_fail

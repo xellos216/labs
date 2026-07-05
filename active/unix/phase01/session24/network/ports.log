@@ -1,0 +1,6 @@
+tcp nginx 80 LISTEN
+tcp nginx 443 LISTEN
+tcp sshd 22 LISTEN
+udp dns 53 LISTEN
+tcp mysql 3306 LISTEN
+tcp nginx 443 ESTABLISHED

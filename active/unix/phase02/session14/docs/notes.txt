@@ -1,0 +1,2 @@
+debug notes
+404 means missing

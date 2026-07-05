@@ -1,0 +1,2 @@
+dev checklist
+debug enabled

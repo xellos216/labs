@@ -1,0 +1,5 @@
+alice:admin:active
+bob:user:inactive
+charlie:user:active
+david:admin:inactive
+eve:user:active

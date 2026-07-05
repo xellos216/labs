@@ -1,0 +1,6 @@
+rootfs / 72
+homefs /home 91
+datafs /data 55
+backupfs /backup 97
+tmpfs /tmp 12
+varfs /var 83

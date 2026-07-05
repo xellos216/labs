@@ -1,0 +1,554 @@
+# Roadmap Index
+
+> This document provides a high-level overview of every roadmap in the Labs project.
+>
+> It serves as the project's entry point and navigation document rather than a learning archive.
+
+---
+
+# Purpose
+
+The Roadmap Index exists to:
+
+* provide a quick overview of all learning tracks
+* define the purpose of each roadmap
+* show long-term progression
+* avoid duplicate roadmap creation
+* simplify project navigation
+
+It should remain concise and stable.
+
+---
+
+# Repository Structure
+
+Labs is organized by learning status.
+
+```text
+active/
+backlog/
+legacy/
+docs/
+README.md
+```
+
+## active/
+
+`active/` contains roadmaps that are currently practiced, reviewed, or expanded.
+
+Canonical active roadmap path:
+
+```text
+active/<roadmap>/README.md
+```
+
+## backlog/
+
+`backlog/` contains planned, paused, or future roadmaps.
+
+Backlog roadmap path:
+
+```text
+backlog/<roadmap>/README.md
+```
+
+## legacy/
+
+`legacy/` contains historical archive files preserved outside active and backlog learning tracks.
+
+Legacy archive path:
+
+```text
+legacy/<roadmap>/<phase>/<file>.md
+```
+
+Legacy files are preservation records.
+
+They are not active learning sessions and should not be treated as current roadmap state.
+
+---
+
+# Roadmap Overview
+
+| Location                            | Roadmap                     | Primary Focus                                 | Status  |
+| ----------------------------------- | --------------------------- | --------------------------------------------- | ------- |
+| `active/unix/`                      | Unix                        | CLI, text processing, observability           | Active  |
+| `active/c/`                         | C Programming               | Memory, ELF, assembly foundations             | Active  |
+| `active/network/`                   | Networking                  | Communication, protocols, packet reasoning    | Active  |
+| `active/server/`                    | Linux Server Administration | Operations, troubleshooting, recovery         | Active  |
+| `active/window/`                    | Windows Fundamentals        | Windows architecture and enterprise systems   | Active  |
+| `active/crypto/`                    | Cryptography                | Byte reasoning and transformation analysis    | Active  |
+| `active/payload/`                   | Payload Construction        | Parser reasoning and input interpretation     | Active  |
+| `active/numbersystem/`              | Number Systems              | Binary, hex, bytes, encoding foundations      | Active  |
+| `backlog/flask/`                    | Flask                       | HTTP, web applications, security foundations  | Backlog |
+| `backlog/toolsmith/`                | Security Toolsmith          | Building security-related utilities           | Backlog |
+| `backlog/vulnerability_report_lab/` | Vulnerability Report Lab    | Vulnerability verification and report writing | Backlog |
+| `backlog/devtool/`                  | DevTools                    | Browser troubleshooting and request analysis  | Backlog |
+| `backlog/echotrace/`                | EchoTrace                   | Public-comment pattern analysis               | Backlog |
+| `backlog/ironforge/`                | Iron Forge                  | Systems/network/home-lab planning             | Backlog |
+| `backlog/LFS/`                      | Linux From Scratch          | Linux build process and system construction   | Backlog |
+| `backlog/myjarvis/`                 | MyJarvis                    | Personal assistant / lab interface project    | Backlog |
+| `backlog/window/`                   | Windows                     | Paused or alternate Windows roadmap material  | Backlog |
+
+Status meanings:
+
+* **Active** — maintained as a current learning track under `active/`
+* **Backlog** — planned, paused, or future work under `backlog/`
+* **Legacy** — historical archive material under `legacy/`
+
+Repository location is authoritative for lifecycle classification.
+
+---
+
+# Roadmap File Policy
+
+Each active roadmap owns its roadmap document.
+
+Canonical active roadmap path:
+
+```text
+active/<roadmap>/README.md
+```
+
+Examples:
+
+```text
+active/unix/README.md
+active/c/README.md
+active/network/README.md
+active/server/README.md
+active/window/README.md
+active/crypto/README.md
+active/payload/README.md
+```
+
+Backlog roadmap path:
+
+```text
+backlog/<roadmap>/README.md
+```
+
+Examples:
+
+```text
+backlog/flask/README.md
+backlog/toolsmith/README.md
+backlog/devtool/README.md
+```
+
+Legacy archive path:
+
+```text
+legacy/<roadmap>/<phase>/<file>.md
+```
+
+Examples:
+
+```text
+legacy/crypto/phase01/05_nonce.md
+legacy/payload/phase01/24_final_review.md
+legacy/server/phase00/README.md
+```
+
+Do not create duplicate canonical roadmap files in a separate central roadmap directory unless the project structure is explicitly revised.
+
+If a roadmap file is missing, moved, or conflicts with this index, report the conflict before continuing the learning sequence.
+
+Individual roadmap documents should normally be read from the GitHub remote or repository working tree, not treated as canonical ChatGPT Project Sources.
+
+---
+
+# Suggested Learning Relationships
+
+The roadmaps are designed to reinforce one another.
+
+```text
+Unix
+        │
+        ▼
+C Programming
+        │
+        ▼
+Linux Internals
+        │
+        ▼
+Networking
+        │
+        ▼
+Linux Server Administration
+        │
+        ▼
+Windows Fundamentals
+        │
+        ▼
+Flask / Web Foundations
+        │
+        ▼
+Security Toolsmith
+        │
+        ▼
+Cryptography
+        │
+        ▼
+Payload Construction
+        │
+        ▼
+Embedded Linux & Firmware Analysis
+```
+
+This is a conceptual dependency graph rather than a strict prerequisite order.
+
+---
+
+# Roadmap Summaries
+
+## Unix
+
+Location:
+
+```text
+active/unix/
+```
+
+Focus:
+
+* stream processing
+* composable CLI workflows
+* observability
+* shell reasoning
+
+Supports:
+
+* Server Administration
+* Networking
+* Embedded Linux
+* Toolsmith
+
+---
+
+## C Programming
+
+Location:
+
+```text
+active/c/
+```
+
+Focus:
+
+* process memory
+* ELF
+* assembly
+* debugging
+
+Supports:
+
+* Linux Internals
+* Reverse Engineering
+* Embedded Linux
+
+---
+
+## Networking
+
+Location:
+
+```text
+active/network/
+```
+
+Focus:
+
+* packet flow
+* Linux networking
+* protocols
+* packet analysis
+
+Supports:
+
+* Flask
+* Server Administration
+* HTB
+* Security
+
+---
+
+## Linux Server Administration
+
+Location:
+
+```text
+active/server/
+```
+
+Focus:
+
+* services
+* authentication
+* logging
+* troubleshooting
+* recovery
+
+Supports:
+
+* Infrastructure
+* Security
+* Production Linux
+
+---
+
+## Windows Fundamentals
+
+Location:
+
+```text
+active/window/
+```
+
+Focus:
+
+* Windows architecture
+* enterprise systems
+* authentication
+* Active Directory
+
+Supports:
+
+* Enterprise Security
+* Incident Response
+* Windows Internals
+
+---
+
+## Cryptography
+
+Location:
+
+```text
+active/crypto/
+```
+
+Focus:
+
+* bytes
+* transformations
+* XOR
+* token analysis
+
+Supports:
+
+* Payload Construction
+* Web Security
+
+---
+
+## Payload Construction
+
+Location:
+
+```text
+active/payload/
+```
+
+Focus:
+
+* parser reasoning
+* trust boundaries
+* input interpretation
+* multi-stage execution
+
+Supports:
+
+* Web Security
+* Secure Software Design
+
+---
+
+## Number Systems
+
+Location:
+
+```text
+active/numbersystem/
+```
+
+Focus:
+
+* binary
+* hexadecimal
+* bytes
+* encoding
+* numeric representation
+
+Supports:
+
+* C Programming
+* Cryptography
+* Payload Construction
+* Low-level systems reasoning
+
+---
+
+## Flask
+
+Location:
+
+```text
+backlog/flask/
+```
+
+Focus:
+
+* HTTP
+* sessions
+* authentication
+* web application architecture
+
+Supports:
+
+* Web Security
+* Payload Construction
+
+---
+
+## Security Toolsmith
+
+Location:
+
+```text
+backlog/toolsmith/
+```
+
+Focus:
+
+* building small security utilities
+* sockets
+* HTTP
+* parsers
+
+Supports:
+
+* Security Automation
+* Python Engineering
+
+---
+
+## Vulnerability Report Lab
+
+Location:
+
+```text
+backlog/vulnerability_report_lab/
+```
+
+Focus:
+
+* vulnerability verification
+* reproducible PoC writing
+* false-positive filtering
+* impact analysis
+* report writing
+* safe disclosure literacy
+
+Supports:
+
+* Web Security
+* Practical Security Research
+* Embedded Linux & Firmware Analysis
+* IoT Device Security
+
+---
+
+# Current Status
+
+Each roadmap progresses independently.
+
+Progress should always follow:
+
+* the roadmap document
+* completed archive documents
+* committed repository state
+
+Never infer skipped phases or sessions.
+
+Repository location is authoritative for lifecycle classification:
+
+* `active/` contains current learning tracks
+* `backlog/` contains planned or paused tracks
+* `legacy/` contains historical archive records
+
+Status does not imply completion.
+
+Determine progress from the roadmap and its recorded phase/session documents.
+
+---
+
+# Legacy Archive Policy
+
+Legacy archives live under:
+
+```text
+legacy/<roadmap>/<phase>/<file>.md
+```
+
+Legacy files preserve historical learning records.
+
+Rules:
+
+* do not rewrite learner answers
+* do not normalize old archive formats unless explicitly requested
+* do not treat legacy files as current sessions
+* preserve roadmap and phase context
+* do not move legacy files back into active or backlog unless explicitly requested
+
+---
+
+# Future Roadmaps
+
+Potential future additions include:
+
+* Reverse Engineering
+* Windows Internals
+* Malware Analysis
+* Digital Forensics
+* Cloud Infrastructure
+* Kubernetes
+* eBPF
+* Operating System Internals
+* Embedded Linux & Firmware Analysis
+
+These should be added only after a dedicated roadmap has been created.
+
+---
+
+# Maintenance Rules
+
+When adding a new active roadmap:
+
+* add it under `active/<roadmap>/`
+* create `active/<roadmap>/README.md`
+* update this index
+* follow the established roadmap format
+
+When adding a backlog roadmap:
+
+* add it under `backlog/<roadmap>/`
+* create `backlog/<roadmap>/README.md`
+* update this index if it is a meaningful project roadmap
+
+When preserving legacy archives:
+
+* place them under `legacy/<roadmap>/<phase>/`
+* preserve their historical content
+* avoid rewriting learner answers
+* avoid rewriting documents solely to match current templates
+
+This document should remain an overview, not a detailed curriculum.
+
+---
+
+# Project Vision
+
+Together, these roadmaps form a connected systems curriculum.
+
+The long-term objective is to understand complete computing systems — from source code and hardware to networking, operating systems, applications, and security — through evidence-based reasoning and practical observation.

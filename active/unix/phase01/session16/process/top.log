@@ -1,0 +1,6 @@
+root nginx 5 120
+root sshd 1 30
+alice firefox 40 900
+bob vim 2 50
+alice python 25 300
+bob chrome 60 1100

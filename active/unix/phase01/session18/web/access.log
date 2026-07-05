@@ -1,0 +1,6 @@
+GET /index 200 nginx
+POST /login 500 nginx
+GET /admin 403 nginx
+GET /index 200 apache
+POST /upload 500 apache
+GET /health 200 nginx

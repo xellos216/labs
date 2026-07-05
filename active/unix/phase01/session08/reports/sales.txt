@@ -1,0 +1,6 @@
+2026-05-01 alice book 3
+2026-05-01 bob pen 10
+2026-05-02 alice pen 5
+2026-05-02 charlie book 2
+2026-05-03 bob book 1
+2026-05-03 alice notebook 4

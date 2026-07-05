@@ -1,0 +1,46 @@
+user1 GET 184ms
+user2 POST 118ms
+user3 GET 61ms
+user0 POST 115ms
+user1 GET 148ms
+user2 POST 157ms
+user3 GET 87ms
+user0 POST 66ms
+user1 GET 155ms
+user2 POST 20ms
+user3 GET 157ms
+user0 POST 167ms
+user1 GET 152ms
+user2 POST 99ms
+user3 GET 85ms
+user0 POST 189ms
+user1 GET 164ms
+user2 POST 141ms
+user3 GET 31ms
+user0 POST 23ms
+user1 GET 181ms
+user2 POST 173ms
+user3 GET 89ms
+user0 POST 141ms
+user1 GET 79ms
+user2 POST 129ms
+user3 GET 139ms
+user0 POST 60ms
+user1 GET 118ms
+user2 POST 191ms
+user3 GET 31ms
+user0 POST 159ms
+user1 GET 26ms
+user2 POST 109ms
+user3 GET 196ms
+user0 POST 164ms
+user1 GET 84ms
+user2 POST 192ms
+user3 GET 158ms
+user0 POST 34ms
+
+Task01: Print only GET requests
+Task02: Extract the latency value (remove "ms")
+Task03: Print requests where latency is greater than or equal to 100
+Task04: Count requests per user
+Task05: For GET requests with latency >= 100, count requests per user

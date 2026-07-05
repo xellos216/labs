@@ -1,0 +1,6 @@
+ext4 / 70
+ext4 /home 92
+xfs /data 55
+tmpfs /run 15
+ext4 /var 88
+xfs /backup 95

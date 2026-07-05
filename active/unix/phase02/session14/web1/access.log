@@ -1,0 +1,4 @@
+200 /index
+404 /missing
+500 /error
+404 /old
