@@ -89,6 +89,7 @@ Keep the following in ChatGPT Project Sources:
 
 * `docs/labs/LABS_SOURCE_SYNC.md`
 * `docs/labs/LABS_SESSION_RULES.md`
+* `docs/labs/MARKDOWN_GENERATION_POLICY.md`
 * `docs/labs/ARCHIVE_TEMPLATE.md`
 * `docs/labs/QA_TEMPLATE_SPECIFICATION.md`
 * `docs/labs/LAB_EXPERIMENT_TEMPLATE.md`
@@ -97,7 +98,6 @@ Keep the following in ChatGPT Project Sources:
 Optionally keep:
 
 * `docs/labs/DESIGN_PRINCIPLES.md`
-* `docs/labs/ARCHIVE_MIGRATION_PLAN.md`
 
 Do not keep ordinary session archives, handoff files, temporary notes, or frequently changing progress records in ChatGPT Project Sources.
 
@@ -146,6 +146,7 @@ For ordinary archive generation, ChatGPT may use cached Project Sources for:
 * QA format
 * experiment format
 * session interaction rules
+* Markdown generation and redaction policy
 
 If the user says templates were recently edited, or if there is any conflict, ChatGPT should fetch the current template from GitHub before generating final archive output.
 
