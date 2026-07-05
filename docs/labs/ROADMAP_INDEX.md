@@ -27,7 +27,6 @@ Labs is organized by learning status.
 ```text
 active/
 backlog/
-legacy/
 docs/
 README.md
 ```
@@ -52,19 +51,9 @@ Backlog roadmap path:
 backlog/<roadmap>/README.md
 ```
 
-## legacy/
+## docs/
 
-`legacy/` contains historical archive files preserved outside active and backlog learning tracks.
-
-Legacy archive path:
-
-```text
-legacy/<roadmap>/<phase>/<file>.md
-```
-
-Legacy files are preservation records.
-
-They are not active learning sessions and should not be treated as current roadmap state.
+`docs/labs/` contains project governance documents, templates, and operational policies.
 
 ---
 
@@ -94,7 +83,6 @@ Status meanings:
 
 * **Active** — maintained as a current learning track under `active/`
 * **Backlog** — planned, paused, or future work under `backlog/`
-* **Legacy** — historical archive material under `legacy/`
 
 Repository location is authoritative for lifecycle classification.
 
@@ -120,6 +108,7 @@ active/server/README.md
 active/window/README.md
 active/crypto/README.md
 active/payload/README.md
+active/numbersystem/README.md
 ```
 
 Backlog roadmap path:
@@ -134,20 +123,7 @@ Examples:
 backlog/flask/README.md
 backlog/toolsmith/README.md
 backlog/devtool/README.md
-```
-
-Legacy archive path:
-
-```text
-legacy/<roadmap>/<phase>/<file>.md
-```
-
-Examples:
-
-```text
-legacy/crypto/phase01/05_nonce.md
-legacy/payload/phase01/24_final_review.md
-legacy/server/phase00/README.md
+backlog/vulnerability_report_lab/README.md
 ```
 
 Do not create duplicate canonical roadmap files in a separate central roadmap directory unless the project structure is explicitly revised.
@@ -475,31 +451,10 @@ Repository location is authoritative for lifecycle classification:
 
 * `active/` contains current learning tracks
 * `backlog/` contains planned or paused tracks
-* `legacy/` contains historical archive records
 
 Status does not imply completion.
 
 Determine progress from the roadmap and its recorded phase/session documents.
-
----
-
-# Legacy Archive Policy
-
-Legacy archives live under:
-
-```text
-legacy/<roadmap>/<phase>/<file>.md
-```
-
-Legacy files preserve historical learning records.
-
-Rules:
-
-* do not rewrite learner answers
-* do not normalize old archive formats unless explicitly requested
-* do not treat legacy files as current sessions
-* preserve roadmap and phase context
-* do not move legacy files back into active or backlog unless explicitly requested
 
 ---
 
@@ -535,13 +490,6 @@ When adding a backlog roadmap:
 * add it under `backlog/<roadmap>/`
 * create `backlog/<roadmap>/README.md`
 * update this index if it is a meaningful project roadmap
-
-When preserving legacy archives:
-
-* place them under `legacy/<roadmap>/<phase>/`
-* preserve their historical content
-* avoid rewriting learner answers
-* avoid rewriting documents solely to match current templates
 
 This document should remain an overview, not a detailed curriculum.
 
