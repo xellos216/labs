@@ -169,6 +169,7 @@ Its purpose is to build intuition for:
 
 It is not treated as a replacement for real x86-64 assembly, Linux ABI knowledge or GDB-based observation.
 The main verification environment remains:
+
 ```text
 C source code
         ↓
@@ -179,60 +180,69 @@ ELF binary
 GDB / objdump
         ↓
 observed CPU and memory behavior
+```
 
-⸻
+---
 
-Example Labs
+## Example Labs
 
-* execute simple register operations in Pocket Assembler
-* compare value movement in Pocket Assembler with mov in x86-64 output
-* compile a small C function and inspect its disassembly
-* observe rip, rsp and rbp in GDB
-* step through a function call instruction by instruction
-* observe how call and ret relate to saved return addresses
+- execute simple register operations in Pocket Assembler
+- compare value movement in Pocket Assembler with mov in x86-64 output
+- compile a small C function and inspect its disassembly
+- observe rip, rsp and rbp in GDB
+- step through a function call instruction by instruction
+- observe how call and ret relate to saved return addresses
 
-⸻
+---
 
-Topics
+## Topics
 
-* CPU instruction model
-* Registers
-* Instruction pointer
-* Stack pointer
-* Base pointer
-* Data movement
-* Arithmetic operations
-* Compare and branch concepts
-* Stack basics
-* Function call basics
-* call
-* ret
-* Return address
-* GDB instruction stepping
-* C-to-assembly bridge
+- CPU instruction model
+- Registers
+- Instruction pointer
+- Stack pointer
+- Base pointer
+- Data movement
+- Arithmetic operations
+- Compare and branch concepts
+- Stack basics
+- Function call basics
+- call
+- ret
+- Return address
+- GDB instruction stepping
+- C-to-assembly bridge
 
-Session 01
+### Session 01
+
 Instruction Execution Model
 
-Session 02
+### Session 02
+
 Registers as CPU Storage
 
-Session 03
+### Session 03
+
 Value Movement and Basic Operations
 
-Session 04
+### Session 04
+
 Compare, Branch and Control Flow
 
-Session 05
+### Session 05
+
 Stack Concept Primer
 
-Session 06
+### Session 06
+
 Instruction Pointer, Stack Pointer and Base Pointer
 
-Session 07
+### Session 07
+
 Function Calls, call and ret
 
-Session 08
+### Session 08
+
 Mini Lab — C Function to GDB Disassembly
 
 ---
