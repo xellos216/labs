@@ -14,6 +14,8 @@ As a result, older archive documents may not match the current archive format.
 
 This document defines how to classify, preserve, and later refactor those archives when the user explicitly requests archive maintenance.
 
+This plan governs migration of session archive documents and their formats. It does not govern the normal lifecycle move of a completed roadmap into the top-level `archive/` directory. Lifecycle classification is defined in `ROADMAP_INDEX.md`.
+
 ---
 
 # Current Policy

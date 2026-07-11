@@ -240,7 +240,7 @@ Completion is based on demonstrated understanding rather than the number of comm
 
 # Markdown Generation
 
-When a session produces or modifies Markdown under `active/**`, `backlog/**`, or `docs/labs/**`, follow:
+When a session produces or modifies Markdown covered by the repository Markdown policy, including files under `active/**`, `backlog/**`, `archive/**`, or `docs/labs/**`, follow:
 
 ```text
 docs/labs/MARKDOWN_GENERATION_POLICY.md

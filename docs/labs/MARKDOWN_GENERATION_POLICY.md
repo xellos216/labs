@@ -11,15 +11,17 @@ The goal is to prevent recurring cleanup work by making generated Markdown match
 This policy applies to generated or modified Markdown under:
 
 ```text
+README.md
 AGENTS.md
 active/**/*.md
 backlog/**/*.md
+archive/**/*.md
 docs/labs/**/*.md
 ```
 
 Repository Markdown outside these paths should be handled only when the task explicitly includes it.
 
-The public repository baseline does not keep a `legacy/` tree. Do not reintroduce historical archive directories unless the user explicitly requests a dedicated restoration or migration task.
+The public repository baseline does not keep a `legacy/` tree. The top-level `archive/` directory is reserved for completed roadmap lifecycles; it is not a restoration area for historical or pre-redaction material. Do not reintroduce historical archive directories unless the user explicitly requests a dedicated restoration or migration task.
 
 ---
 
@@ -136,9 +138,11 @@ Before committing Markdown changes, run:
 
 ```bash
 npx markdownlint-cli2@latest \
+  "README.md" \
   "AGENTS.md" \
   "active/**/*.md" \
   "backlog/**/*.md" \
+  "archive/**/*.md" \
   "docs/labs/**/*.md"
 ```
 
@@ -162,7 +166,7 @@ Check MAC addresses:
 ```bash
 rg -n --pcre2 \
   -e '\b[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){5}\b' \
-  -- active backlog docs README.md AGENTS.md
+  -- active backlog archive docs README.md AGENTS.md
 ```
 
 Check public IPv4 addresses:
@@ -170,7 +174,7 @@ Check public IPv4 addresses:
 ```bash
 rg -n --pcre2 \
   -e '\b(?!(?:10|127)\.)(?!(?:172\.(?:1[6-9]|2[0-9]|3[01]))\.)(?!(?:192\.168)\.)(?!(?:169\.254)\.)(?!(?:0|255)\.)(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3}\b' \
-  -- active backlog docs README.md AGENTS.md
+  -- active backlog archive docs README.md AGENTS.md
 ```
 
 Review matches manually because documentation ranges such as `203.0.113.0/24`, `198.51.100.0/24`, `192.0.2.0/24`, and well-known public examples such as `8.8.8.8` may be intentional.
