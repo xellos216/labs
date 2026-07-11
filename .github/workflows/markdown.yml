@@ -28,7 +28,9 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v23
         with:
           globs: |
+            README.md
             AGENTS.md
             active/**/*.md
             backlog/**/*.md
+            archive/**/*.md
             docs/labs/**/*.md

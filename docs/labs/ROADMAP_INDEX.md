@@ -27,6 +27,7 @@ Labs is organized by learning status and project function.
 ```text
 active/
 backlog/
+archive/
 docs/
 AGENTS.md
 README.md
@@ -34,7 +35,7 @@ README.md
 
 ## active/
 
-`active/` contains roadmaps that are currently practiced, reviewed, or expanded.
+`active/` contains roadmaps that are currently practiced or expanded.
 
 Canonical active roadmap path:
 
@@ -52,11 +53,21 @@ Backlog roadmap path:
 backlog/<roadmap>/README.md
 ```
 
+## archive/
+
+`archive/` contains roadmaps whose planned learning sessions are complete and whose records remain available for review and reference.
+
+Archived roadmap path:
+
+```text
+archive/<roadmap>/README.md
+```
+
 ## docs/
 
 `docs/labs/` contains project governance, templates, source policy, and workflow rules.
 
-The public repository baseline does not keep a historical archive tree. Historical or pre-redaction material should not be reintroduced unless the user explicitly requests a dedicated restoration, migration, or private archival task.
+The top-level `archive/` directory is a roadmap lifecycle location, not a historical restoration tree. Historical or pre-redaction material should not be reintroduced unless the user explicitly requests a dedicated restoration, migration, or private archival task.
 
 ---
 
@@ -68,10 +79,8 @@ The public repository baseline does not keep a historical archive tree. Historic
 | `active/c/`                         | C Programming               | Memory, ELF, assembly foundations             | Active  |
 | `active/network/`                   | Networking                  | Communication, protocols, packet reasoning    | Active  |
 | `active/server/`                    | Linux Server Administration | Operations, troubleshooting, recovery         | Active  |
-| `active/window/`                    | Windows Fundamentals        | Windows architecture and enterprise systems   | Active  |
 | `active/crypto/`                    | Cryptography                | Byte reasoning and transformation analysis    | Active  |
 | `active/payload/`                   | Payload Construction        | Parser reasoning and input interpretation     | Active  |
-| `active/numbersystem/`              | Number Systems              | Binary, hex, bytes, encoding foundations      | Active  |
 | `backlog/flask/`                    | Flask                       | HTTP, web applications, security foundations  | Backlog |
 | `backlog/toolsmith/`                | Security Toolsmith          | Building security-related utilities           | Backlog |
 | `backlog/vulnerability_report_lab/` | Vulnerability Report Lab    | Vulnerability verification and report writing | Backlog |
@@ -81,11 +90,13 @@ The public repository baseline does not keep a historical archive tree. Historic
 | `backlog/LFS/`                      | Linux From Scratch          | Linux build process and system construction   | Backlog |
 | `backlog/myjarvis/`                 | MyJarvis                    | Personal assistant / lab interface project    | Backlog |
 | `backlog/window/`                   | Windows                     | Paused or alternate Windows roadmap material  | Backlog |
+| `archive/numbersystem/`             | Number Systems              | Binary, hex, bytes, encoding foundations      | Archive |
 
 Status meanings:
 
 * **Active** — maintained as a current learning track under `active/`
 * **Backlog** — planned, paused, or future work under `backlog/`
+* **Archive** — planned learning sessions are complete; review and reference continue under `archive/`
 
 Repository location is authoritative for lifecycle classification.
 
@@ -93,25 +104,25 @@ Repository location is authoritative for lifecycle classification.
 
 # Roadmap File Policy
 
-Each active roadmap owns its roadmap document.
+Each roadmap owns its roadmap document inside its current lifecycle directory.
 
-Canonical active roadmap path:
+Canonical roadmap paths:
 
 ```text
 active/<roadmap>/README.md
+backlog/<roadmap>/README.md
+archive/<roadmap>/README.md
 ```
 
-Examples:
+Current active examples:
 
 ```text
 active/unix/README.md
 active/c/README.md
 active/network/README.md
 active/server/README.md
-active/window/README.md
 active/crypto/README.md
 active/payload/README.md
-active/numbersystem/README.md
 ```
 
 Backlog roadmap path:
@@ -126,6 +137,13 @@ Examples:
 backlog/flask/README.md
 backlog/toolsmith/README.md
 backlog/devtool/README.md
+backlog/window/README.md
+```
+
+Archived roadmap example:
+
+```text
+archive/numbersystem/README.md
 ```
 
 Do not create duplicate canonical roadmap files in a separate central roadmap directory unless the project structure is explicitly revised.
@@ -280,7 +298,7 @@ Supports:
 Location:
 
 ```text
-active/window/
+backlog/window/
 ```
 
 Focus:
@@ -347,7 +365,7 @@ Supports:
 Location:
 
 ```text
-active/numbersystem/
+archive/numbersystem/
 ```
 
 Focus:
@@ -453,8 +471,9 @@ Repository location is authoritative for lifecycle classification:
 
 * `active/` contains current learning tracks
 * `backlog/` contains planned or paused tracks
+* `archive/` contains tracks whose planned learning sessions are complete
 
-Status does not imply completion.
+Active and Backlog status do not imply completion. Archive status means the planned session sequence is complete, but review questions, factual corrections, and reference use may continue.
 
 Determine progress from the roadmap and its recorded phase/session documents.
 
@@ -492,6 +511,13 @@ When adding a backlog roadmap:
 * add it under `backlog/<roadmap>/`
 * create `backlog/<roadmap>/README.md`
 * update this index if it is a meaningful project roadmap
+
+When archiving a completed roadmap:
+
+* move the roadmap directory to `archive/<roadmap>/`
+* keep its roadmap and session records together
+* update this index and any lifecycle-specific references
+* do not treat review-only work as reactivation
 
 When restoring historical material:
 

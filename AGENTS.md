@@ -22,9 +22,10 @@ This repository contains:
 
 * active learning roadmaps
 * backlog roadmaps
+* archived roadmaps retained for review and reference
 * phase-based learning records
 * practical lab notes
-* archive documents inside active or backlog tracks
+* session archive documents inside roadmap tracks
 * review questions
 * experiment records
 * small experiments and proof-of-concept code
@@ -116,13 +117,13 @@ For experiment documentation, read:
 For roadmap continuation, read:
 
 * `docs/labs/ROADMAP_INDEX.md`
-* the active roadmap's `active/<roadmap>/README.md`
+* the roadmap's `README.md` from its current `active/`, `backlog/`, or `archive/` lifecycle directory
 
 For roadmap creation or roadmap modification, read:
 
 * `docs/labs/ROADMAP_FORMAT.md`
 * `docs/labs/ROADMAP_INDEX.md`
-* the relevant `active/<roadmap>/README.md` or `backlog/<roadmap>/README.md` if it already exists
+* the relevant roadmap `README.md` from `active/`, `backlog/`, or `archive/` if it already exists
 
 For repository structure, taxonomy, or organization changes, read:
 
@@ -141,12 +142,13 @@ AGENTS.md
 README.md
 active/
 backlog/
+archive/
 docs/
 ```
 
 ## active/
 
-`active/` contains roadmaps that are currently practiced, reviewed, or expanded.
+`active/` contains roadmaps that are currently practiced or expanded.
 
 Canonical active roadmap path:
 
@@ -175,6 +177,20 @@ backlog/<roadmap>/README.md
 
 Backlog material is not active unless explicitly reactivated.
 
+## archive/
+
+`archive/` contains roadmaps whose planned learning sessions are complete and whose roadmap, session records, and review material remain available.
+
+Canonical archived roadmap path:
+
+```text
+archive/<roadmap>/README.md
+```
+
+Review answers, factual corrections, link repairs, and clearly scoped maintenance may continue in an archived roadmap. Review-only work does not reactivate a track.
+
+The lifecycle `archive/` directory is not a restoration area for historical, pre-redaction, or legacy material. Reintroducing such material requires an explicit audited restoration, migration, or private archival task.
+
 ## docs/labs/
 
 `docs/labs/` contains governance and operational documentation.
@@ -196,25 +212,27 @@ Do not place ordinary session archives here.
 
 # Roadmap Layout Policy
 
-Each active roadmap directory owns its roadmap document.
+Each roadmap directory owns its roadmap document inside its current lifecycle directory.
 
-The canonical active roadmap path is:
+Canonical roadmap paths are:
 
 ```text
 active/<roadmap>/README.md
+backlog/<roadmap>/README.md
+archive/<roadmap>/README.md
 ```
 
-Examples:
+Current examples:
 
 ```text
 active/unix/README.md
 active/c/README.md
 active/network/README.md
 active/server/README.md
-active/window/README.md
 active/crypto/README.md
 active/payload/README.md
-active/numbersystem/README.md
+backlog/window/README.md
+archive/numbersystem/README.md
 ```
 
 Do not move roadmap documents into a central `roadmaps/` directory unless the user explicitly requests a structural redesign.
@@ -245,7 +263,9 @@ When content fits multiple directories, choose the directory based on the primar
 
 # Archive Rules
 
-Archive documents are learning records.
+Session archive documents are learning records and may exist inside roadmap directories under `active/`, `backlog/`, or `archive/`.
+
+The term "session archive" describes a learning record. The top-level `archive/` directory describes a roadmap lifecycle state. Do not confuse lifecycle relocation with session archive format migration.
 
 Future archives should follow:
 
@@ -413,9 +433,11 @@ For Markdown changes, run:
 
 ```bash
 npx markdownlint-cli2@latest \
+  "README.md" \
   "AGENTS.md" \
   "active/**/*.md" \
   "backlog/**/*.md" \
+  "archive/**/*.md" \
   "docs/labs/**/*.md"
 ```
 
@@ -428,8 +450,8 @@ docs/labs/MARKDOWN_GENERATION_POLICY.md
 For structural refactors:
 
 ```bash
-rg 'old/path'
-rg '\]\(.*\.md\)'
+rg 'old/path' active backlog archive docs README.md AGENTS.md
+rg '\]\(.*\.md\)' active backlog archive docs README.md AGENTS.md
 find . -type d -empty
 ```
 

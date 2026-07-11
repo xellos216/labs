@@ -109,30 +109,39 @@ Individual roadmap documents should normally be read from the GitHub remote thro
 
 # Roadmap Loading Policy
 
-Each active roadmap owns its roadmap document.
+Each roadmap owns its roadmap document inside its current lifecycle directory.
 
-The canonical roadmap path is:
+Canonical roadmap paths are:
 
 ```text
 active/<roadmap>/README.md
+backlog/<roadmap>/README.md
+archive/<roadmap>/README.md
 ```
 
-Examples:
+Current active examples:
 
 ```text
 active/unix/README.md
 active/c/README.md
 active/network/README.md
 active/server/README.md
-active/window/README.md
 active/crypto/README.md
 active/payload/README.md
-active/numbersystem/README.md
 ```
 
 Backlog roadmaps may be referenced at `backlog/<roadmap>/README.md`, but they are not active unless explicitly reactivated.
 
-Before continuing a learning sequence, ChatGPT should consult the relevant roadmap document from the GitHub remote.
+Archived roadmaps may be referenced at `archive/<roadmap>/README.md`. Their planned learning sessions are complete, but review and reference work may continue without reactivating the track.
+
+Examples:
+
+```text
+backlog/window/README.md
+archive/numbersystem/README.md
+```
+
+Before continuing a learning sequence or review, ChatGPT should consult the relevant roadmap document from its current lifecycle directory in the GitHub remote.
 
 If a roadmap file has moved or the expected path is unavailable, ChatGPT should report the missing file instead of inventing the session order.
 
@@ -203,6 +212,6 @@ At the start of a Labs session, use this rule:
 ```text
 Use Project Instructions and `docs/labs/LABS_SOURCE_SYNC.md` for source policy.
 Use cached Project Sources for common templates.
-Use the GitHub connector to read the active roadmap before continuing a learning sequence.
+Use the GitHub connector to read the roadmap from its current lifecycle directory before continuing a learning sequence or review.
 Treat GitHub remote as authoritative over uploaded Project Sources.
 ```
