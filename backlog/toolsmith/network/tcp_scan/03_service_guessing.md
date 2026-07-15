@@ -311,12 +311,6 @@ Evidence
 
 ---
 
-# Observation
-
-![01_01](images/01_01.png)
-
----
-
 ## QA
 
 **Q1.**

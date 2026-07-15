@@ -217,34 +217,6 @@ Servers must validate and handle missing or unexpected values safely.
 
 ---
 
-# Observations
-
----
-
-![06_01](images/06_01.png)
-
----
-
-![06_02](images/06_02.png)--
-
----
-
-![06_03](images/06_03.png)--
-
----
-
-![06_04](images/06_04.png)
-
----
-
-![06_05](images/06_05.png)
-
----
-
-![06_06](images/06_06.png)
-
----
-
 # Flask Web Security Foundations
 ## Phase 01
 ### Session 06

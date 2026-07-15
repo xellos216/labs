@@ -121,16 +121,6 @@ and should not assume clients behave as expected.
 
 ---
 
-# Observations
-
-![05_01](images/01_01.png)
-
----
-
-![05_02](images/01_02.png)
-
----
-
 # QA
 
 **Q1.**
