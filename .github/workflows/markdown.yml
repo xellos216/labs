@@ -30,6 +30,8 @@ jobs:
           globs: |
             README.md
             AGENTS.md
+            LICENSE.md
+            THIRD_PARTY_NOTICES.md
             active/**/*.md
             backlog/**/*.md
             archive/**/*.md

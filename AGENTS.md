@@ -89,6 +89,26 @@ Before creating, moving, or refactoring lab documents, read the relevant documen
 * `docs/labs/ROADMAP_FORMAT.md`
 
   * Format rules for roadmap documents.
+* `docs/labs/GETTING_STARTED.md`
+
+  * Public learner bootstrap and operating guide.
+* `docs/labs/CHATGPT_SETUP.md`
+
+  * Optional ChatGPT setup guide.
+* `docs/labs/PROJECT_INSTRUCTIONS.md`
+
+  * Reusable generic project-instructions template.
+
+Root public legal scope documents are:
+
+* `LICENSE.md`
+
+  * Repository-specific license scope and exclusions.
+* `THIRD_PARTY_NOTICES.md`
+
+  * Third-party rights, dependency references, and notice guidance.
+
+Canonical legal text under `LICENSES/` is publisher-supplied source material, not a normal editable project document.
 
 ---
 
@@ -101,6 +121,21 @@ For source policy, Project Sources, or GitHub connector behavior, read:
 * `docs/labs/LABS_SOURCE_SYNC.md`
 
 For Markdown generation, Markdown cleanup, privacy redaction, or Markdown policy changes, read:
+
+* `docs/labs/MARKDOWN_GENERATION_POLICY.md`
+
+For public onboarding or reusable assistant setup, read the relevant documents:
+
+* `docs/labs/GETTING_STARTED.md`
+* `docs/labs/CHATGPT_SETUP.md`
+* `docs/labs/PROJECT_INSTRUCTIONS.md`
+
+For licensing scope or third-party notices, read:
+
+* `LICENSE.md`
+* `THIRD_PARTY_NOTICES.md`
+
+For canonical legal-text handling, public media, or privacy review, also read:
 
 * `docs/labs/MARKDOWN_GENERATION_POLICY.md`
 
@@ -140,6 +175,9 @@ Current high-level repository structure:
 ```text
 AGENTS.md
 README.md
+LICENSE.md
+THIRD_PARTY_NOTICES.md
+LICENSES/
 active/
 backlog/
 archive/
@@ -207,6 +245,10 @@ Use for:
 * roadmap index and roadmap format rules
 
 Do not place ordinary session archives here.
+
+## Root Legal Documents and LICENSES/
+
+`LICENSE.md` defines repository-specific license scope, and `THIRD_PARTY_NOTICES.md` records third-party scope and notice guidance. `LICENSES/` stores verified canonical legal text. Do not treat canonical legal text as ordinary Markdown or normalize it to match repository formatting.
 
 ---
 
@@ -390,6 +432,12 @@ docs/labs/MARKDOWN_GENERATION_POLICY.md
 
 Mask personal and local environment identifiers such as public IPs, MAC addresses, host-specific interface names, usernames, hostnames, local paths, tokens, or account IDs.
 
+Public images and other media require review of visible content, filenames, surrounding context, and embedded metadata. Manually inspect image pixels; text grep is insufficient for screenshots. If an agent cannot perform the visual or metadata review, request human review.
+
+Before public commits, review Git author names and email addresses. Removing or sanitizing a file in the current tree does not remove earlier versions from Git history, including copies reachable through old commits, tags, branches, forks, or clones. History rewriting is destructive and requires a separate, explicitly approved task; ordinary documentation cleanup must not rewrite history.
+
+Preserve verified canonical legal text under `LICENSES/` byte-for-byte. Do not reflow, trim, translate, or normalize it for lint or style consistency.
+
 ---
 
 # Lab Safety
@@ -435,11 +483,15 @@ For Markdown changes, run:
 npx markdownlint-cli2@latest \
   "README.md" \
   "AGENTS.md" \
+  "LICENSE.md" \
+  "THIRD_PARTY_NOTICES.md" \
   "active/**/*.md" \
   "backlog/**/*.md" \
   "archive/**/*.md" \
   "docs/labs/**/*.md"
 ```
+
+Do not include canonical legal texts under `LICENSES/` in Markdown linting. If changes are staged, also inspect `git diff --cached --check` and `git diff --cached`.
 
 For public Markdown generated from real network or host output, run the redaction checks documented in:
 
@@ -462,6 +514,8 @@ Check for:
 * empty directories
 * accidental mass changes
 * generated artifacts committed by mistake
+* unreviewed public image pixels or metadata
+* unexpected public Git author metadata or historical exposure
 
 For runnable code or lab tools, verify with the smallest relevant command first.
 
