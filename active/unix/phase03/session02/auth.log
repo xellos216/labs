@@ -1,0 +1,20 @@
+Jul 14 09:00:01 labhost sshd[2101]: Failed password for invalid user admin from 192.0.2.10 port 49152 ssh2
+Jul 14 09:00:04 labhost sshd[2102]: Failed password for invalid user test from 192.0.2.11 port 49153 ssh2
+Jul 14 09:00:07 labhost sshd[2103]: Failed password for root from 192.0.2.10 port 49154 ssh2
+Jul 14 09:00:12 labhost sshd[2104]: Accepted publickey for analyst from 198.51.100.20 port 51200 ssh2
+Jul 14 09:01:03 labhost sshd[2110]: Failed password for invalid user admin from 192.0.2.10 port 49155 ssh2
+Jul 14 09:01:18 labhost sudo[2115]: analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/systemctl status sshd
+Jul 14 09:01:44 labhost sshd[2120]: Failed password for invalid user guest from 203.0.113.30 port 53001 ssh2
+Jul 14 09:02:02 labhost sshd[2122]: Failed password for root from 192.0.2.10 port 49156 ssh2
+Jul 14 09:02:15 labhost sshd[2125]: Accepted password for operator from 203.0.113.40 port 54000 ssh2
+Jul 14 09:02:31 labhost sudo[2128]: operator : 3 incorrect password attempts ; TTY=pts/1 ; PWD=/home/operator ; USER=root ; COMMAND=/usr/bin/id
+Jul 14 09:03:01 labhost sshd[2131]: Failed password for invalid user admin from 192.0.2.10 port 49157 ssh2
+Jul 14 09:03:24 labhost sshd[2135]: Connection closed by authenticating user root 192.0.2.12 port 55000 [preauth]
+Jul 14 09:04:08 labhost sshd[2140]: Failed password for invalid user oracle from 203.0.113.30 port 53002 ssh2
+Jul 14 09:04:16 labhost sshd[2141]: Failed password for invalid user postgres from 203.0.113.30 port 53003 ssh2
+Jul 14 09:04:55 labhost sshd[2145]: Accepted publickey for analyst from 198.51.100.20 port 51201 ssh2
+Jul 14 09:05:10 labhost sudo[2150]: analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/journalctl -u sshd
+Jul 14 09:05:44 labhost sshd[2154]: Failed password for invalid user admin from 192.0.2.10 port 49158 ssh2
+Jul 14 09:06:03 labhost sshd[2160]: Failed password for invalid user deploy from 192.0.2.11 port 49159 ssh2
+Jul 14 09:06:20 labhost sshd[2163]: Accepted publickey for deploy from 192.0.2.11 port 49160 ssh2
+Jul 14 09:07:02 labhost sudo[2170]: deploy : TTY=pts/2 ; PWD=/srv/app ; USER=root ; COMMAND=/usr/bin/systemctl restart app.service
