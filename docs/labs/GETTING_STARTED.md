@@ -24,51 +24,46 @@ There are two distinct ways to use Labs:
 
 1. Browse the populated `xellos216/labs` repository as a reference
    implementation, including its evolving roadmaps and historical records.
-2. Create a separate personal learning workspace whose goals, environment,
-   roadmap order, and progress belong to you.
+2. Generate a separate personal learning workspace from the clean
+   `xellos216/labs-starter` template, then adapt its goals, environment,
+   roadmap order, and progress to your needs.
 
 Do not treat the populated reference repository as an empty template. Its
 content and Git history reflect an existing learner's work.
 
-## Manual Bootstrap Until `labs-starter` Exists
+## Create a Workspace from Labs Starter
 
-A separate `labs-starter` template repository is planned but is not yet
-available. Until then, a minimal directory skeleton can be created manually:
+Use the public
+[xellos216/labs-starter](https://github.com/xellos216/labs-starter) template
+to create a clean personal workspace. The generated repository has Git history
+independent from both the populated `xellos216/labs` reference repository and
+the `xellos216/labs-starter` template repository.
+
+After generating the repository, adapt its `README.md` to describe your own
+learning workspace and choose appropriate licenses for future personal
+content. Before the first personal commit, confirm the Git identity that will
+be recorded publicly:
 
 ```bash
-mkdir my-labs
-cd my-labs
-git init
-mkdir -p active backlog archive docs/labs
+git config --get user.name
+git config --get user.email
 ```
 
-These commands create only a repository and its initial directories; they do
-not create a complete Labs installation. Selectively copy and adapt only the
-governance and template documents you need. Preserve required attribution
-and license notices, and review the reference repository's [License and
-Scope](../../LICENSE.md) before reusing material.
-
-Useful reference documents include:
-
-- [Design Principles](DESIGN_PRINCIPLES.md)
-- [Labs Session Rules](LABS_SESSION_RULES.md)
-- [Roadmap Format Specification](ROADMAP_FORMAT.md)
-- [Archive Template](ARCHIVE_TEMPLATE.md)
-- [QA Template Specification](QA_TEMPLATE_SPECIFICATION.md)
-- [Lab Experiment Template](LAB_EXPERIMENT_TEMPLATE.md)
-- [Markdown Generation Policy](MARKDOWN_GENERATION_POLICY.md)
-
-Create a roadmap index that reflects your own repository. Do not copy the
-reference repository's personal roadmap inventory unchanged.
+Create the first roadmap with the roadmap template included in the generated
+repository, then register it in that repository's roadmap index. The generated
+workspace is yours to adapt; it does not copy the populated reference
+repository's personal roadmaps or progress. AI setup is optional.
 
 ## Create the First Roadmap
 
 1. Define the learning objective and intended scope.
-2. Create `backlog/<roadmap>/README.md` using the roadmap format as a guide.
-3. Review the proposed phases and sessions before beginning.
-4. Move the roadmap to `active/` only when actual learning begins.
-5. Keep phase and session records inside the same roadmap directory.
-6. Move the whole roadmap to `archive/` only when its planned sequence is
+2. Create `backlog/<roadmap>/README.md` from the roadmap template included in
+   the generated repository.
+3. Register the roadmap in the generated repository's roadmap index.
+4. Review the proposed phases and sessions before beginning.
+5. Move the roadmap to `active/` only when actual learning begins.
+6. Keep phase and session records inside the same roadmap directory.
+7. Move the whole roadmap to `archive/` only when its planned sequence is
    complete.
 
 There is no universal first roadmap. Choose a topic that matches your goals

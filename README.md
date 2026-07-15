@@ -17,11 +17,18 @@ reference implementation of the Labs method. Its roadmap order, recorded
 progress, and topic selection reflect one learner's path. Historical session
 archives may use older formats that remain useful as learning records.
 
-This repository is not an empty starter repository. A separate
-`labs-starter` repository is planned but is not yet available. Until it
-exists, readers should adapt only the parts of this reference implementation
-that fit their own goals. The repository is not distributed as a whole under
-an OSI-approved software license.
+This repository is not an empty starter repository. The separate public
+[xellos216/labs-starter](https://github.com/xellos216/labs-starter) repository
+is the clean, reusable template for a new personal workspace. Learners should
+use that template rather than clone this populated repository as their
+bootstrap. A repository generated from the template has independent Git
+history and should be adapted to its learner's own goals and roadmaps.
+
+Readers may still clone `xellos216/labs` to study the populated reference
+implementation and its history. This repository is not distributed as a whole
+under an OSI-approved software license; its licensing scope remains separate
+from the starter repository and is defined in this repository's license
+documents.
 
 ## Who It Is For
 
@@ -82,6 +89,8 @@ clean bootstrap for a new personal Labs repository.
 
 ## Start Your Own Labs
 
+- [Create a workspace from
+  xellos216/labs-starter](https://github.com/xellos216/labs-starter)
 - [Getting Started with Labs](docs/labs/GETTING_STARTED.md)
 - [Optional ChatGPT Setup](docs/labs/CHATGPT_SETUP.md)
 - [Project Instructions Template](docs/labs/PROJECT_INSTRUCTIONS.md)
