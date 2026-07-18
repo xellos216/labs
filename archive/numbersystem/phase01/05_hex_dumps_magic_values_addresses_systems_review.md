@@ -969,6 +969,8 @@ rw-p offset ...
 <details>
 <summary>A</summary>
 
+The offset shows the position from the beginning of the data, the byte column shows the actual stored bytes, and the ASCII view shows a printable interpretation of those bytes.
+
 </details>
 
 ---
@@ -977,6 +979,8 @@ rw-p offset ...
 
 <details>
 <summary>A</summary>
+
+`7f45 4c46` should be split into `7f 45 4c 46` because two hexadecimal digits represent one byte. The visual grouping in `xxd` does not change the actual byte boundaries.
 
 </details>
 
@@ -987,6 +991,8 @@ rw-p offset ...
 <details>
 <summary>A</summary>
 
+`7f 45 4c 46` appears as `.ELF` because `0x7f` is a non-printable byte displayed as `.`, while `0x45`, `0x4c`, and `0x46` are interpreted as the printable ASCII characters `E`, `L`, and `F`.
+
 </details>
 
 ---
@@ -995,6 +1001,8 @@ rw-p offset ...
 
 <details>
 <summary>A</summary>
+
+`0x41414141` suggests the ASCII filler pattern `AAAA` because each byte `0x41` represents the character `A`.
 
 </details>
 
@@ -1005,6 +1013,8 @@ rw-p offset ...
 <details>
 <summary>A</summary>
 
+Depending on context, `0x00000000` can mean integer zero, a null pointer, cleared memory, or an empty field.
+
 </details>
 
 ---
@@ -1013,6 +1023,8 @@ rw-p offset ...
 
 <details>
 <summary>A</summary>
+
+`0xffffffff` contains 32 bits all set to `1`. Interpreted as an unsigned 32-bit integer, it is `4294967295`; interpreted as a signed 32-bit two's complement integer, it is `-1`.
 
 </details>
 
@@ -1023,6 +1035,8 @@ rw-p offset ...
 <details>
 <summary>A</summary>
 
+`de ad be ef` is the big-endian byte order of `0xdeadbeef`, while `ef be ad de` is the little-endian byte order of the same value.
+
 </details>
 
 ---
@@ -1031,6 +1045,8 @@ rw-p offset ...
 
 <details>
 <summary>A</summary>
+
+`r-xp` means the region is readable, executable, not writable, and privately mapped.
 
 </details>
 
@@ -1041,6 +1057,8 @@ rw-p offset ...
 <details>
 <summary>A</summary>
 
+`/bin/cat` at the end of the mapping line indicates that the memory region is backed by that file rather than being anonymous memory.
+
 </details>
 
 ---
@@ -1049,5 +1067,7 @@ rw-p offset ...
 
 <details>
 <summary>A</summary>
+
+One file can appear as multiple memory mappings because different segments of the file are mapped separately, each with its own permissions and file offset.
 
 </details>

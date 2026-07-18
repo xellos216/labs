@@ -1080,6 +1080,8 @@ stat can show numeric permissions with %a.
 <details>
 <summary>A</summary>
 
+Unix permission notation fits naturally with octal because each permission group contains three bits—read, write, and execute—and one octal digit represents exactly three bits.
+
 </details>
 
 ---
@@ -1088,6 +1090,8 @@ stat can show numeric permissions with %a.
 
 <details>
 <summary>A</summary>
+
+`755` represents `rwxr-xr-x`, `644` represents `rw-r--r--`, `600` represents `rw-------`, and `700` represents `rwx------`.
 
 </details>
 
@@ -1098,6 +1102,8 @@ stat can show numeric permissions with %a.
 <details>
 <summary>A</summary>
 
+The first character represents the file type. In `-rwxr-xr-x`, `-` means a regular file.
+
 </details>
 
 ---
@@ -1106,6 +1112,8 @@ stat can show numeric permissions with %a.
 
 <details>
 <summary>A</summary>
+
+For a regular file, `x` means the file may be executed. For a directory, `x` means the directory may be entered, searched, or traversed.
 
 </details>
 
@@ -1116,6 +1124,8 @@ stat can show numeric permissions with %a.
 <details>
 <summary>A</summary>
 
+`cat file.txt` works because the `cat` program only needs read permission on `file.txt`. Running `./file.txt` treats the file as an execution target and therefore requires execute permission.
+
 </details>
 
 ---
@@ -1124,6 +1134,8 @@ stat can show numeric permissions with %a.
 
 <details>
 <summary>A</summary>
+
+`chmod 755 file.txt` grants execute permission, so the permission error may disappear. However, execution can still fail if the file content is not a valid executable format or does not contain a usable interpreter directive such as a shebang.
 
 </details>
 
@@ -1134,6 +1146,8 @@ stat can show numeric permissions with %a.
 <details>
 <summary>A</summary>
 
+`ls dir` failed because the directory did not have read permission. Directory read permission is required to list the names of entries inside it.
+
 </details>
 
 ---
@@ -1142,6 +1156,8 @@ stat can show numeric permissions with %a.
 
 <details>
 <summary>A</summary>
+
+`cat dir/inside.txt` succeeded because directory execute permission allowed traversal of the known path, and `inside.txt` itself was readable. Directory read permission was not required because the filename was already known.
 
 </details>
 
@@ -1152,6 +1168,8 @@ stat can show numeric permissions with %a.
 <details>
 <summary>A</summary>
 
+With `d--x------`, the owner can enter or traverse the directory and access an already known filename if the target file permissions allow it. The directory contents cannot be listed because read permission is absent.
+
 </details>
 
 ---
@@ -1160,6 +1178,8 @@ stat can show numeric permissions with %a.
 
 <details>
 <summary>A</summary>
+
+An exit status is evidence of the result because it is produced after the command finishes and summarizes success or failure. It does not itself cause the outcome; the underlying permission check, missing command, or execution error causes it.
 
 </details>
 
