@@ -653,6 +653,8 @@ Correct:
 <details>
 <summary>A</summary>
 
+Hexadecimal is commonly used because one hexadecimal digit represents four bits, so two hexadecimal digits represent exactly one byte. It is more compact and readable than binary while preserving byte boundaries.
+
 </details>
 
 ---
@@ -661,6 +663,8 @@ Correct:
 
 <details>
 <summary>A</summary>
+
+One hexadecimal digit represents 4 bits.
 
 </details>
 
@@ -671,6 +675,8 @@ Correct:
 <details>
 <summary>A</summary>
 
+`0xff` is 8 bits or 1 byte, `0xffff` is 16 bits or 2 bytes, and `0xffffffff` is 32 bits or 4 bytes.
+
 </details>
 
 ---
@@ -679,6 +685,8 @@ Correct:
 
 <details>
 <summary>A</summary>
+
+The left-side value represents the byte offset from the beginning of the input or file.
 
 </details>
 
@@ -689,6 +697,8 @@ Correct:
 <details>
 <summary>A</summary>
 
+`0x00` appears as `.` because it is a non-printable NUL byte, and `xxd` uses `.` as a placeholder for non-printable bytes in the ASCII area.
+
 </details>
 
 ---
@@ -697,6 +707,8 @@ Correct:
 
 <details>
 <summary>A</summary>
+
+The character `'0'` is the printable ASCII byte `0x30`, while `0x00` is the non-printable NUL byte. They are different byte values with different meanings.
 
 </details>
 
@@ -707,6 +719,8 @@ Correct:
 <details>
 <summary>A</summary>
 
+`"0a"` consists of two printable characters stored as the bytes `0x30 0x61`, while `0x0a` is one non-printable LF/newline byte.
+
 </details>
 
 ---
@@ -715,6 +729,8 @@ Correct:
 
 <details>
 <summary>A</summary>
+
+The dump contains two visible character `'0'` bytes, one newline byte, and one NUL byte.
 
 </details>
 

@@ -701,6 +701,8 @@ A sentinel such as -1 may appear as all bits set in fixed-width two's complement
 <details>
 <summary>A</summary>
 
+The same bit pattern can have different numeric meanings because the stored bits are interpreted according to the integer width and whether the type is signed or unsigned.
+
 </details>
 
 ---
@@ -709,6 +711,8 @@ A sentinel such as -1 may appear as all bits set in fixed-width two's complement
 
 <details>
 <summary>A</summary>
+
+As an unsigned 8-bit value, `0xff` means `255`. As a signed 8-bit two's complement value, it means `-1`.
 
 </details>
 
@@ -719,6 +723,8 @@ A sentinel such as -1 may appear as all bits set in fixed-width two's complement
 <details>
 <summary>A</summary>
 
+`0x7f` is the maximum signed 8-bit value because its bit pattern is `01111111`: the sign bit is `0`, and all seven remaining value bits are `1`, giving `127`.
+
 </details>
 
 ---
@@ -727,6 +733,8 @@ A sentinel such as -1 may appear as all bits set in fixed-width two's complement
 
 <details>
 <summary>A</summary>
+
+`0x80` is the minimum signed 8-bit value because its bit pattern is `10000000`, which represents `-128` in 8-bit two's complement.
 
 </details>
 
@@ -737,6 +745,8 @@ A sentinel such as -1 may appear as all bits set in fixed-width two's complement
 <details>
 <summary>A</summary>
 
+`value & 0xff` keeps only the lowest 8 bits of `value`. It was useful in Python because Python integers do not wrap automatically to 8 bits, so the mask simulated fixed-width 8-bit behavior.
+
 </details>
 
 ---
@@ -745,6 +755,8 @@ A sentinel such as -1 may appear as all bits set in fixed-width two's complement
 
 <details>
 <summary>A</summary>
+
+The `signed8` function first keeps the low 8 bits. If the value is at least `0x80`, it subtracts `0x100`, converting the unsigned range `128–255` into the signed range `-128–-1`.
 
 </details>
 
@@ -755,6 +767,8 @@ A sentinel such as -1 may appear as all bits set in fixed-width two's complement
 <details>
 <summary>A</summary>
 
+As an unsigned 32-bit value, `0xffffffff` means `4294967295`. As a signed 32-bit two's complement value, it means `-1`.
+
 </details>
 
 ---
@@ -763,6 +777,8 @@ A sentinel such as -1 may appear as all bits set in fixed-width two's complement
 
 <details>
 <summary>A</summary>
+
+`0xffffffff` should not be interpreted immediately as only `4294967295` because its meaning depends on the integer width, signedness, and usage context. In 32 bits, it can mean unsigned `4294967295`, signed `-1`, or an all-bits-set mask.
 
 </details>
 
@@ -773,6 +789,8 @@ A sentinel such as -1 may appear as all bits set in fixed-width two's complement
 <details>
 <summary>A</summary>
 
+`0xff` is all eight bits set in one byte, while `0xffffffff` is all 32 bits set in four bytes. Both represent the all-bits-set pattern for their respective widths.
+
 </details>
 
 ---
@@ -781,6 +799,8 @@ A sentinel such as -1 may appear as all bits set in fixed-width two's complement
 
 <details>
 <summary>A</summary>
+
+C requires extra caution because unsigned overflow has defined modulo wraparound behavior, while signed overflow is undefined behavior. Therefore, signed overflow cannot safely be assumed to wrap to the opposite end of the range.
 
 </details>
 

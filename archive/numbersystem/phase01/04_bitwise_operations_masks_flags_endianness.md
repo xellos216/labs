@@ -1033,6 +1033,8 @@ value & 0xff keeps only the low 8 bits of value.
 <details>
 <summary>A</summary>
 
+A mask is a bit pattern that selects which bit positions should be tested, preserved, enabled, cleared, or toggled.
+
 </details>
 
 ---
@@ -1041,6 +1043,8 @@ value & 0xff keeps only the low 8 bits of value.
 
 <details>
 <summary>A</summary>
+
+`value & mask` keeps or tests the selected bits, `value | mask` enables the selected bits, and `value ^ mask` toggles the selected bits.
 
 </details>
 
@@ -1051,6 +1055,8 @@ value & 0xff keeps only the low 8 bits of value.
 <details>
 <summary>A</summary>
 
+Unix permissions can be represented as bit flags because `r`, `w`, and `x` are independent yes/no states. They map to the three bits `100`, `010`, and `001`, with numeric values `4`, `2`, and `1`.
+
 </details>
 
 ---
@@ -1059,6 +1065,8 @@ value & 0xff keeps only the low 8 bits of value.
 
 <details>
 <summary>A</summary>
+
+If `perm & flag` produces a non-zero result, the flag is set. If it produces zero, the flag is not set.
 
 </details>
 
@@ -1069,6 +1077,8 @@ value & 0xff keeps only the low 8 bits of value.
 <details>
 <summary>A</summary>
 
+Enable a flag with `value | flag`, clear it with `value & ~flag`, and toggle it with `value ^ flag`.
+
 </details>
 
 ---
@@ -1077,6 +1087,8 @@ value & 0xff keeps only the low 8 bits of value.
 
 <details>
 <summary>A</summary>
+
+`1` is `00000001` in an 8-bit view. Shifting it left by seven positions produces `10000000`, which is `0x80`.
 
 </details>
 
@@ -1087,6 +1099,8 @@ value & 0xff keeps only the low 8 bits of value.
 <details>
 <summary>A</summary>
 
+Python prints `0b10` instead of `0b010` because leading zeroes are not part of the numeric value, and `bin()` returns the shortest binary representation.
+
 </details>
 
 ---
@@ -1095,6 +1109,8 @@ value & 0xff keeps only the low 8 bits of value.
 
 <details>
 <summary>A</summary>
+
+A byte sequence shows the bytes in storage order, while an integer value is the numeric result of interpreting those bytes according to a width and byte-order rule.
 
 </details>
 
@@ -1105,6 +1121,8 @@ value & 0xff keeps only the low 8 bits of value.
 <details>
 <summary>A</summary>
 
+Little-endian interpretation produces `0x12345678` because the first byte, `0x78`, is treated as the least significant byte, followed by `0x56`, `0x34`, and `0x12` as increasingly significant bytes.
+
 </details>
 
 ---
@@ -1113,6 +1131,8 @@ value & 0xff keeps only the low 8 bits of value.
 
 <details>
 <summary>A</summary>
+
+Endianness is described as byte order because it determines the order of bytes in a multi-byte value. It does not reverse the bit order inside each byte.
 
 </details>
 
